@@ -2,21 +2,34 @@ require 'json'
 require 'open-uri'
 require 'nokogiri'
 
-top_100_steam_games_url = "https://steamspy.com/api.php?request=top100in2weeks"
-top_100_serialized = URI.open(top_100_steam_games_url).read
-top_100_games = JSON.parse(top_100_serialized)
-
-top_100_games.each do |element|
-  # p element[1]["name"]
-  # p element[1]["developer"]
-  title = element[1]["name"]
-  developer = element[1]["developer"]
-  game_serialized = URI.open("https://steamspy.com/api.php?request=appdetails&appid=#{element[1]["appid"]}").read
-  game = JSON.parse(game_serialized)
-  genre = game["genre"].split
-  image_url = "https://cdn.cloudflare.steamstatic.com/steam/apps/#{element[1]["appid"]}/header.jpg"
-
+def game_description(appid)
+  url = "https://store.steampowered.com/app/#{appid}/"
+  html_file = URI.open(url).read
+  html_doc = Nokogiri::HTML(html_file)
+  html_doc.search('.game_description_snippet').each do |element|
+    return element.text.strip
+  end
 end
 
+def game_genres(appid)
+  game_serialized = URI.open("https://steamspy.com/api.php?request=appdetails&appid=#{appid}").read
+  game = JSON.parse(game_serialized)
+  game["genre"].split
+end
 
-# There are no API's to get descriptions by AppID, must scrape SteamDB for information
+def top_100_games
+  top_100_steam_games_url = "https://steamspy.com/api.php?request=top100in2weeks"
+  top_100_serialized = URI.open(top_100_steam_games_url).read
+  top_100_games = JSON.parse(top_100_serialized)
+
+  top_100_games.each do |element|
+    appid = element[1]["appid"]
+    Game.create(title: element[1]["name"],
+                image_url: "https://cdn.cloudflare.steamstatic.com/steam/apps/#{appid}/header.jpg",
+                developer: element[1]["developer"],
+                description: game_description(appid),
+                genre: game_genres(appid))
+  end
+end
+
+top_100_games
