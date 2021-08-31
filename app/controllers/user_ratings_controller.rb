@@ -8,7 +8,6 @@ class UserRatingsController < ApplicationController
 
   def create
     @user_rating = UserRating.new(rating_params)
-    @user_rating.user = User.find(params[:user_id])
     @user_rating.reviewer_id = current_user.id
     if @user_rating.save!
       redirect_to user_path(@user_rating)
