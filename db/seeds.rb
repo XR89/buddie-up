@@ -24,7 +24,7 @@ def top_100_games
   p "Seeding Top 100 Steam games..."
   top_100_games.each do |element|
     appid = element[1]["appid"]
-    Game.create!(title: element[1]["name"],
+    Game.create(title: element[1]["name"],
                 image_url: "https://cdn.cloudflare.steamstatic.com/steam/apps/#{appid}/header.jpg",
                 developer: element[1]["developer"],
                 description: game_description(appid),
