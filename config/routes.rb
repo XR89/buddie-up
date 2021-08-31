@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get '/welcome', to: 'pages#welcome'
   devise_for :users
-  get '/profile', to: 'users#profile', as: :profile
+  get '/profile', to: 'users#profile', as: 'profile'
   resources :users, only: %i[index show] do
     resources :user_ratings, only: %i[new create], as: :ratings
   end
