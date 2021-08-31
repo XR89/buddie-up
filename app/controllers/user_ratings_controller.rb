@@ -2,12 +2,14 @@ class UserRatingsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[new]
   def new
     @user_rating = UserRating.new
+    @user = User.find(params[:user_id])
     # raise
   end
 
   def create
     @user_rating = UserRating.new(rating_params)
     @user_rating.user = User.find(params[:user_id])
+    @user_rating.reviewer_id = current_user.id
     if @user_rating.save!
       redirect_to user_path(@user_rating)
     else

@@ -1,4 +1,4 @@
-<%= simple_form_for(@user_rating) do |f| %>
+<%= simple_form_for [@user_rating, @user] do |f| %>
   <%= f.input :comments %>
   <%= f.input :rating %>
   <%= f.button :submit %>
