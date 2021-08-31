@@ -4,7 +4,7 @@ class CreateSessions < ActiveRecord::Migration[6.1]
       t.references :game_id, null: false, foreign_key: true
       t.boolean :ongoing
       t.string :status
-      t.text :users, array: true, default: []
+      t.integer :users, array: true, default: []
 
       t.timestamps
     end
