@@ -10,17 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_08_31_102947) do
+=======
+ActiveRecord::Schema.define(version: 2021_08_31_110120) do
+>>>>>>> 9360ff479f1c5076bca13f49013487c6a22719da
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "games", force: :cascade do |t|
     t.string "title"
     t.string "genre", default: [], array: true
     t.text "description"
     t.string "developer"
     t.string "image_url"
+=======
+  create_table "sessions", force: :cascade do |t|
+    t.integer "game_id"
+    t.boolean "ongoing"
+    t.string "status"
+    t.text "users", default: [], array: true
+>>>>>>> 9360ff479f1c5076bca13f49013487c6a22719da
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
