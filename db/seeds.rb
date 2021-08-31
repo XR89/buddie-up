@@ -21,14 +21,15 @@ def top_100_games
   top_100_steam_games_url = "https://steamspy.com/api.php?request=top100in2weeks"
   top_100_serialized = URI.open(top_100_steam_games_url).read
   top_100_games = JSON.parse(top_100_serialized)
-
+  p "Seeding Top 100 Steam games..."
   top_100_games.each do |element|
     appid = element[1]["appid"]
-    Game.create(title: element[1]["name"],
+    Game.create!(title: element[1]["name"],
                 image_url: "https://cdn.cloudflare.steamstatic.com/steam/apps/#{appid}/header.jpg",
                 developer: element[1]["developer"],
                 description: game_description(appid),
                 genre: game_genres(appid))
+    p "#{Game.count}/100 - Created Game: #{element[1]["name"]}"
   end
 end
 
