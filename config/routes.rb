@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/welcome', to: 'pages#welcome'
   devise_for :users
-  get '/profile', to: 'users#profile', as 'profile'
+  get '/profile', to: 'users#profile', as: 'profile'
   resources :users, only: %i[index show]
   resources :games, only: %i[index show]
   resources :session, only: %i[show]
