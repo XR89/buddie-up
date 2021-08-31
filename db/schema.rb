@@ -43,6 +43,16 @@ ActiveRecord::Schema.define(version: 2021_08_31_145105) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "games", force: :cascade do |t|
+    t.string "title"
+    t.string "genre", default: [], array: true
+    t.text "description"
+    t.string "developer"
+    t.string "image_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "sessions", force: :cascade do |t|
     t.boolean "ongoing"
     t.string "status"
@@ -87,7 +97,7 @@ ActiveRecord::Schema.define(version: 2021_08_31_145105) do
     t.integer "favourite_users", default: [], array: true
     t.integer "avoid_users", default: [], array: true
     t.integer "user_status"
-    t.bigint "session_id", null: false
+    t.bigint "session_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["session_id"], name: "index_users_on_session_id"
