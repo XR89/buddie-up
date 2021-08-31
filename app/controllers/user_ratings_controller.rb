@@ -2,7 +2,7 @@ class UserRatingsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[new]
   def new
     @user_rating = UserRating.new
-    @users = User.where('session_id == current_user.session_id')
+    @users = User.where(session_id: current_user.id)
     # raise
   end
 
