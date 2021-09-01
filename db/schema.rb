@@ -61,20 +61,20 @@ ActiveRecord::Schema.define(version: 2021_09_01_113943) do
     t.index ["user_id"], name: "index_favourite_users_on_user_id"
   end
 
+  create_table "game_sessions", force: :cascade do |t|
+    t.boolean "ongoing"
+    t.string "status"
+    t.integer "users", default: [], array: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "games", force: :cascade do |t|
     t.string "title"
     t.string "genre", default: [], array: true
     t.text "description"
     t.string "developer"
     t.string "image_url"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "sessions", force: :cascade do |t|
-    t.boolean "ongoing"
-    t.string "status"
-    t.integer "users", default: [], array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -130,5 +130,5 @@ ActiveRecord::Schema.define(version: 2021_09_01_113943) do
   add_foreign_key "favourite_users", "users", column: "favourite_user_id"
   add_foreign_key "user_ratings", "users"
   add_foreign_key "user_ratings", "users", column: "reviewee_id"
-  add_foreign_key "users", "sessions"
+  add_foreign_key "users", "game_sessions", column: "session_id"
 end
