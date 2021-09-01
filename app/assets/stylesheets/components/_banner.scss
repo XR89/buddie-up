@@ -1,4 +1,15 @@
 .banner {
-  height: calc(100vh - 64px);
-  background-image: linear-gradient(215deg, $black, $dark-grey);
+  height: 100vh;
+}
+
+.banner-animate {
+  background-color: $pink;
+  background-image: linear-gradient(90deg, $pink, $orange, $pink, $orange);
+  animation: bannerAnimation 15s linear infinite;
+  background-size: 300% 100%;
+}
+
+@keyframes bannerAnimation {
+    0% { background-position: 0 0% }
+    100% { background-position: 100% 0 }
 }
