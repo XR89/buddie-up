@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/profile', to: 'users#profile', as: 'profile'
   resources :users, only: %i[index show]
   resources :games, only: %i[index show]
-  resources :session, only: %i[show] do
+  resources :game_session, only: %i[show] do
     resources :user_ratings, only: %i[new create], as: :ratings
   end
 
