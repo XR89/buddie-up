@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_01_110935) do
+ActiveRecord::Schema.define(version: 2021_09_01_113943) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,9 +83,10 @@ ActiveRecord::Schema.define(version: 2021_09_01_110935) do
     t.float "rating"
     t.bigint "user_id", null: false
     t.text "comments"
-    t.integer "reviewer_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "reviewee_id"
+    t.index ["reviewee_id"], name: "index_user_ratings_on_reviewee_id"
     t.index ["user_id"], name: "index_user_ratings_on_user_id"
   end
 
@@ -128,5 +129,6 @@ ActiveRecord::Schema.define(version: 2021_09_01_110935) do
   add_foreign_key "favourite_users", "users"
   add_foreign_key "favourite_users", "users", column: "favourite_user_id"
   add_foreign_key "user_ratings", "users"
+  add_foreign_key "user_ratings", "users", column: "reviewee_id"
   add_foreign_key "users", "sessions"
 end
