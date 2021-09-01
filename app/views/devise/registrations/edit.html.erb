@@ -23,7 +23,11 @@
                   hint: "we need your current password to confirm your changes",
                   required: true,
                   input_html: { autocomplete: "current-password" } %>
-      <%= f.input :username %>
+      <%= f.input :username, required: true, autofocus: true  %>
+      <%= f.input :dob, as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year - 18,
+                              order: [:day, :month, :year] %>
+      <%= f.input :gender, collection: ["Male", "Female", "Other", "Prefer not to say"], required: true, autofocus: true  %>        
       <%= f.input :region, collection: ["Europe",
                                        "North America",
                                        "South America",
@@ -32,11 +36,7 @@
                                        "East Asia",
                                        "Southeast Asia",
                                        "Australia & Pacific",
-                                       "Antarctica"] %>
-      <%= f.input :dob, as: :date, start_year: Date.today.year - 90,
-                              end_year: Date.today.year - 18,
-                              order: [:day, :month, :year] %>
-      <%= f.input :gender, collection: ["Male", "Female", "Other", "Prefer not to say"] %>             
+                                       "Antarctica"], required: true, autofocus: true  %>
       <%= f.input :steam_handle %>
       <%= f.input :origin_handle %>
       <%= f.input :psn_handle %>
