@@ -12,16 +12,11 @@ class User < ApplicationRecord
                        uniqueness: true
   validates :region, inclusion: { in: @regions,
                                   message: "%<value> is not a valid region" }
-
-  # validation for languages included in variable below
+  # validation for languages?
   validate :validate_age
   validate :gender, inclusion: { in: ["Male", "Female", "Non-binary", "Prefer not to say"] }
+  # validation for user status (0 - offline, 1 - online) may require sessions?
 
-  # validation for favourite users
-  # validation for avoid users
-  # validation for user status (0 - offline, 1 - online)?
-
-  # update when schema finalised
   has_many :user_ratings
   has_one_attached :photo
 
