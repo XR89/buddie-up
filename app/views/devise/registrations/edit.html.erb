@@ -11,7 +11,7 @@
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
       <% end %>
-
+      
       <%= f.input :password,
                   hint: "leave it blank if you don't want to change it",
                   required: false,
@@ -23,7 +23,8 @@
                   hint: "we need your current password to confirm your changes",
                   required: true,
                   input_html: { autocomplete: "current-password" } %>
-      <%= f.input :region, :collection => ["Europe",
+      <%= f.input :username %>
+      <%= f.input :region, collection: ["Europe",
                                        "North America",
                                        "South America",
                                        "Africa",
@@ -32,8 +33,10 @@
                                        "Southeast Asia",
                                        "Australia & Pacific",
                                        "Antarctica"] %>
-      <%= f.input :dob, as: :date %>
-      <%= f.input :gender, :collection => ["Male", "Female", "Other", "Prefer not to say"] %>             
+      <%= f.input :dob, as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year - 18,
+                              order: [:day, :month, :year] %>
+      <%= f.input :gender, collection: ["Male", "Female", "Other", "Prefer not to say"] %>             
       <%= f.input :steam_handle %>
       <%= f.input :origin_handle %>
       <%= f.input :psn_handle %>
