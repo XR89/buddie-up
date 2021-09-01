@@ -1,17 +1,17 @@
 class MessagesController < ApplicationController
   def create
-    @session = Session.find(params[:sessino_id])
+    @gamesession = GameSession.find(params[:sessino_id])
     @message = Message.new(message_params)
-    @message.session = @session
+    @message.session = @gamesession
     @message.user = current_user
     if @message.save
-      redirect_to session_path(@session, anchor: "message-#{@message.id}")
+      redirect_to session_path(@gamesession, anchor: "message-#{@message.id}")
     else
-      render "sessions/show"
+      render "gamesessions/show"
     end
   end
 
   def message_params
-    params.require(:message).permit(:content, :user_id, :session_id)
+    params.require(:message).permit(:content, :user_id, :game_session_id)
   end
 end

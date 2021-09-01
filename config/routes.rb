@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :games, only: %i[index show]
   resources :game_session, only: %i[show] do
     resources :user_ratings, only: %i[new create], as: :ratings
+    resources :messages, only: :create
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
