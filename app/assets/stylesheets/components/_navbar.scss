@@ -1,12 +1,31 @@
-.navbar-lewagon {
+nav {
+  display: flex;
   justify-content: space-between;
-  background: white;
+  align-items: center;
+  padding: 0 20px;
+  height: 64px;
+  background-color: $black;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
+.navbar-brand  img {
   width: 40px;
+}
+
+.nav-items {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+    li {
+    display: inline;
+  }
+}
+
+.nav-link {
+  display: inline-block;
+  margin: 8px;
+  padding: 4px 8px;
+  background-color: $pink;
+  color: $white;
+  -webkit-box-shadow: 1px 1px $pink-accent, 2px 2px $pink-accent, 3px 3px $pink-accent;
+  boxshadow: 1px 1px $pink-accent, 2px 2px $pink-accent, 3px 3px $pink-accent;
 }
