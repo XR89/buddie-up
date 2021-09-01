@@ -1,6 +1,6 @@
 
 
-<div class="game-banner" style="background-image: linear-gradient(rgba(213,2,75,0.4),rgba(255,104,37,0.4)), url(https://cdn.akamai.steamstatic.com/steam/apps/10/page_bg_generated_v6b.jpg);">
+<div class="game-banner" style="background-image: linear-gradient(rgba(213,2,75,0.4),rgba(255,104,37,0.4)), url(<% @game.background_image_url %>);">
   <div class="container d-flex justify-content-between">
     <div class="container">
         <img src="<%= @game.image_url %>" alt="game-splash-art">
@@ -12,5 +12,7 @@
     </div>
   </div>
 </div>
+
+
 
 
