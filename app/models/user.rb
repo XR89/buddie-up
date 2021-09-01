@@ -10,11 +10,19 @@ class User < ApplicationRecord
                                            numbers, and punctuation: -_." },
                        length: { minimum: 3, maximum: 255 },
                        uniqueness: true
-  validates :region, inclusion: { in: @regions,
+  validates :region, inclusion: { in: ["Europe",
+                                       "North America",
+                                       "South America",
+                                       "Africa",
+                                       "Middle East",
+                                       "East Asia",
+                                       "Southeast Asia",
+                                       "Australia & Pacific",
+                                       "Antarctica"],
                                   message: "%<value> is not a valid region" }
   # validation for languages?
   validate :validate_age
-  validate :gender, inclusion: { in: ["Male", "Female", "Non-binary", "Prefer not to say"] }
+  validates :gender, inclusion: { in: ["Male", "Female", "Other", "Prefer not to say"] }
   # validation for user status (0 - offline, 1 - online) may require sessions?
 
   has_many :user_ratings
@@ -27,18 +35,6 @@ class User < ApplicationRecord
       errors.add(:dob, 'You must be at least 18 years old.')
     end
   end
-
-  @regions = [
-    "Europe",
-    "North America",
-    "South America",
-    "Africa",
-    "Middle East",
-    "East Asia",
-    "Southeast Asia",
-    "Australia & Pacific",
-    "Antarctica"
-  ]
 
   @languages = %w[
     English
