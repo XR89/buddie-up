@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[create]
+
   def create
     @gamesession = GameSession.find(params[:sessino_id])
     @message = Message.new(message_params)
