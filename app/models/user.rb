@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :favourite_users, foreign_key: :user_id
   has_many :avoid_users, foreign_key: :user_id
   has_many :user_ratings, foreign_key: :user_id
-  
+
 end
