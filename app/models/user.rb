@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one_attached :photo
+  has_many :favourite_users, foreign_key: :user_id, class_name: "FavouriteUser"
 end

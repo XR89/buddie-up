@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_31_145105) do
+ActiveRecord::Schema.define(version: 2021_09_01_101908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 2021_08_31_145105) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "favourite_users", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "favourite_user_id"
+    t.index ["favourite_user_id"], name: "index_favourite_users_on_favourite_user_id"
+    t.index ["user_id"], name: "index_favourite_users_on_user_id"
   end
 
   create_table "games", force: :cascade do |t|
@@ -105,6 +114,8 @@ ActiveRecord::Schema.define(version: 2021_08_31_145105) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "favourite_users", "users"
+  add_foreign_key "favourite_users", "users", column: "favourite_user_id"
   add_foreign_key "user_ratings", "users"
   add_foreign_key "users", "sessions"
 end
