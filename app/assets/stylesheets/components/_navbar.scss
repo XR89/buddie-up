@@ -2,12 +2,12 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  position: sticky;
   top: 0;
   padding: 0 20px;
   width: 100%;
   height: 64px;
-  background: transparent;
+  background-color: $black;
 }
 
 .navbar-brand  img {
