@@ -3,7 +3,17 @@
     <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
   <% end %>
 
-  <div>
+
+
+  <div class='d-flex'>
+
+    <%= simple_form_for :query, url: games_path, method: :get, class:'d-flex' do |f| %>
+    <%= f.input :title, collection: Game.all, input_html: { class: 'select2', id: 'search-input' }  %>
+    <%= f.submit %>
+    <% end %>
+
+
+
     <ul class="nav-items">
       <% if user_signed_in? %>
         <li class="nav-item">
