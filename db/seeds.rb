@@ -28,7 +28,7 @@ def top_100_games
                 image_url: "https://cdn.cloudflare.steamstatic.com/steam/apps/#{appid}/header.jpg",
                 developer: element[1]["developer"],
                 description: game_description(appid),
-                genre: game_genres(appid)
+                genre: game_genres(appid),
                 background_image_url: "https://cdn.akamai.steamstatic.com/steam/apps/#{appid}/page_bg_generated_v6b.jpg")
     p "#{Game.count}/100 - Created Game: #{element[1]["name"]}"
   end
