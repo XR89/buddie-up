@@ -25,8 +25,11 @@ class User < ApplicationRecord
   validates :gender, inclusion: { in: ["Male", "Female", "Other", "Prefer not to say"] }
   # validation for user status (0 - offline, 1 - online) may require sessions?
 
-  has_many :user_ratings
   has_one_attached :photo
+  has_many :favourite_users, foreign_key: :user_id
+  has_many :avoid_users, foreign_key: :user_id
+  has_many :user_ratings, foreign_key: :user_id
+
 
   private
 
