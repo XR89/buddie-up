@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-
-  get '/welcome', to: 'pages#welcome'
+  root to: 'pages#home'
+  get '/welcome', to: 'pages#welcome', as: 'welcome'
   devise_for :users
   get '/profile', to: 'users#profile', as: 'profile'
   resources :users, only: %i[index show]
