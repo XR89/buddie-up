@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :username, :region, :dob, :gender, :language, presence: true
+  validates :username, :region, :dob, :gender, presence: true
   validates :username, format: { with: /\A[A-Za-z0-9\-_.]+\z/i,
                                  message: "Please use only letters from the latin alphabet,
                                            numbers, and punctuation: -_." },
@@ -31,7 +31,7 @@ class User < ApplicationRecord
   private
 
   def validate_age
-    if dob.present? && dob > 18.years.ago.to_d
+    if dob.present? && dob.strftime('%Y%m%d').to_i > 18.years.ago.strftime('%Y%m%d').to_i
       errors.add(:dob, 'You must be at least 18 years old.')
     end
   end
