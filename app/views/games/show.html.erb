@@ -1,6 +1,12 @@
-<h1><%= @game.title %></h1>
-<h6><%= @game.description %></h6>
-<h5>Developed by: <%= @game.developer %></h5>
 
 
-<img src="<%=@game.image_url %>" alt="game_splash_art">
+<div class="game-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.akamai.steamstatic.com/steam/apps/20/page_bg_generated_v6b.jpg);">
+  <div class="container">
+    <img src="<%= @game.image_url %>" alt="game-splash-art">
+    <h1><%= @game.title %></p>
+    <p><%= @game.description %></p>
+    <p>Developed by: <%= @game.developer %></h5>
+  </div>
+</div>
+
+
