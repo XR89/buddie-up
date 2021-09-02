@@ -2,6 +2,7 @@
   display: inline-block;
   position: relative;
   margin: 0 4px;
+  border: none;
   padding: 8px 16px;
   color: white;
   text-align: center;
@@ -26,16 +27,15 @@
 .pop-btn-pink {
   background-color: $pink;
   color: $white;
-  box-shadow: 1px 1px $pink-accent, 2px 2px $pink-accent, 3px 3px $pink-accent;
-  border-width: 0px;
+  box-shadow: 1px 1px $pink-accent, 2px 2px $pink-accent, 3px 3px $pink-accent, 4px 4px $pink-accent;
   &:hover {
-    top: 1px;
-    left: 1px;
+    top: 2px;
+    left: 2px;
     box-shadow: 1px 1px $pink-accent, 2px 2px $pink-accent;
   }
   &:active {
-    top: 3px;
-    left: 3px;
+    top: 4px;
+    left: 4px;
     box-shadow: 0 0, 0 0;
   }
 }
@@ -43,15 +43,15 @@
 .pop-btn-purple {
   background-color: $purple;
   color: $white;
-  box-shadow: 1px 1px $purple-accent, 2px 2px $purple-accent, 3px 3px $purple-accent;
+  box-shadow: 1px 1px $purple-accent, 2px 2px $purple-accent, 3px 3px $purple-accent, 4px 4px $purple-accent;
   &:hover {
-    top: 1px;
-    left: 1px;
+    top: 2px;
+    left: 2px;
     box-shadow: 1px 1px $purple-accent, 2px 2px $purple-accent;
   }
   &:active {
-    top: 3px;
-    left: 3px;
+    top: 4px;
+    left: 4px;
     box-shadow: 0 0, 0 0;
   }
 }
@@ -59,15 +59,15 @@
 .pop-btn-orange {
   background-color: $orange;
   color: $white;
-  box-shadow: 1px 1px $orange-accent, 2px 2px $orange-accent, 3px 3px $orange-accent;
+  box-shadow: 1px 1px $orange-accent, 2px 2px $orange-accent, 3px 3px $orange-accent, 4px 4px $orange-accent;
   &:hover {
-    top: 1px;
-    left: 1px;
+    top: 2px;
+    left: 2px;
     box-shadow: 1px 1px $orange-accent, 2px 2px $orange-accent;
   }
   &:active {
-    top: 3px;
-    left: 3px;
+    top: 4px;
+    left: 4px;
     box-shadow: 0 0, 0 0;
   }
 }
@@ -75,15 +75,15 @@
 .pop-btn-blue {
   background-color: $blue;
   color: $white;
-  box-shadow: 1px 1px $blue-accent, 2px 2px $blue-accent, 3px 3px $blue-accent;
+  box-shadow: 1px 1px $blue-accent, 2px 2px $blue-accent, 3px 3px $blue-accent, 4px 4px $blue-accent;
   &:hover {
-    top: 1px;
-    left: 1px;
+    top: 2px;
+    left: 2px;
     box-shadow: 1px 1px $blue-accent, 2px 2px $blue-accent;
   }
   &:active {
-    top: 3px;
-    left: 3px;
+    top: 4px;
+    left: 4px;
     box-shadow: 0 0, 0 0;
   }
 }
