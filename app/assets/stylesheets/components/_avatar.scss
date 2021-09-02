@@ -2,7 +2,9 @@
   width: 40px;
   border-radius: 50%;
 }
-// .avatar-large {
-//   width: 56px;
-//   border-radius: 50%;
-// }
+.avatar-large {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+}
