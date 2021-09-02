@@ -70,17 +70,17 @@ def top_100_games
   top_100_games.each do |element|
     appid = element[1]["appid"]
     game = Game.new(title: element[1]["name"],
-                image_url: "https://cdn.cloudflare.steamstatic.com/steam/apps/#{appid}/header.jpg",
-                developer: element[1]["developer"],
-                description: game_description(appid),
-                genre: game_genres(appid))
+                    image_url: "https://cdn.cloudflare.steamstatic.com/steam/apps/#{appid}/header.jpg",
+                    developer: element[1]["developer"],
+                    description: game_description(appid),
+                    genre: game_genres(appid))
     p "#{Game.count}/100 - Created Game: #{element[1]["name"]}" if game.save!
   end
 end
 
 def first_10_users
   p "Seeding first 10 users..."
-  User.new(
+  test_user = User.new(
     email: 'test@test.com',
     username: 'tester1',
     password: 'password',
@@ -89,7 +89,7 @@ def first_10_users
     gender: "Prefer not to say",
     language: LANGUAGES.sample
   )
-  p "#{User.count + 1}/10 - Created test user"
+  p "#{User.count + 1}/10 - Created test user" if test_user.save!
 
   9.times do
     user = User.new(

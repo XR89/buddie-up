@@ -1,0 +1,18 @@
+.welcomebanner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10%;
+  height: 100vh;
+}
+
+.banner-animate {
+  background-image: linear-gradient(0deg, $pink, $orange, $pink, $orange);
+  animation: bannerAnimation 30s linear infinite;
+  background-size: 100% 300%;
+}
+
+@keyframes bannerAnimation {
+    0% { background-position: 0 0 }
+    100% { background-position: 0 100% }
+}

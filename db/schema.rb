@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 2021_09_01_143126) do
     t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "background_image_url"
   end
 
   create_table "messages", force: :cascade do |t|
