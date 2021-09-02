@@ -13,7 +13,7 @@ class GameSessionsController < ApplicationController
     @gamesession = GameSession.new(gamesession_params)
     @gamesession.ongoing = true
     @gamesession.status = 'active'
-    @game = Game.find(params[:id])
+    # @game = Game.find(params[:id])
     @gamesession.game = @game
     if @gamesession.save
       redirect_to game_session_path(@gamesession)
@@ -25,6 +25,6 @@ class GameSessionsController < ApplicationController
   private
 
   def gamesession_params
-    params.require(:gamesession).permit(:game_id, :ongoing, :status)
+    params.require(:gamesession).permit(:ongoing, :status)
   end
 end

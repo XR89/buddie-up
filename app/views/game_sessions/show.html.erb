@@ -1,4 +1,4 @@
-<h1>#<%= @gamesession.game.title %></h1>
+<%# <h1>#<%= @gamesession.game.title</h1> %>
 <div id="messages" data-gamesession-id="<%= @gamesession.id %>">
   <% @gamesession.messages.each do |message| %>
     <div class="message-container" id="message-<%= message.id %>">
