@@ -77,9 +77,8 @@ end
 def seed_100_games
   serialized_games = File.read('db/games.json')
   top_100_games = JSON.parse(serialized_games)
+  p "Seeding Top 100 games"
   top_100_games.each do |game|
-    p game
-    p ' '
     Game.create!(
       title: game[1]["title"],
       developer: game[1]["developer"],
@@ -88,6 +87,7 @@ def seed_100_games
       image_url: game[1]["image_url"],
       background_image_url: game[1]["background_image_url"]
     )
+    p "Seeded: #{game[1]["title"]}"
   end
 end
 
