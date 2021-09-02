@@ -1,0 +1,1269 @@
+{
+    "570": {
+        "title": "Dota 2",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/570/header.jpg",
+        "developer": "Valve",
+        "description": "Every day, millions of players worldwide enter battle as one of over a hundred Dota heroes. And no matter if it's their 10th hour of play or 1,000th, there's always something new to discover. With regular updates that ensure a constant evolution of gameplay, features, and heroes, Dota 2 has taken on a life of its own.",
+        "genre": [
+            "Action,",
+            "Free",
+            "to",
+            "Play,",
+            "Strategy"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/570/page_bg_generated_v6b.jpg"
+    },
+    "730": {
+        "title": "Counter-Strike: Global Offensive",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg",
+        "developer": "Valve, Hidden Path Entertainment",
+        "description": "Counter-Strike: Global Offensive (CS: GO) expands upon the team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).",
+        "genre": [
+            "Action,",
+            "Free",
+            "to",
+            "Play"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/730/page_bg_generated_v6b.jpg"
+    },
+    "578080": {
+        "title": "PUBG: BATTLEGROUNDS",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/578080/header.jpg",
+        "developer": "KRAFTON, Inc.",
+        "description": "PUBG: BATTLEGROUNDS is a battle royale shooter that pits 100 players against each other in a struggle for survival. Gather supplies and outwit your opponents to become the last person standing.",
+        "genre": [
+            "Action,",
+            "Adventure,",
+            "Massively",
+            "Multiplayer"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/578080/page_bg_generated_v6b.jpg"
+    },
+    "440": {
+        "title": "Team Fortress 2",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/440/header.jpg",
+        "developer": "Valve",
+        "description": "Nine distinct classes provide a broad range of tactical abilities and personalities. Constantly updated with new game modes, maps, equipment and, most importantly, hats!",
+        "genre": [
+            "Action,",
+            "Free",
+            "to",
+            "Play"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/440/page_bg_generated_v6b.jpg"
+    },
+    "304930": {
+        "title": "Unturned",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/304930/header.jpg",
+        "developer": "Smartly Dressed Games",
+        "description": "You're a survivor in the zombie infested ruins of society, and must work with your friends and forge alliances to remain among the living.",
+        "genre": [
+            "Action,",
+            "Adventure,",
+            "Casual,",
+            "Free",
+            "to",
+            "Play,",
+            "Indie"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/304930/page_bg_generated_v6b.jpg"
+    },
+    "230410": {
+        "title": "Warframe",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/230410/header.jpg",
+        "developer": "Digital Extremes",
+        "description": "Warframe is a cooperative free-to-play third person online action game set in an evolving sci-fi world.",
+        "genre": [
+            "Action,",
+            "Free",
+            "to",
+            "Play"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/230410/page_bg_generated_v6b.jpg"
+    },
+    "271590": {
+        "title": "Grand Theft Auto V",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg",
+        "developer": "Rockstar North",
+        "description": "Grand Theft Auto V for PC offers players the option to explore the award-winning world of Los Santos and Blaine County in resolutions of up to 4k and beyond, as well as the chance to experience the game running at 60 frames per second.",
+        "genre": [
+            "Action,",
+            "Adventure"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/271590/page_bg_generated_v6b.jpg"
+    },
+    "105600": {
+        "title": "Terraria",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/105600/header.jpg",
+        "developer": "Re-Logic",
+        "description": "Dig, fight, explore, build! Nothing is impossible in this action-packed adventure game. Four Pack also available!",
+        "genre": [
+            "Action,",
+            "Adventure,",
+            "Indie,",
+            "RPG"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/105600/page_bg_generated_v6b.jpg"
+    },
+    "1172470": {
+        "title": "Apex Legends",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1172470/header.jpg",
+        "developer": "Respawn Entertainment",
+        "description": "Apex Legends is the award-winning, free-to-play Hero shooter from Respawn Entertainment. Master an ever-growing roster of legendary characters with powerful abilities and experience strategic squad play and innovative gameplay in the next evolution of Hero Shooter and Battle Royale.",
+        "genre": [
+            "Action,",
+            "Adventure,",
+            "Free",
+            "to",
+            "Play"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/1172470/page_bg_generated_v6b.jpg"
+    },
+    "252490": {
+        "title": "Rust",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/252490/header.jpg",
+        "developer": "Facepunch Studios",
+        "description": "The only aim in Rust is to survive. Everything wants you to die - the island’s wildlife and other inhabitants, the environment, other survivors. Do whatever it takes to last another night.",
+        "genre": [
+            "Action,",
+            "Adventure,",
+            "Indie,",
+            "Massively",
+            "Multiplayer,",
+            "RPG"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/252490/page_bg_generated_v6b.jpg"
+    },
+    "291550": {
+        "title": "Brawlhalla",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/291550/header.jpg",
+        "developer": "Blue Mammoth Games",
+        "description": "An epic platform fighter for up to 8 players online or local. Try casual free-for-alls, ranked matches, or invite friends to a private room. And it's free! Play cross-platform with millions of players on PlayStation, Xbox, Nintendo Switch, iOS, Android & Steam! Frequent updates. Over fifty Legends.",
+        "genre": [
+            "Action,",
+            "Free",
+            "to",
+            "Play,",
+            "Indie"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/291550/page_bg_generated_v6b.jpg"
+    },
+    "359550": {
+        "title": "Tom Clancy's Rainbow Six Siege",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/359550/header.jpg",
+        "developer": "Ubisoft Montreal",
+        "description": "Tom Clancy's Rainbow Six Siege is the latest installment of the acclaimed first-person shooter franchise developed by the renowned Ubisoft Montreal studio.",
+        "genre": [
+            "Action"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/359550/page_bg_generated_v6b.jpg"
+    },
+    "945360": {
+        "title": "Among Us",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/945360/header.jpg",
+        "developer": "Innersloth",
+        "description": "An online and local party game of teamwork and betrayal for 4-15 players...in space!",
+        "genre": [
+            "Casual"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/945360/page_bg_generated_v6b.jpg"
+    },
+    "4000": {
+        "title": "Garry's Mod",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/4000/header.jpg",
+        "developer": "Facepunch Studios",
+        "description": "Garry's Mod is a physics sandbox. There aren't any predefined aims or goals. We give you the tools and leave you to play.",
+        "genre": [
+            "Indie,",
+            "Simulation"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/4000/page_bg_generated_v6b.jpg"
+    },
+    "236390": {
+        "title": "War Thunder",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/236390/header.jpg",
+        "developer": "Gaijin Entertainment",
+        "description": "War Thunder is the most comprehensive free-to-play, cross-platform, MMO military game dedicated to aviation, armoured vehicles, and naval craft, from the early 20th century to the most advanced modern combat units. Join now and take part in major battles on land, in the air, and at sea.",
+        "genre": [
+            "Action,",
+            "Free",
+            "to",
+            "Play,",
+            "Massively",
+            "Multiplayer,",
+            "Simulation"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/236390/page_bg_generated_v6b.jpg"
+    },
+    "340": {
+        "title": "Half-Life 2: Lost Coast",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/340/header.jpg",
+        "developer": "Valve",
+        "description": "Originally planned as a section of the Highway 17 chapter of Half-Life 2, Lost Coast is a playable technology showcase that introduces High Dynamic Range lighting to the Source engine.",
+        "genre": [
+            "Action"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/340/page_bg_generated_v6b.jpg"
+    },
+    "218620": {
+        "title": "PAYDAY 2",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/218620/header.jpg",
+        "developer": "OVERKILL - a Starbreeze Studio.",
+        "description": "PAYDAY 2 is an action-packed, four-player co-op shooter that once again lets gamers don the masks of the original PAYDAY crew - Dallas, Hoxton, Wolf and Chains - as they descend on Washington DC for an epic crime spree.",
+        "genre": [
+            "Action,",
+            "RPG"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/218620/page_bg_generated_v6b.jpg"
+    },
+    "238960": {
+        "title": "Path of Exile",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/238960/header.jpg",
+        "developer": "Grinding Gear Games",
+        "description": "You are an Exile, struggling to survive on the dark continent of Wraeclast, as you fight to earn power that will allow you to exact your revenge against those who wronged you. Created by hardcore gamers, Path of Exile is an online Action RPG set in a dark fantasy world.",
+        "genre": [
+            "Action,",
+            "Adventure,",
+            "Free",
+            "to",
+            "Play,",
+            "Indie,",
+            "Massively",
+            "Multiplayer,",
+            "RPG"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/238960/page_bg_generated_v6b.jpg"
+    },
+    "10": {
+        "title": "Counter-Strike",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/10/header.jpg",
+        "developer": "Valve",
+        "description": "Play the world's number 1 online action game. Engage in an incredibly realistic brand of terrorist warfare in this wildly popular team-based game. Ally with teammates to complete strategic missions. Take out enemy sites. Rescue hostages. Your role affects your team's success. Your team's success affects your role.",
+        "genre": [
+            "Action"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/10/page_bg_generated_v6b.jpg"
+    },
+    "444090": {
+        "title": "Paladins",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/444090/header.jpg",
+        "developer": "Evil Mojo Games",
+        "description": "Join 25+ million players in Paladins, the free-to-play fantasy team-based shooter sensation. Wield guns and magic as a legendary Champion of the Realm, customizing your core set of abilities to play exactly how you want to play.",
+        "genre": [
+            "Action,",
+            "Free",
+            "to",
+            "Play"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/444090/page_bg_generated_v6b.jpg"
+    },
+    "1085660": {
+        "title": "Destiny 2",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1085660/header.jpg",
+        "developer": "Bungie",
+        "description": "Destiny 2 is an action MMO with a single evolving world that you and your friends can join anytime, anywhere, absolutely free.",
+        "genre": [
+            "Action,",
+            "Adventure,",
+            "Free",
+            "to",
+            "Play"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/1085660/page_bg_generated_v6b.jpg"
+    },
+    "272060": {
+        "title": "Serena",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/272060/header.jpg",
+        "developer": "Senscape",
+        "description": "How long has it been? A man sits in a distant getaway cabin waiting for his wife Serena. Where is she? Things in the cabin evoke memories, and the husband comes to a disturbing realization... This short point-and-click adventure is the result of a massive collaborative effort between dozens of fans and designers of adventure games.",
+        "genre": [
+            "Adventure,",
+            "Indie"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/272060/page_bg_generated_v6b.jpg"
+    },
+    "892970": {
+        "title": "Valheim",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/892970/header.jpg",
+        "developer": "Iron Gate AB",
+        "description": "A brutal exploration and survival game for 1-10 players, set in a procedurally-generated purgatory inspired by viking culture. Battle, build, and conquer your way to a saga worthy of Odin’s patronage!",
+        "genre": [
+            "Action,",
+            "Adventure,",
+            "Indie,",
+            "RPG,",
+            "Early",
+            "Access"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/892970/page_bg_generated_v6b.jpg"
+    },
+    "49520": {
+        "title": "Borderlands 2",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/49520/header.jpg",
+        "developer": "Gearbox Software, Aspyr (Mac), Aspyr (Linux)",
+        "description": "The Ultimate Vault Hunter’s Upgrade lets you get the most out of the Borderlands 2 experience.",
+        "genre": [
+            "Action,",
+            "RPG"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/49520/page_bg_generated_v6b.jpg"
+    },
+    "431960": {
+        "title": "Wallpaper Engine",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/431960/header.jpg",
+        "developer": "Wallpaper Engine Team",
+        "description": "Use stunning live wallpapers on your desktop. Animate your own images to create new wallpapers or import videos/websites and share them on the Steam Workshop!",
+        "genre": [
+            "Casual,",
+            "Indie,",
+            "Animation",
+            "&",
+            "Modeling,",
+            "Design",
+            "&",
+            "Illustration,",
+            "Photo",
+            "Editing,",
+            "Utilities"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/431960/page_bg_generated_v6b.jpg"
+    },
+    "1091500": {
+        "title": "Cyberpunk 2077",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg",
+        "developer": "CD PROJEKT RED",
+        "description": "Cyberpunk 2077 is an open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour and body modification. You play as V, a mercenary outlaw going after a one-of-a-kind implant that is the key to immortality.",
+        "genre": [
+            "RPG"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/1091500/page_bg_generated_v6b.jpg"
+    },
+    "227940": {
+        "title": "Heroes & Generals",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/227940/header.jpg",
+        "developer": "RETO MOTO",
+        "description": "Shoot, blow sh!t up, fly or bark orders in the ultimate Free-to-Play, large scale, multiplayer, shooter experience. Thousands of players in multiple battles fighting one massive war of nations. The first to capture 15 cities takes the glory.",
+        "genre": [
+            "Action,",
+            "Free",
+            "to",
+            "Play,",
+            "Indie,",
+            "Massively",
+            "Multiplayer,",
+            "Strategy"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/227940/page_bg_generated_v6b.jpg"
+    },
+    "1468810": {
+        "title": "鬼谷八荒 Tale of Immortal",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1468810/header.jpg",
+        "developer": "鬼谷工作室",
+        "description": "Tale of Immortal is an open-world sandbox based on Chinese mythology and cultivation. You will grow to become immortal, conquer the beasts from the Classic of Mountains and Season, make your choices carefully and grasp your own destiny.",
+        "genre": [
+            "Action,",
+            "Adventure,",
+            "Indie,",
+            "RPG,",
+            "Simulation,",
+            "Early",
+            "Access"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/1468810/page_bg_generated_v6b.jpg"
+    },
+    "252950": {
+        "title": "Rocket League",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/252950/header.jpg",
+        "developer": "Psyonix LLC",
+        "description": "Rocket League is a high-powered hybrid of arcade-style soccer and vehicular mayhem with easy-to-understand controls and fluid, physics-driven competition. Rocket League includes casual and competitive Online Matches, a fully-featured offline Season Mode, special “Mutators” that let you change the rules entirely, hockey and...",
+        "genre": [
+            "Action,",
+            "Indie,",
+            "Racing,",
+            "Sports"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/252950/page_bg_generated_v6b.jpg"
+    },
+    "1097150": {
+        "title": "Fall Guys: Ultimate Knockout",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1097150/header.jpg",
+        "developer": "Mediatonic",
+        "description": "Fall Guys is a massively multiplayer party game with up to 60 players online in a free-for-all struggle through round after round of escalating chaos until one victor remains!",
+        "genre": [
+            "Action,",
+            "Casual,",
+            "Indie,",
+            "Massively",
+            "Multiplayer,",
+            "Sports"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/1097150/page_bg_generated_v6b.jpg"
+    },
+    "292030": {
+        "title": "The Witcher 3: Wild Hunt",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/292030/header.jpg",
+        "developer": "CD PROJEKT RED",
+        "description": "As war rages on throughout the Northern Realms, you take on the greatest contract of your life — tracking down the Child of Prophecy, a living weapon that can alter the shape of the world.",
+        "genre": [
+            "RPG"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/292030/page_bg_generated_v6b.jpg"
+    },
+    "291480": {
+        "title": "Warface",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/291480/header.jpg",
+        "developer": "MY.GAMES",
+        "description": "Warface is a contemporary MMO first person shooter with millions of fans around the world. It offers intense PvP modes, compelling PvE missions and raids that you can challenge with five diverse classes and a colossal customizable arsenal.",
+        "genre": [
+            "Action,",
+            "Adventure,",
+            "Free",
+            "to",
+            "Play,",
+            "Massively",
+            "Multiplayer,",
+            "RPG,",
+            "Simulation,",
+            "Strategy"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/291480/page_bg_generated_v6b.jpg"
+    },
+    "381210": {
+        "title": "Dead by Daylight",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/381210/header.jpg",
+        "developer": "Behaviour Interactive Inc.",
+        "description": "Dead by Daylight is a multiplayer (4vs1) horror game where one player takes on the role of the savage Killer, and the other four players play as Survivors, trying to escape the Killer and avoid being caught and killed.",
+        "genre": [
+            "Action"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/381210/page_bg_generated_v6b.jpg"
+    },
+    "301520": {
+        "title": "Robocraft",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/301520/header.jpg",
+        "developer": "Freejam",
+        "description": "Build insane, fully customisable robot battle vehicles that drive, hover, walk and fly in the free-to-play action game Robocraft. Add weapons from the future and jump in the driving seat as you take your creation into battle against other players online!",
+        "genre": [
+            "Action,",
+            "Free",
+            "to",
+            "Play,",
+            "Indie,",
+            "Massively",
+            "Multiplayer,",
+            "RPG,",
+            "Simulation"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/301520/page_bg_generated_v6b.jpg"
+    },
+    "620": {
+        "title": "Portal 2",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/620/header.jpg",
+        "developer": "Valve",
+        "description": "The \"Perpetual Testing Initiative\" has been expanded to allow you to design co-op puzzles for you and your friends!",
+        "genre": [
+            "Action,",
+            "Adventure"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/620/page_bg_generated_v6b.jpg"
+    },
+    "550650": {
+        "title": "Black Squad",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/550650/header.jpg",
+        "developer": "VALOFE, NS STUDIO",
+        "description": "Black Squad is a free-to-play military first-person-shooter. Players can master their skills and show off their strategies with a wide range of game maps, modes, and weapons to choose from. Join thousands of FPS players worldwide in one of the most played games on Steam!",
+        "genre": [
+            "Action,",
+            "Free",
+            "to",
+            "Play"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/550650/page_bg_generated_v6b.jpg"
+    },
+    "240": {
+        "title": "Counter-Strike: Source",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/240/header.jpg",
+        "developer": "Valve",
+        "description": "Counter-Strike: Source blends Counter-Strike's award-winning teamplay action with the advanced technology of Source™ technology.",
+        "genre": [
+            "Action"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/240/page_bg_generated_v6b.jpg"
+    },
+    "227300": {
+        "title": "Euro Truck Simulator 2",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/227300/header.jpg",
+        "developer": "SCS Software",
+        "description": "Travel across Europe as king of the road, a trucker who delivers important cargo across impressive distances! With dozens of cities to explore, your endurance, skill and speed will all be pushed to their limits.",
+        "genre": [
+            "Indie,",
+            "Simulation"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/227300/page_bg_generated_v6b.jpg"
+    },
+    "386360": {
+        "title": "SMITE",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/386360/header.jpg",
+        "developer": "Titan Forge Games",
+        "description": "Join 35+ million players in SMITE, the Battleground of the Gods! Wield Thor’s hammer, turn your foes to stone as Medusa, or flex your divine power as one of 100+ other mythological icons. Become a God and play FREE today!",
+        "genre": [
+            "Action,",
+            "Free",
+            "to",
+            "Play"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/386360/page_bg_generated_v6b.jpg"
+    },
+    "755790": {
+        "title": "Ring of Elysium",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/755790/header.jpg",
+        "developer": "Aurora Studio",
+        "description": "Escape an astonishing disaster in Ring of Elysium, a battle royale shooter developed by Aurora Studio.",
+        "genre": [
+            "Action,",
+            "Free",
+            "to",
+            "Play,",
+            "Massively",
+            "Multiplayer"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/755790/page_bg_generated_v6b.jpg"
+    },
+    "320": {
+        "title": "Half-Life 2: Deathmatch",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/320/header.jpg",
+        "developer": "Valve",
+        "description": "Fast multiplayer action set in the Half-Life 2 universe! HL2's physics adds a new dimension to deathmatch play. Play straight deathmatch or try Combine vs. Resistance teamplay. Toss a toilet at your friend today!",
+        "genre": [
+            "Action"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/320/page_bg_generated_v6b.jpg"
+    },
+    "477160": {
+        "title": "Human: Fall Flat",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/477160/header.jpg",
+        "developer": "No Brakes Games",
+        "description": "Human: Fall Flat is a hilarious, light-hearted platformer set in floating dreamscapes that can be played solo or with up to 8 players online. Free new levels keep its vibrant community rewarded.",
+        "genre": [
+            "Adventure,",
+            "Casual,",
+            "Indie,",
+            "Simulation"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/477160/page_bg_generated_v6b.jpg"
+    },
+    "304050": {
+        "title": "Trove",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/304050/header.jpg",
+        "developer": "Trion Worlds",
+        "description": "Grab your friends, hone your blades, and set off for adventure in Trove, the ultimate action MMO!",
+        "genre": [
+            "Action,",
+            "Adventure,",
+            "Casual,",
+            "Free",
+            "to",
+            "Play,",
+            "Massively",
+            "Multiplayer,",
+            "RPG"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/304050/page_bg_generated_v6b.jpg"
+    },
+    "275390": {
+        "title": "Guacamelee! Super Turbo Championship Edition",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/275390/header.jpg",
+        "developer": "DrinkBox Studios",
+        "description": "The definitive version of the smash hit Metroidvania-style action-platformer, Guacamelee! STCE adds new levels, powers, challenges and refinements to the sprawling, ridiculous, Mexican-inspired adventure of the original Guacamelee! Gold Edition.",
+        "genre": [
+            "Action,",
+            "Adventure,",
+            "Indie"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/275390/page_bg_generated_v6b.jpg"
+    },
+    "220": {
+        "title": "Half-Life 2",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/220/header.jpg",
+        "developer": "Valve",
+        "description": "1998. HALF-LIFE sends a shock through the game industry with its combination of pounding action and continuous, immersive storytelling. Valve's debut title wins more than 50 game-of-the-year awards on its way to being named \"Best PC Game Ever\" by PC Gamer, and launches a franchise with more than eight million retail units sold worldwide.",
+        "genre": [
+            "Action"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/220/page_bg_generated_v6b.jpg"
+    },
+    "433850": {
+        "title": "Z1 Battle Royale",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/433850/header.jpg",
+        "developer": "Daybreak Game Company",
+        "description": "Z1 Battle Royale is a Free to Play, fast-paced, action arcade, competitive Battle Royale. Staying true to its \"King of the Kill\" roots, the game has been revamped and restored to the classic feel, look, and gameplay everyone fell in love with. Play solo, duos, or fives and be the last ones standing.",
+        "genre": [
+            "Action,",
+            "Adventure,",
+            "Free",
+            "to",
+            "Play,",
+            "Massively",
+            "Multiplayer"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/433850/page_bg_generated_v6b.jpg"
+    },
+    "413150": {
+        "title": "Stardew Valley",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/413150/header.jpg",
+        "developer": "ConcernedApe",
+        "description": "You've inherited your grandfather's old farm plot in Stardew Valley. Armed with hand-me-down tools and a few coins, you set out to begin your new life. Can you learn to live off the land and turn these overgrown fields into a thriving home?",
+        "genre": [
+            "Indie,",
+            "RPG,",
+            "Simulation"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/413150/page_bg_generated_v6b.jpg"
+    },
+    "130": {
+        "title": "Half-Life: Blue Shift",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/130/header.jpg",
+        "developer": "Gearbox Software",
+        "description": "Made by Gearbox Software and originally released in 2001 as an add-on to Half-Life, Blue Shift is a return to the Black Mesa Research Facility in which you play as Barney Calhoun, the security guard sidekick who helped Gordon out of so many sticky situations.",
+        "genre": [
+            "Action"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/130/page_bg_generated_v6b.jpg"
+    },
+    "417910": {
+        "title": "Street Warriors Online",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/417910/header.jpg",
+        "developer": "Crazy Rocks Studios",
+        "description": "First, realistic PvP brawling game for up to 8 vs 8 players with original, dynamic combat system and fast, round based battles. Create and develop Your character. Earn new skills and items that helps You beat Your opponents. Gather Your friends and fight together in a clan.",
+        "genre": [
+            "Action,",
+            "Massively",
+            "Multiplayer,",
+            "Simulation,",
+            "Sports"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/417910/page_bg_generated_v6b.jpg"
+    },
+    "552990": {
+        "title": "World of Warships",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/552990/header.jpg",
+        "developer": "Wargaming Group Limited",
+        "description": "Immerse yourself in thrilling naval battles and assemble an armada of over 400 ships from the first half of the 20th century — from stealthy destroyers to gigantic battleships. Change the look of your ship, choose upgrades to suit your play style, and go into battle with other players!",
+        "genre": [
+            "Action,",
+            "Free",
+            "to",
+            "Play,",
+            "Massively",
+            "Multiplayer,",
+            "Simulation"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/552990/page_bg_generated_v6b.jpg"
+    },
+    "400": {
+        "title": "Portal",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/400/header.jpg",
+        "developer": "Valve",
+        "description": "Portal™ is a new single player game from Valve. Set in the mysterious Aperture Science Laboratories, Portal has been called one of the most innovative new games on the horizon and will offer gamers hours of unique gameplay.",
+        "genre": [
+            "Action"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/400/page_bg_generated_v6b.jpg"
+    },
+    "346110": {
+        "title": "ARK: Survival Evolved",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/346110/header.jpg",
+        "developer": "Studio Wildcard, Instinct Games, Efecto Studios, Virtual Basement LLC",
+        "description": "Stranded on the shores of a mysterious island, you must learn to survive. Use your cunning to kill or tame the primeval creatures roaming the land, and encounter other players to survive, dominate... and escape!",
+        "genre": [
+            "Action,",
+            "Adventure,",
+            "Indie,",
+            "Massively",
+            "Multiplayer,",
+            "RPG"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/346110/page_bg_generated_v6b.jpg"
+    },
+    "8930": {
+        "title": "Sid Meier's Civilization V",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/8930/header.jpg",
+        "developer": "Firaxis Games, Aspyr (Mac), Aspyr (Linux)",
+        "description": "Create, discover, and download new player-created maps, scenarios, interfaces, and more!",
+        "genre": [
+            "Strategy"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/8930/page_bg_generated_v6b.jpg"
+    },
+    "532210": {
+        "title": "Life is Strange 2",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/532210/header.jpg",
+        "developer": "DONTNOD Entertainment, Feral Interactive (Mac), Feral Interactive (Linux)",
+        "description": "After a tragic incident, brothers Sean and Daniel Diaz run away from home. Fearing the police, and dealing with Daniel's new telekinetic power, the boys head to Mexico. Each stop on their journey brings new friends and new challenges.",
+        "genre": [
+            "Adventure"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/532210/page_bg_generated_v6b.jpg"
+    },
+    "739630": {
+        "title": "Phasmophobia",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/739630/header.jpg",
+        "developer": "Kinetic Games",
+        "description": "Phasmophobia is a 4 player online co-op psychological horror. Paranormal activity is on the rise and it’s up to you and your team to use all the ghost hunting equipment at your disposal in order to gather as much evidence as you can.",
+        "genre": [
+            "Action,",
+            "Indie,",
+            "Early",
+            "Access"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/739630/page_bg_generated_v6b.jpg"
+    },
+    "242760": {
+        "title": "The Forest",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/242760/header.jpg",
+        "developer": "Endnight Games Ltd",
+        "description": "As the lone survivor of a passenger jet crash, you find yourself in a mysterious forest battling to stay alive against a society of cannibalistic mutants. Build, explore, survive in this terrifying first person survival horror simulator.",
+        "genre": [
+            "Action,",
+            "Adventure,",
+            "Indie,",
+            "Simulation"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/242760/page_bg_generated_v6b.jpg"
+    },
+    "218230": {
+        "title": "PlanetSide 2",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/218230/header.jpg",
+        "developer": "Rogue Planet Games",
+        "description": "PlanetSide 2 is an all-out planetary war, where thousands of players battle as one across enormous continents. Utilize infantry, ground and air vehicles, and teamwork to destroy your enemies in this revolutionary first-person shooter on a massive scale.",
+        "genre": [
+            "Action,",
+            "Free",
+            "to",
+            "Play,",
+            "Massively",
+            "Multiplayer"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/218230/page_bg_generated_v6b.jpg"
+    },
+    "444200": {
+        "title": "World of Tanks Blitz",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/444200/header.jpg",
+        "developer": "Wargaming Group Limited",
+        "description": "Check out Update 8.2! New map, new tanks, new events, and new experiences!",
+        "genre": [
+            "Action,",
+            "Free",
+            "to",
+            "Play,",
+            "Massively",
+            "Multiplayer"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/444200/page_bg_generated_v6b.jpg"
+    },
+    "96000": {
+        "title": "The Tiny Bang Story",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/96000/header.jpg",
+        "developer": "Colibri Games",
+        "description": "Life on Tiny Planet was calm and carefree until a great disaster occurred - Tiny Planet was hit by a meteor! The world fell apart and now its future depends only on you! Use your imagination and creativity: in order to restore Tiny Planet and help its inhabitants you will have to fix a variety of machines and mechanisms as well as solve...",
+        "genre": [
+            "Adventure,",
+            "Casual,",
+            "Indie"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/96000/page_bg_generated_v6b.jpg"
+    },
+    "582010": {
+        "title": "Monster Hunter: World",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/582010/header.jpg",
+        "developer": "CAPCOM Co., Ltd.",
+        "description": "Welcome to a new world! In Monster Hunter: World, the latest installment in the series, you can enjoy the ultimate hunting experience, using everything at your disposal to hunt monsters in a new world teeming with surprises and excitement.",
+        "genre": [
+            "Action"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/582010/page_bg_generated_v6b.jpg"
+    },
+    "80": {
+        "title": "Counter-Strike: Condition Zero",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/80/header.jpg",
+        "developer": "Valve",
+        "description": "With its extensive Tour of Duty campaign, a near-limitless number of skirmish modes, updates and new content for Counter-Strike's award-winning multiplayer game play, plus over 12 bonus single player missions, Counter-Strike: Condition Zero is a tremendous offering of single and multiplayer content.",
+        "genre": [
+            "Action"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/80/page_bg_generated_v6b.jpg"
+    },
+    "219990": {
+        "title": "Grim Dawn",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/219990/header.jpg",
+        "developer": "Crate Entertainment",
+        "description": "Enter an apocalyptic fantasy world where humanity is on the brink of extinction, iron is valued above gold and trust is hard earned. This ARPG features complex character development, hundreds of unique items, crafting and quests with choice & consequence.",
+        "genre": [
+            "Action,",
+            "Adventure,",
+            "Indie,",
+            "RPG"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/219990/page_bg_generated_v6b.jpg"
+    },
+    "251570": {
+        "title": "7 Days to Die",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/251570/header.jpg",
+        "developer": "The Fun Pimps",
+        "description": "7 Days to Die is an open-world game that is a unique combination of first person shooter, survival horror, tower defense, and role-playing games. Play the definitive zombie survival sandbox RPG that came first. Navezgane awaits!",
+        "genre": [
+            "Action,",
+            "Adventure,",
+            "Indie,",
+            "RPG,",
+            "Simulation,",
+            "Strategy,",
+            "Early",
+            "Access"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/251570/page_bg_generated_v6b.jpg"
+    },
+    "261550": {
+        "title": "Mount & Blade II: Bannerlord",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/261550/header.jpg",
+        "developer": "TaleWorlds Entertainment",
+        "description": "The horns sound, the ravens gather. An empire is torn by civil war. Beyond its borders, new kingdoms rise. Gird on your sword, don your armour, summon your followers and ride forth to win glory on the battlefields of Calradia. Establish your hegemony and create a new world out of the ashes of the old.",
+        "genre": [
+            "Action,",
+            "RPG,",
+            "Simulation,",
+            "Strategy,",
+            "Early",
+            "Access"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/261550/page_bg_generated_v6b.jpg"
+    },
+    "370910": {
+        "title": "Kathy Rain",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/370910/header.jpg",
+        "developer": "Clifftop Games",
+        "description": "Set in the 90's, Kathy Rain tells the story of a strong-willed journalism major who has to come to terms with her own troubled past as she investigates the mysterious death of her recently deceased grandfather.",
+        "genre": [
+            "Adventure,",
+            "Indie"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/370910/page_bg_generated_v6b.jpg"
+    },
+    "224260": {
+        "title": "No More Room in Hell",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/224260/header.jpg",
+        "developer": "No More Room in Hell Team",
+        "description": "The chances of you surviving this all out war of society and the undead are slim to none. Already, there are millions of the walking dead shambling about, searching for food to eat. There's no known cure. One bite can possibly end it all for you. However, you aren't alone in this nightmare.",
+        "genre": [
+            "Action,",
+            "Free",
+            "to",
+            "Play,",
+            "Indie"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/224260/page_bg_generated_v6b.jpg"
+    },
+    "1089350": {
+        "title": "NBA 2K20",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1089350/header.jpg",
+        "developer": "Visual Concepts",
+        "description": "2K continues to redefine what’s possible in sports gaming with NBA 2K20, featuring best in class graphics & gameplay, ground breaking game modes, and unparalleled player control and customization.",
+        "genre": [
+            "Simulation,",
+            "Sports"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/1089350/page_bg_generated_v6b.jpg"
+    },
+    "365590": {
+        "title": "Tom Clancy’s The Division",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/365590/header.jpg",
+        "developer": "Massive Entertainment",
+        "description": "After a deadly pandemic sweeps through New York, it's up to Agents to save what remains. Complete missions, explore the Dark Zone, and fight back enemy factions alone or with 3 friends. Experience a full endgame offering you new PvP and PvE modes.",
+        "genre": [
+            "Action,",
+            "Adventure,",
+            "RPG"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/365590/page_bg_generated_v6b.jpg"
+    },
+    "333930": {
+        "title": "Dirty Bomb",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/333930/header.jpg",
+        "developer": "Splash Damage",
+        "description": "Work together or die alone! Fight to restore peace to London or tear it down for profit in the most challenging team based shooter around.",
+        "genre": [
+            "Action,",
+            "Free",
+            "to",
+            "Play"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/333930/page_bg_generated_v6b.jpg"
+    },
+    "50": {
+        "title": "Half-Life: Opposing Force",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/50/header.jpg",
+        "developer": "Gearbox Software",
+        "description": "Return to the Black Mesa Research Facility as one of the military specialists assigned to eliminate Gordon Freeman. Experience an entirely new episode of single player action. Meet fierce alien opponents, and experiment with new weaponry. Named 'Game of the Year' by the Academy of Interactive Arts and Sciences.",
+        "genre": [
+            "Action"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/50/page_bg_generated_v6b.jpg"
+    },
+    "550": {
+        "title": "Left 4 Dead 2",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/550/header.jpg",
+        "developer": "Valve",
+        "description": "Set in the zombie apocalypse, Left 4 Dead 2 (L4D2) is the highly anticipated sequel to the award-winning Left 4 Dead, the #1 co-op game of 2008. This co-operative action horror FPS takes you and your friends through the cities, swamps and cemeteries of the Deep South, from Savannah to New Orleans across five expansive campaigns.",
+        "genre": [
+            "Action"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/550/page_bg_generated_v6b.jpg"
+    },
+    "1046930": {
+        "title": "Dota Underlords",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/1046930/header.jpg",
+        "developer": "Valve",
+        "description": "Hire a crew and destroy your rivals in this new strategy battler set in the world of Dota. Introducing Season One: Explore White Spire and earn rewards on the Battle Pass. Pick from several different game modes, play on your own or with friends, and take advantage of crossplay on PC and mobile.",
+        "genre": [
+            "Casual,",
+            "Free",
+            "to",
+            "Play,",
+            "Strategy"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/1046930/page_bg_generated_v6b.jpg"
+    },
+    "203160": {
+        "title": "Tomb Raider",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/203160/header.jpg",
+        "developer": "Crystal Dynamics, Eidos-Montréal, Feral Interactive (Mac), Feral Interactive (Linux), Nixxes",
+        "description": "Tomb Raider explores the intense origin story of Lara Croft and her ascent from a young woman to a hardened survivor.",
+        "genre": [
+            "Action,",
+            "Adventure"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/203160/page_bg_generated_v6b.jpg"
+    },
+    "60": {
+        "title": "Ricochet",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/60/header.jpg",
+        "developer": "Valve",
+        "description": "A futuristic action game that challenges your agility as well as your aim, Ricochet features one-on-one and team matches played in a variety of futuristic battle arenas.",
+        "genre": [
+            "Action"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/60/page_bg_generated_v6b.jpg"
+    },
+    "439700": {
+        "title": "Z1 Battle Royale: Test Server",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/439700/header.jpg",
+        "developer": "Daybreak Game Company",
+        "description": "Z1 Battle Royale is a Free to Play, fast-paced, action arcade, competitive Battle Royale. Staying true to its \"King of the Kill\" roots, the game has been revamped and restored to the classic feel, look, and gameplay everyone fell in love with. Play solo, duos, or fives and be the last ones standing.",
+        "genre": [
+            "Massively",
+            "Multiplayer"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/439700/page_bg_generated_v6b.jpg"
+    },
+    "72850": {
+        "title": "The Elder Scrolls V: Skyrim",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/72850/header.jpg",
+        "developer": "Bethesda Game Studios",
+        "description": "Winner of more than 200 Game of the Year Awards, Skyrim Special Edition brings the epic fantasy to life in stunning detail. The Special Edition includes the critically acclaimed game and add-ons with all-new features like remastered art and effects, volumetric god rays, dynamic depth of field, screen-space reflections, and more. Skyrim Special Edition also brings the full power of mods to the PC and consoles. New quests, environments, characters, dialogue, armor, weapons and more – with Mods, there are no limits to what you can experience.",
+        "genre": [
+            "RPG"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/72850/page_bg_generated_v6b.jpg"
+    },
+    "239140": {
+        "title": "Dying Light",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/239140/header.jpg",
+        "developer": "Techland",
+        "description": "First-person action survival game set in a post-apocalyptic open world overrun by flesh-hungry zombies. Roam a city devastated by a mysterious virus epidemic. Scavenge for supplies, craft weapons, and face hordes of the infected.",
+        "genre": [
+            "Action,",
+            "RPG"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/239140/page_bg_generated_v6b.jpg"
+    },
+    "648800": {
+        "title": "Raft",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/648800/header.jpg",
+        "developer": "Redbeet Interactive",
+        "description": "Raft throws you and your friends into an epic oceanic adventure! Alone or together, players battle to survive a perilous voyage across a vast sea! Gather debris, scavenge reefs and build your own floating home, but be wary of the man-eating sharks!",
+        "genre": [
+            "Adventure,",
+            "Indie,",
+            "Simulation,",
+            "Early",
+            "Access"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/648800/page_bg_generated_v6b.jpg"
+    },
+    "322330": {
+        "title": "Don't Starve Together",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/322330/header.jpg",
+        "developer": "Klei Entertainment",
+        "description": "Fight, Farm, Build and Explore Together in the standalone multiplayer expansion to the uncompromising wilderness survival game, Don't Starve.",
+        "genre": [
+            "Adventure,",
+            "Indie,",
+            "Simulation"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/322330/page_bg_generated_v6b.jpg"
+    },
+    "632360": {
+        "title": "Risk of Rain 2",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/632360/header.jpg",
+        "developer": "Hopoo Games",
+        "description": "Escape a chaotic alien planet by fighting through hordes of frenzied monsters – with your friends, or on your own. Combine loot in surprising ways and master each character until you become the havoc you feared upon your first crash landing.",
+        "genre": [
+            "Action,",
+            "Indie"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/632360/page_bg_generated_v6b.jpg"
+    },
+    "360": {
+        "title": "Half-Life Deathmatch: Source",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/360/header.jpg",
+        "developer": "Valve",
+        "description": "Half-Life Deathmatch: Source is a recreation of the first multiplayer game set in the Half-Life universe. Features all the classic weapons and most-played maps, now running on the Source engine.",
+        "genre": [
+            "Action"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/360/page_bg_generated_v6b.jpg"
+    },
+    "278360": {
+        "title": "A Story About My Uncle",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/278360/header.jpg",
+        "developer": "Gone North Games",
+        "description": "A Story About My Uncle is a first person platforming adventure game about a boy who searches for his lost uncle, and ends up in a world he couldn’t imagine existed. The movement is a crucial part of the games core gameplay – focusing on swinging through the world with a grappling hook that gives the player a wonderful sense of speed and...",
+        "genre": [
+            "Adventure,",
+            "Casual,",
+            "Indie"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/278360/page_bg_generated_v6b.jpg"
+    },
+    "273110": {
+        "title": "Counter-Strike Nexon: Studio",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/273110/header.jpg",
+        "developer": "Valve Corporation, Nexon Korea Corporation",
+        "description": "Counter-Strike Nexon: Studio is a Free to Play MMOFPS offering competitive PvP and PvE action including content from the original Counter-Strike and all new game modes, map creation function, weapons, and hordes of Zombies!",
+        "genre": [
+            "Action,",
+            "Casual,",
+            "Free",
+            "to",
+            "Play,",
+            "Massively",
+            "Multiplayer"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/273110/page_bg_generated_v6b.jpg"
+    },
+    "588430": {
+        "title": "Fallout Shelter",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/588430/header.jpg",
+        "developer": "Bethesda Game Studios",
+        "description": "Fallout Shelter puts you in control of a state-of-the-art underground Vault from Vault-Tec. Build the perfect Vault, keep your Dwellers happy, and protect them from the dangers of the Wasteland.",
+        "genre": [
+            "Free",
+            "to",
+            "Play,",
+            "RPG,",
+            "Simulation"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/588430/page_bg_generated_v6b.jpg"
+    },
+    "377160": {
+        "title": "Fallout 4",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/377160/header.jpg",
+        "developer": "Bethesda Game Studios",
+        "description": "Bethesda Game Studios, the award-winning creators of Fallout 3 and The Elder Scrolls V: Skyrim, welcome you to the world of Fallout 4 – their most ambitious game ever, and the next generation of open-world gaming.",
+        "genre": [
+            "RPG"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/377160/page_bg_generated_v6b.jpg"
+    },
+    "10180": {
+        "title": "Call of Duty: Modern Warfare 2",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/10180/header.jpg",
+        "developer": "Infinity Ward",
+        "description": "The most-anticipated game of the year and the sequel to the best-selling first-person action game of all time, Modern Warfare 2 continues the gripping and heart-racing action as players face off against a new threat dedicated to bringing the world to the brink of collapse.",
+        "genre": [
+            "Action"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/10180/page_bg_generated_v6b.jpg"
+    },
+    "466240": {
+        "title": "Deceit",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/466240/header.jpg",
+        "developer": "Baseline",
+        "description": "Deceit tests your instincts at trust and deception in an action-filled, multiplayer first-person shooter. You wake up in unknown surroundings to the sound of the Game Master’s unfamiliar voice, surrounded by five others. A third of your group have been infected with a virus, but who will escape?",
+        "genre": [
+            "Action,",
+            "Free",
+            "to",
+            "Play,",
+            "Indie"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/466240/page_bg_generated_v6b.jpg"
+    },
+    "814380": {
+        "title": "Sekiro: Shadows Die Twice - GOTY Edition",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/814380/header.jpg",
+        "developer": "FromSoftware",
+        "description": "Game of the Year - The Game Awards 2019 Best Action Game of 2019 - IGN Carve your own clever path to vengeance in the award winning adventure from developer FromSoftware, creators of Bloodborne and the Dark Souls series. Take Revenge. Restore Your Honor. Kill Ingeniously.",
+        "genre": [
+            "Action,",
+            "Adventure"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/814380/page_bg_generated_v6b.jpg"
+    },
+    "275850": {
+        "title": "No Man's Sky",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/275850/header.jpg",
+        "developer": "Hello Games",
+        "description": "No Man's Sky is a game about exploration and survival in an infinite procedurally generated universe.",
+        "genre": [
+            "Action,",
+            "Adventure"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/275850/page_bg_generated_v6b.jpg"
+    },
+    "844870": {
+        "title": "KurtzPel",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/844870/header.jpg",
+        "developer": "KOG",
+        "description": "\"KurtzPel is an anime-styled, action battle game from a third-person perspective. Players can battle it out in both PvP and PvE mission-based battle modes with massive boss monsters. Players utilize Karmas (the method used to indicate weapon and class types) when charging into battle. Each character gets to use two types of Karmas.",
+        "genre": [
+            "Action,",
+            "Free",
+            "to",
+            "Play,",
+            "Early",
+            "Access"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/844870/page_bg_generated_v6b.jpg"
+    },
+    "363970": {
+        "title": "Clicker Heroes",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/363970/header.jpg",
+        "developer": "Playsaurus",
+        "description": "Ever wondered what one quadrillion damage per second feels like? Wonder no more! Embark on your quest to attain it today!",
+        "genre": [
+            "Adventure,",
+            "Casual,",
+            "Free",
+            "to",
+            "Play,",
+            "Indie,",
+            "RPG,",
+            "Simulation,",
+            "Strategy"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/363970/page_bg_generated_v6b.jpg"
+    },
+    "30": {
+        "title": "Day of Defeat",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/30/header.jpg",
+        "developer": "Valve",
+        "description": "Enlist in an intense brand of Axis vs. Allied teamplay set in the WWII European Theatre of Operations. Players assume the role of light/assault/heavy infantry, sniper or machine-gunner class, each with a unique arsenal of historical weaponry at their disposal. Missions are based on key historical operations.",
+        "genre": [
+            "Action"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/30/page_bg_generated_v6b.jpg"
+    },
+    "107410": {
+        "title": "Arma 3",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/107410/header.jpg",
+        "developer": "Bohemia Interactive",
+        "description": "Experience true combat gameplay in a massive military sandbox. Deploying a wide variety of single- and multiplayer content, over 20 vehicles and 40 weapons, and limitless opportunities for content creation, this is the PC’s premier military game. Authentic, diverse, open - Arma 3 sends you to war.",
+        "genre": [
+            "Action,",
+            "Simulation,",
+            "Strategy"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/107410/page_bg_generated_v6b.jpg"
+    },
+    "40": {
+        "title": "Deathmatch Classic",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/40/header.jpg",
+        "developer": "Valve",
+        "description": "Enjoy fast-paced multiplayer gaming with Deathmatch Classic (a.k.a. DMC). Valve's tribute to the work of id software, DMC invites players to grab their rocket launchers and put their reflexes to the test in a collection of futuristic settings.",
+        "genre": [
+            "Action"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/40/page_bg_generated_v6b.jpg"
+    },
+    "863550": {
+        "title": "HITMAN 2",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/863550/header.jpg",
+        "developer": "IO Interactive A/S",
+        "description": "Travel the globe and track your targets across exotic sandbox locations in HITMAN™ 2. From sun-drenched streets to dark and dangerous rainforests, nowhere is safe from the world’s most creative assassin, Agent 47 in the ultimate spy thriller story.",
+        "genre": [
+            "Action"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/863550/page_bg_generated_v6b.jpg"
+    },
+    "44350": {
+        "title": "GRID 2",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/44350/header.jpg",
+        "developer": "Codemasters Racing",
+        "description": "Be fast, be first and be famous as the race returns in GRID 2, the sequel to the BAFTA-award winning, multi-million selling Race Driver: GRID.",
+        "genre": [
+            "Racing,",
+            "Sports"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/44350/page_bg_generated_v6b.jpg"
+    },
+    "700330": {
+        "title": "SCP: Secret Laboratory",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/700330/header.jpg",
+        "developer": "Northwood Studios",
+        "description": "Deep within the SCP Foundation during a containment breach, many of the anomalies have bypassed security and escaped from their chambers - without peaceful intentions. Become site personnel, a re-containment agent, or an anomalous entity and fight to take control of or escape the facility!",
+        "genre": [
+            "Action,",
+            "Free",
+            "to",
+            "Play"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/700330/page_bg_generated_v6b.jpg"
+    },
+    "255710": {
+        "title": "Cities: Skylines",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/255710/header.jpg",
+        "developer": "Colossal Order Ltd.",
+        "description": "Cities: Skylines is a modern take on the classic city simulation. The game introduces new game play elements to realize the thrill and hardships of creating and maintaining a real city whilst expanding on some well-established tropes of the city building experience.",
+        "genre": [
+            "Simulation,",
+            "Strategy"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/255710/page_bg_generated_v6b.jpg"
+    },
+    "221380": {
+        "title": "Age of Empires II (2013)",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/221380/header.jpg",
+        "developer": "Skybox Labs, Hidden Path Entertainment, Ensemble Studios, Forgotten Empires",
+        "description": "Age of Empires II has been re-imagined in high definition with new features, trading cards, improved AI, workshop support, multiplayer, Steamworks integration and more!",
+        "genre": [
+            "Strategy"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/221380/page_bg_generated_v6b.jpg"
+    },
+    "813820": {
+        "title": "Realm Royale",
+        "image_url": "https://cdn.cloudflare.steamstatic.com/steam/apps/813820/header.jpg",
+        "developer": "Heroic Leap Games",
+        "description": "Be the last Champion standing in Realm Royale! Loot deadly weapons and powerful abilities to create your own Champion. Explore a fantasy world from horseback while outrunning the deadly fog. Can you survive the first 100-person fantasy Battle Royale?",
+        "genre": [
+            "Action,",
+            "Free",
+            "to",
+            "Play,",
+            "Early",
+            "Access"
+        ],
+        "background_image_url": "https://cdn.akamai.steamstatic.com/steam/apps/813820/page_bg_generated_v6b.jpg"
+    }
+}
