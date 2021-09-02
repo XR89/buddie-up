@@ -1,6 +1,4 @@
 require 'json'
-require 'open-uri'
-require 'nokogiri'
 
 REGIONS = [
   "Europe",
@@ -47,41 +45,10 @@ LANGUAGES = %w[
   Other
 ]
 
-def game_description(appid)
-  url = "https://store.steampowered.com/app/#{appid}/"
-  html_file = URI.open(url).read
-  html_doc = Nokogiri::HTML(html_file)
-  html_doc.search('.game_description_snippet').each do |element|
-    return element.text.strip
-  end
-end
-
-def game_genres(appid)
-  game_serialized = URI.open("https://steamspy.com/api.php?request=appdetails&appid=#{appid}").read
-  game = JSON.parse(game_serialized)
-  game["genre"].split
-end
-
-def top_100_games
-  top_100_steam_games_url = "https://steamspy.com/api.php?request=top100in2weeks"
-  top_100_serialized = URI.open(top_100_steam_games_url).read
-  top_100_games = JSON.parse(top_100_serialized)
-  p "Seeding Top 100 Steam games..."
-  top_100_games.each do |element|
-    appid = element[1]["appid"]
-    game = Game.new(title: element[1]["name"],
-                    image_url: "https://cdn.cloudflare.steamstatic.com/steam/apps/#{appid}/header.jpg",
-                    developer: element[1]["developer"],
-                    description: game_description(appid),
-                    genre: game_genres(appid),
-                    background_image_url: "https://cdn.akamai.steamstatic.com/steam/apps/#{appid}/page_bg_generated_v6b.jpg")
-    p "#{Game.count}/100 - Created Game: #{element[1]["name"]}" if game.save!
-  end
-end
 
 def first_10_users
   p "Seeding first 10 users..."
-  test_user = User.new(
+  test_user1 = User.new(
     email: 'test@test.com',
     username: 'tester1',
     password: 'password',
@@ -90,9 +57,20 @@ def first_10_users
     gender: "Prefer not to say",
     language: LANGUAGES.sample
   )
-  p "#{User.count + 1}/10 - Created test user" if test_user.save!
+  p "#{User.count}/10 - Created first test user" if test_user1.save!
 
-  9.times do
+  test_user2 = User.new(
+    email: 'test2@test.com',
+    username: 'tester2',
+    password: 'password',
+    region: 'Antarctica',
+    dob: Faker::Date.between(from: '1970-01-01', to: '2000-01-01').strftime('%Y-%m-%d'),
+    gender: "Prefer not to say",
+    language: LANGUAGES.sample
+  )
+  p "#{User.count}/10 - Created second test user" if test_user2.save!
+
+  8.times do
     user = User.new(
       email: Faker::Internet.email,
       username: Faker::Internet.username(specifier: 3..16),
@@ -103,9 +81,39 @@ def first_10_users
       language: LANGUAGES.sample
     )
     # Does not include handles, favourite games, favourite/avoided users, online status
-    p "#{User.count + 1}/10 - Created User: #{user.username} from #{user.region}" if user.save!
+    p "#{User.count}/10 - Created User: #{user.username} from #{user.region}" if user.save!
   end
 end
 
-top_100_games
+def two_chat_sessions
+  p "Creating two game sessions..."
+  2.times do
+    game_session = GameSession.new(
+      ongoing: true,
+      status: 'fiiine',
+      game_id: 1
+    )
+    p "Created a game session" if game_session.save!
+  end
+end
+
+def seed_100_games
+  serialized_games = File.read('db/games.json')
+  top_100_games = JSON.parse(serialized_games)
+  p "Seeding Top 100 games"
+  top_100_games.each do |game|
+    Game.create!(
+      title: game[1]["title"],
+      developer: game[1]["developer"],
+      description: game[1]["description"],
+      genre: game[1]["genre"],
+      image_url: game[1]["image_url"],
+      background_image_url: game[1]["background_image_url"]
+    )
+    p "Seeded: #{game[1]["title"]}"
+  end
+end
+
+seed_100_games
 first_10_users
+two_chat_sessions
