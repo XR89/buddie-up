@@ -3,8 +3,12 @@ class GamesController < ApplicationController
     # raise
     if params[:query].present?
       @game = params[:query]
-      @game = Game.find(@game['title'])
-      redirect_to game_path(@game)
+      if @game['title'].present?
+        @game = Game.find(@game['title'])
+        redirect_to game_path(@game)
+      else
+        @games = Game.all
+      end
     else
       @games = Game.all
     end
