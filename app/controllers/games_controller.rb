@@ -2,10 +2,8 @@ class GamesController < ApplicationController
   def index
     # raise
     if params[:query].present?
-      @test = params[:query]
-      @test2 = @test['title']
-      # raise
-      @game = Game.find(@test2)
+      @game = params[:query]
+      @game = Game.find(@game['title'])
       redirect_to game_path(@game)
     else
       @games = Game.all

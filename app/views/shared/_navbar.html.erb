@@ -7,11 +7,12 @@
 
   <div class='d-flex'>
 
-    <%= simple_form_for :query, url: games_path, method: :get, class:'d-flex' do |f| %>
-    <%= f.input :title, collection: Game.all, input_html: { class: 'select2', id: 'search-input' }  %>
+    <%= simple_form_for :query, url: games_path, method: :get, class:'#' do |f| %>
+    <div class='d-flex'>
+    <%= f.input :title, collection: Game.all, input_html: { class: 'select2' }  %>
     <%= f.submit %>
+    </div>
     <% end %>
-
 
 
     <ul class="nav-items">
