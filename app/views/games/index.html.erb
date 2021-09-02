@@ -1,7 +1,15 @@
-<h1>ALL GAMES</h1>
 
-<ul>
-  <% @games.each do |game| %>
-    <li><%= link_to game.title, game_path(game) %></li>
-  <% end %>
-</ul>
+<div class="container text-center">
+  <h1>Our Games:</h1>
+  <ul class="game-card-grid">
+    <% @games.each do |game| %>
+      <li>
+        <%= link_to game_path(game) do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= game.image_url %>)">
+          </div>
+        <% end %>      
+      </li>
+    <% end %>
+  </ul>
+</div>
+
