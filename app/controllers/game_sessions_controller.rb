@@ -1,5 +1,5 @@
 class GameSessionsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[show]
+  # skip_before_action :authenticate_user!, only: %i[show]
   # the above line is just to test that the chat functionality works during development without
   #  the hassle of logging in and out
 
@@ -11,14 +11,14 @@ class GameSessionsController < ApplicationController
 
   def create
     @gamesession = GameSession.new(gamesession_params)
-    @gamesession.ongoing = true
-    @gamesession.status = 'active'
+    # @gamesession.ongoing = true
+    # @gamesession.status = 'active'
     # @game = Game.find(params[:id])
-    @gamesession.game = @game
+    # @gamesession.game = @game
     if @gamesession.save
       redirect_to game_session_path(@gamesession)
     else
-      render 'games/show'
+      render root_path
     end
   end
 
