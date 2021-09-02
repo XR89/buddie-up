@@ -34,7 +34,11 @@
           <%= link_to "Profile", profile_path, class: "pop-btn pop-btn-pink" %>
         </li>
         <li class="nav-dropdown">
-          <%= cl_image_tag @user.photo.key, class: "avatar", id: "navbarDropdown", data: { toggle: "dropdown" } %>
+          <% if @user.photo.attached? %>
+            <%= cl_image_tag @user.photo.key, class: "avatar", id: "navbarDropdown", data: { toggle: "dropdown" } %>
+          <% else %>
+            <%= image_tag "default-profile.jpeg", class:"avatar", id: "navbarDropdown", data: { toggle: "dropdown" }%>
+          <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Action", "#", class: "dropdown-item" %>
             <%= link_to "Another action", "#", class: "dropdown-item" %>
