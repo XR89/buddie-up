@@ -1,22 +1,24 @@
 <nav>
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <%# <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+  <% if user_signed_in? %>
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <h1>BUDDIE UP</h1>
+    <% end %>
   <% end %>
 
   <div>
     <ul class="nav-items">
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "Home", root_path, class: "nav-link" %>
+          <%= link_to "Home", root_path, class: "pop-btn pop-btn-pink" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Games", games_path, class: "nav-link" %>
+          <%= link_to "Games", games_path, class: "pop-btn pop-btn-pink" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Users", users_path, class: "nav-link" %>
+          <%= link_to "Users", users_path, class: "pop-btn pop-btn-pink" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Profile", profile_path, class: "nav-link" %>
+          <%= link_to "Profile", profile_path, class: "pop-btn pop-btn-pink" %>
         </li>
         <li class="nav-dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", id: "navbarDropdown", data: { toggle: "dropdown" } %>

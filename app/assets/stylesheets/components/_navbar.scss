@@ -10,11 +10,18 @@ nav {
   background-color: $black;
 }
 
-.navbar-brand  img {
-  width: 40px;
+.navbar-brand {
+  h1 {
+    font-family: 'Game Battles';
+    font-size: 16px;
+    background-image: linear-gradient(to right, $pink, $orange);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 .nav-items {
+  flex-shrink: 0;
   margin: 0;
   padding: 0;
   list-style-type: none;
