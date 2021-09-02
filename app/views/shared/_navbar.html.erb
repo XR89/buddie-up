@@ -5,9 +5,22 @@
     <% end %>
   <% end %>
 
-  <div>
-    <ul class="nav-items">
+
+
+  <div class='d-flex'>
+
+    <div class="d-flex justify-content-center">
       <% if user_signed_in? %>
+      <%= simple_form_for :query, url: games_path, method: :get, class:'#' do |f| %>
+      <div class='d-flex'>
+      <%= f.input :title, collection: Game.all, label: false, input_html: { class: 'select2 test' }  %>
+      <%= f.submit "Go to Game", class: "pop-btn pop-btn-pink button_correct nav-items" %>
+      </div>
+      <% end %>
+    </div>
+
+
+    <ul class="nav-items">
         <li class="nav-item">
           <%= link_to "Home", root_path, class: "pop-btn pop-btn-pink" %>
         </li>
@@ -28,7 +41,7 @@
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
-      <% end %>
     </ul>
+    <% end %>
   </div>
 </nav>
