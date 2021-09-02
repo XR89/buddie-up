@@ -21,8 +21,10 @@
 
 .pop-btn-pink {
   background-color: $pink;
+  height: 40px;
   color: $white;
   box-shadow: 1px 1px $pink-accent, 2px 2px $pink-accent, 3px 3px $pink-accent;
+  border-width: 0px;
   &:hover {
     top: 1px;
     left: 1px;
