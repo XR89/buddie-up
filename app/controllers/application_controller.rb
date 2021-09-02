@@ -7,11 +7,11 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :dob, :gender, :region])
 
     # For additional in app/views/devise/registrations/edit.html.erb
-    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :dob, :gender, :region, 
-                                                              :steam_handle, :origin_handle, 
-                                                              :psn_handle, :epic_handle, 
-                                                              :discord_handle, :live_handle, 
-                                                              :gog_handle, :twich_handle, 
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :dob, :gender, :region,
+                                                              :steam_handle, :origin_handle,
+                                                              :psn_handle, :epic_handle,
+                                                              :discord_handle, :live_handle,
+                                                              :gog_handle, :twich_handle,
                                                               :battlenet_handle])
   end
 end
