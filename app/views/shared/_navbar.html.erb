@@ -9,8 +9,8 @@
 
     <%= simple_form_for :query, url: games_path, method: :get, class:'#' do |f| %>
     <div class='d-flex'>
-    <%= f.input :title, collection: Game.all, input_html: { class: 'select2' }  %>
-    <%= f.submit %>
+    <%= f.input :title, collection: Game.all, label: false, input_html: { class: 'select2 test' }  %>
+    <%= f.submit "Go to Game", class: '#' %>
     </div>
     <% end %>
 
