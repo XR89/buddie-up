@@ -12,5 +12,5 @@
 </div>
 
 <%= simple_form_for [ @gamesession, @message ], remote: true do |f| %>
-  <%= f.input :content, label: false, placeholder: "Message ##{@gamesession.game.title}" %>
+  <%= f.input :content, label: false, placeholder: "Message" %>
 <% end %>
