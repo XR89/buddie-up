@@ -11,7 +11,7 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
+import { initSelect2 } from '../components/init_select2';
 
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
@@ -26,8 +26,17 @@ import "bootstrap";
 import { initGameSessionCable } from '../channels/gamesession_channel';
 
 
+const removeBootstrapFromSimpleForms = () => {
+  let bootstrapButtons = document.querySelectorAll(".btn");
+  bootstrapButtons.forEach(button => {
+    button.classList.remove("btn");
+  });
+};
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initGameSessionCable();
+  initSelect2();
+  removeBootstrapFromSimpleForms();
 });
