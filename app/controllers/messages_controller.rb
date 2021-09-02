@@ -1,15 +1,17 @@
 class MessagesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[create]
+  # the above line is just to test that the chat functionality works during development without
+  #  the hassle of logging in and out
 
   def create
-    @gamesession = GameSession.find(params[:sessino_id])
+    @gamesession = GameSession.find(params[:game_session_id])
     @message = Message.new(message_params)
     @message.session = @gamesession
     @message.user = current_user
     if @message.save
-      redirect_to session_path(@gamesession, anchor: "message-#{@message.id}")
+      redirect_to game_session_path(@gamesession, anchor: "message-#{@message.id}")
     else
-      render "gamesessions/show"
+      render "game_sessions/show"
     end
   end
 
