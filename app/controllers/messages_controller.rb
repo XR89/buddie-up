@@ -4,9 +4,10 @@ class MessagesController < ApplicationController
   #  the hassle of logging in and out
 
   def create
+    # raise
     @gamesession = GameSession.find(params[:game_session_id])
     @message = Message.new(message_params)
-    @message.session = @gamesession
+    @message.game_session = @gamesession
     @message.user = current_user
     if @message.save
       redirect_to game_session_path(@gamesession, anchor: "message-#{@message.id}")

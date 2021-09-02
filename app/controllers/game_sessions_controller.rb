@@ -11,14 +11,14 @@ class GameSessionsController < ApplicationController
 
   def create
     @gamesession = GameSession.new(gamesession_params)
-    @gamesession.ongoing = true
-    @gamesession.status = 'active'
+    # @gamesession.ongoing = true
+    # @gamesession.status = 'active'
     # @game = Game.find(params[:id])
-    @gamesession.game = @game
+    # @gamesession.game = @game
     if @gamesession.save
       redirect_to game_session_path(@gamesession)
     else
-      render 'games/show'
+      render root_path
     end
   end
 
