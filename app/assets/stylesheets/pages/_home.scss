@@ -1,1 +1,21 @@
-// Specific CSS for your home-page
+.home-banner {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: calc(50vh - 128px);
+  h1 {
+    padding: 10vh;
+    font-family: 'Game Battles';
+    font-size: 64px;
+    background-image: linear-gradient(to right, $blue, $purple, $blue, $purple);
+    background-size: 300% 100%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientScroll 10s linear infinite;
+    @keyframes gradientScroll {
+        to { background-position: 100% 0% }
+    }
+  }
+  background-color: $black;
+  color: $white;
+}

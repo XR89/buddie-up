@@ -1,6 +1,8 @@
 <nav>
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <%# <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+  <% if user_signed_in? %>
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <h1>BUDDIE UP</h1>
+    <% end %>
   <% end %>
 
   <div>
