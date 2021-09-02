@@ -1,5 +1,5 @@
 class GameSessionsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[show]
+  # skip_before_action :authenticate_user!, only: %i[show]
   # the above line is just to test that the chat functionality works during development without
   #  the hassle of logging in and out
 
