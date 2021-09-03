@@ -4,21 +4,36 @@ class GameSessionsController < ApplicationController
   #  the hassle of logging in and out
 
   def show
-    @gamesession = GameSession.find(params[:id])
-    @message = Message.new
+    if current_user.invitations.nil? || current_user.invitations == 'unconfirmed'
+      redirect_to profile_path # add error message, not final.
+    else
+      @gamesession = GameSession.find(params[:id])
+      @message = Message.new
+    end
   end
   # new should be in the game show page as a button to create a new game session.
 
   def create
-    @gamesession = GameSession.new(gamesession_params)
+    @gamesession = GameSession.new # not yet testing for existence for game session.
+
+    @invitation_1 = Invitation.new(status: 'confirmed') # for first user who initiaties the chat
+    @invitation_1.user = current_user
+    @invitation_1.game_session = @gamesession
+
+    @invitee = User.find(params[:id]) # assuming we are on user's show page.
+    # for user_2 to decide whether to accept
+    @invitation_2 = Invitation.new(status: 'unconfirmed')
+    @invitation_2.user = @invitee
+    @invitation_2.game_session = @gamesession
+
     # @gamesession.ongoing = true
     # @gamesession.status = 'active'
     # @game = Game.find(params[:id])
     # @gamesession.game = @game
-    if @gamesession.save
+    if @gamesession.save && @invitation_1.save && @invitation_2.save
       redirect_to game_session_path(@gamesession)
     else
-      render root_path
+      redirect_to profile_path
     end
   end
 
