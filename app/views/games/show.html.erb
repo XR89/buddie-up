@@ -1,18 +1,12 @@
-
-
-<div class="game-banner" style="background-image: linear-gradient(rgba(213,2,75,0.4),rgba(255,104,37,0.4)), url(<%= @game.background_image_url %>);">
-  <div class="container d-flex justify-content-between">
-    <div class="container">
-        <img src="<%= @game.image_url %>" alt="game-splash-art">
-    </div>
-    <div class="container">
-        <h1><%= @game.title %></p>
-        <p><%= @game.description %></p>
-        <p>Developed by: <%= @game.developer %></p>
-    </div>
+<div class="game-banner" style="background-image: linear-gradient(to top right, rgba(255,104,37,0.2), rgba(213,2,75,0.2), rgba(213,2,75,0.2)),
+                                                  linear-gradient(to top left, rgba(255,104,37,0.2), rgba(213,2,75,0.2), rgba(104, 32, 124, 0.2)),
+                                                  url(<%= @game.background_image_url %>);">
+  <div class="game-image">
+    <img src="<%= @game.image_url %>" alt="game-splash-art">
+  </div>
+  <div class="game-desc">
+    <h2><%= @game.title %></h2>
+    <p><%= @game.description %></p>
+    <p>Developed by: <%= @game.developer %></p>
   </div>
 </div>
-
-
-
-
