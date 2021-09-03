@@ -47,41 +47,63 @@ LANGUAGES = %w[
 
 
 def first_10_users
-  p "Seeding first 10 users..."
-  test_user1 = User.new(
-    email: 'test@test.com',
-    username: 'tester1',
+  p "Seeding first 20 users..."
+  test_user = User.new(
+    email: 'louis@test.com',
+    username: 'kinglouisxv',
+    password: 'password',
+    region: 'Europe',
+    dob: Faker::Date.between(from: '1970-01-01', to: '2000-01-01').strftime('%Y-%m-%d'),
+    gender: "Prefer not to say",
+    language: LANGUAGES.sample
+  )
+  p "#{User.count}/20 - Created Louis's account" if test_user.save!
+
+  test_user = User.new(
+    email: 'xander@test.com',
+    username: 'rumpeltiltskin',
     password: 'password',
     region: 'Antarctica',
     dob: Faker::Date.between(from: '1970-01-01', to: '2000-01-01').strftime('%Y-%m-%d'),
     gender: "Prefer not to say",
     language: LANGUAGES.sample
   )
-  p "#{User.count}/10 - Created first test user" if test_user1.save!
+  p "#{User.count}/20 - Created Xander's account" if test_user.save!
 
-  test_user2 = User.new(
-    email: 'test2@test.com',
-    username: 'tester2',
+  test_user = User.new(
+    email: 'drew@test.com',
+    username: 'king$layer',
     password: 'password',
-    region: 'Antarctica',
+    region: 'North America',
     dob: Faker::Date.between(from: '1970-01-01', to: '2000-01-01').strftime('%Y-%m-%d'),
     gender: "Prefer not to say",
     language: LANGUAGES.sample
   )
-  p "#{User.count}/10 - Created second test user" if test_user2.save!
+  p "#{User.count}/20 - Created Drew's account" if test_user.save!
 
-  8.times do
+  test_user = User.new(
+    email: 'jacob@test.com',
+    username: 'jdizzle',
+    password: 'password',
+    region: 'Africa',
+    dob: Faker::Date.between(from: '1970-01-01', to: '2000-01-01').strftime('%Y-%m-%d'),
+    gender: "Prefer not to say",
+    language: LANGUAGES.sample
+  )
+  p "#{User.count}/20 - Created Jacob's account" if test_user.save!
+
+  16.times do
     user = User.new(
       email: Faker::Internet.email,
       username: Faker::Internet.username(specifier: 3..16),
-      password: Faker::Internet.password(min_length: 8, max_length: 32),
+      password: 'password',
       region: REGIONS.sample,
       dob: Faker::Date.between(from: '1970-01-01', to: '2000-01-01').strftime('%Y-%m-%d'),
       gender: ['Male', 'Female', 'Other', 'Prefer not to say'].sample,
       language: LANGUAGES.sample
     )
     # Does not include handles, favourite games, favourite/avoided users, online status
-    p "#{User.count}/10 - Created User: #{user.username} from #{user.region}" if user.save!
+    p "#{User.count}/20 - Created User: #{user.username} from #{user.region}" if user.save!
   end
 end
 

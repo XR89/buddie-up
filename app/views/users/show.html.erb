@@ -10,19 +10,11 @@
             <p class="text-center">Region: <%= @user.region %></p>
             <p class="text-center">Gender: <%= @user.gender %></p>
             <p class="text-center">Age: <%= Date.today.year  - @user.dob.year %></p>
-            <%= link_to "edit profile", edit_user_registration_path, class: "pop-btn pop-btn-pink" %>
-            <% if @invitations %>
-              <% @invitations.each do |invitation| %>
-                <% if invitation.status == 'unconfirmed' %>
-                  <%= link_to "accept chat", user_accept_path(@user.id, invitation.id), method: 'patch', class: "pop-btn pop-btn-pink" %>
-                  <%= link_to "decline chat", user_decline_path(@user.id, invitation.id), method: 'patch',class: "pop-btn pop-btn-orange" %>
-                <% end %>
-              <% end %>
-            <% end %>
+            <%= link_to "create chat", game_sessions_path(user_id: @user.id), method: 'post', class: "pop-btn pop-btn-pink" %>
         </div>
     </div>
     <div class="row">
-        <div class="container mt-4 text-left">
+        <div class="container mt-4 text-left">d
             <h2>News Feed</h2>
             <p><%= @user.username %> played Dota 2 yesterday!</p>
             <p><%= @user.username %> is now friends with KingSlayer210</p>

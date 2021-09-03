@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!
   def home
     # newsfeed for logged in user
+    @user = current_user
     redirect_to welcome_path unless current_user
   end
 

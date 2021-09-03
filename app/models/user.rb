@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :username, :region, :dob, :gender, presence: true
-  validates :username, format: { with: /\A[A-Za-z0-9\-_.]+\z/i,
+  validates :username, format: { with: /\A[A-Za-z0-9\-_.£$€@*]+\z/i,
                                  message: "Please use only letters from the latin alphabet,
                                            numbers, and punctuation: -_." },
                        length: { minimum: 3, maximum: 255 },
@@ -29,6 +29,7 @@ class User < ApplicationRecord
   has_many :favourite_users, foreign_key: :user_id
   has_many :avoid_users, foreign_key: :user_id
   has_many :user_ratings, foreign_key: :user_id
+  has_many :invitations
 
   private
 
