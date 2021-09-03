@@ -1,2 +1,90 @@
-<%= link_to "edit profile", edit_user_registration_path %>
-<%= link_to "create chat", game_sessions_path %>
+<div class="container d-flex justify-content-around">
+    <div class="row">
+        <div class="container mt-4">
+            <% if @user.photo.attached? %>
+                <%= cl_image_tag @user.photo.key, class: "avatar-large" %>
+            <% else %>
+                <%= image_tag "default-profile.jpeg", class: "avatar-large" %>
+            <% end %>
+            <h1 class="text-center"><%= @user.username %></h1>
+            <p class="text-center">Region: <%= @user.region %></p>
+            <p class="text-center">Gender: <%= @user.gender %></p>
+            <p class="text-center">Age: <%= Date.today.year  - @user.dob.year %></p>
+            <%= link_to "edit profile", edit_user_registration_path, class: "pop-btn pop-btn-pink" %>
+            <%= link_to "create chat", game_sessions_path, method: 'post', class: "pop-btn pop-btn-pink" %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container mt-4 text-left">
+            <h2>News Feed</h2>
+            <p><%= @user.username %> played Dota 2 yesterday!</p>
+            <p><%= @user.username %> is now friends with KingSlayer210</p>
+            <p></p>
+        </div>
+    </div>
+</div>
+<div class="container mt-4 d-flex justify-content-around">
+    <div class="row text-center">
+        <ul>
+        <h3>Find me:</h3>
+            <% if @user.steam_handle %>
+                <li>
+                    <i class="fab fa-steam"></i> <%= @user.steam_handle %>
+                </li>
+            <% end %>
+            <% if @user.origin_handle %>
+                <li>
+                    <i class="fas fa-circle-notch"></i><%= @user.origin_handle %>
+                </li>
+            <% end %>
+            <% if @user.psn_handle %>
+                <li>
+                    <i class="fab fa-playstation"></i><%= @user.psn_handle%>
+                </li>
+            <% end %>
+            <% if @user.epic_handle %>
+                <li>
+                    <i class="fas fa-shield-alt"></i><%= @user.epic_handle%>
+                </li>
+            <% end %>
+            <% if @user.discord_handle %>
+                <li>
+                    <i class="fab fa-discord"></i><%= @user.discord_handle%>
+                </li>
+            <% end %>
+            <% if @user.live_handle %>
+                <li>
+                    <i class="fab fa-xbox"></i><%= @user.live_handle%>
+                </li>
+            <% end %>
+            <% if @user.gog_handle %>
+                <li>
+                    <i class="fab fa-guilded"></i><%= @user.gog_handle%>
+                </li>
+            <% end %>
+            <% if @user.twich_handle %>
+                <li>
+                    <i class="fab fa-twitch"></i><%= @user.twich_handle%>
+                </li>
+            <% end %>
+            <% if @user.battlenet_handle %>
+                <li>
+                    <i class="fab fa-battle-net"></i><%= @user.battlenet_handle%>
+                </li>
+            <% end %>
+        </ul>
+    </div>
+        <div class="row">
+        <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+        <div id="live"></div>
+        <script type="text/javascript">
+        var options = {
+            width: 600,
+            height: 300,
+            channel: "lolworldchampionship"
+        };
+        var player = new Twitch.Player("live", options);
+        player.setVolume(0);
+        </script>
+    </div>
+</div>

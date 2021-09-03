@@ -4,14 +4,14 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :dob, :gender, :region])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :dob, :gender, :region, :photo])
 
     # For additional in app/views/devise/registrations/edit.html.erb
-    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :dob, :gender, :region, 
-                                                              :steam_handle, :origin_handle, 
-                                                              :psn_handle, :epic_handle, 
-                                                              :discord_handle, :live_handle, 
-                                                              :gog_handle, :twich_handle, 
-                                                              :battlenet_handle])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :dob, :gender, :region,
+                                                              :steam_handle, :origin_handle,
+                                                              :psn_handle, :epic_handle,
+                                                              :discord_handle, :live_handle,
+                                                              :gog_handle, :twich_handle,
+                                                              :battlenet_handle, :photo])
   end
 end
