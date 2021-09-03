@@ -34,7 +34,7 @@
           <%= link_to "Profile", profile_path, class: "pop-btn pop-btn-pink" %>
         </li>
         <li class="nav-dropdown">
-          <% if @user.photo.attached? %>
+          <% if current_user.photo.attached? %>
             <%= cl_image_tag @user.photo.key, class: "avatar", id: "navbarDropdown", data: { toggle: "dropdown" } %>
           <% else %>
             <%= image_tag "default-profile.jpeg", class:"avatar", id: "navbarDropdown", data: { toggle: "dropdown" }%>
