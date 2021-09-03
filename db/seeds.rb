@@ -92,9 +92,11 @@ def first_10_users
   )
   p "#{User.count}/20 - Created Jacob's account" if test_user.save!
 
+  user = 'user1@test.com'
+  counter = 1
   16.times do
     user = User.new(
-      email: Faker::Internet.email,
+      email: "user#{counter}@test.com",
       username: Faker::Internet.username(specifier: 3..16),
       password: 'password',
       region: REGIONS.sample,
@@ -104,6 +106,7 @@ def first_10_users
     )
     # Does not include handles, favourite games, favourite/avoided users, online status
     p "#{User.count}/20 - Created User: #{user.username} from #{user.region}" if user.save!
+    counter += 1
   end
 end
 
