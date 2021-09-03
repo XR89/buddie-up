@@ -4,7 +4,8 @@ class GameSessionsController < ApplicationController
   #  the hassle of logging in and out
 
   def show
-    if current_user.invitations.nil? || current_user.invitations == 'unconfirmed'
+    @invitation = current_user.invitations.where(game_session: params[:id])[0] unless current_user.invitations.nil?
+    if @invitation.nil? || @invitation.status != 'confirmed'
       redirect_to profile_path # add error message, not final.
     else
       @gamesession = GameSession.find(params[:id])
@@ -20,7 +21,7 @@ class GameSessionsController < ApplicationController
     @invitation_1.user = current_user
     @invitation_1.game_session = @gamesession
 
-    @invitee = User.find(params[:id]) # assuming we are on user's show page.
+    @invitee = User.find(params[:user_id]) # assuming we are on user's show page.
     # for user_2 to decide whether to accept
     @invitation_2 = Invitation.new(status: 'unconfirmed')
     @invitation_2.user = @invitee

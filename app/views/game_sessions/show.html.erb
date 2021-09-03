@@ -1,18 +1,21 @@
 <%# <h1>#<%= @gamesession.game.title</h1> %>
-<div id="messages" data-gamesession-id="<%= @gamesession.id %>">
-  <% @gamesession.messages.each do |message| %>
-    <%= render 'messages/message', message: message %>
-    <%# <div class="message-container" id="message-<%= message.id %>
-      <%# <i class="author"> %>
-        <%# <span><%= message.user.username</span> %>
-        <%# <small><%= message.created_at.strftime("%a %b %e at %l:%M%p")</small> %>
-      <%# </i> %>
-      <%# <p><%= message.content</p> %>
-    <%# </div> %>
-  <% end %>
+<div class="container__chat">
+  <div id="messages" data-gamesession-id="<%= @gamesession.id %>">
+    <% @gamesession.messages.each do |message| %>
+      <%= render 'messages/message', message: message %>
+      <%# <div class="message-container" id="message-<%= message.id %>
+        <%# <i class="author"> %>
+          <%# <span><%= message.user.username</span> %>
+          <%# <small><%= message.created_at.strftime("%a %b %e at %l:%M%p")</small> %>
+        <%# </i> %>
+        <%# <p><%= message.content</p> %>
+      <%# </div> %>
+    <% end %>
+  </div>
+  <div class="container__chat--input">
+    <%= simple_form_for [ @gamesession, @message ], remote: true do |f| %>
+      <%= f.input :content, label: false, placeholder: "Message" %>
+      <%= f.submit %>
+    <% end %>
+  </div>
 </div>
-
-<%= simple_form_for [ @gamesession, @message ], remote: true do |f| %>
-  <%= f.input :content, label: false, placeholder: "Message" %>
-  <%= f.submit %>
-<% end %>

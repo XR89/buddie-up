@@ -10,7 +10,7 @@
             <p class="text-center">Region: <%= @user.region %></p>
             <p class="text-center">Gender: <%= @user.gender %></p>
             <p class="text-center">Age: <%= Date.today.year  - @user.dob.year %></p>
-            <%= link_to "create chat", game_sessions_path, class: "pop-btn pop-btn-pink" %>
+            <%= link_to "create chat", game_sessions_path(user_id: @user.id), method: 'post', class: "pop-btn pop-btn-pink" %>
         </div>
     </div>
     <div class="row">

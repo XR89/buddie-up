@@ -1,0 +1,12 @@
+.container__chat {
+  margin: 0 10vw;
+  height: calc(100vh - 238px);
+  overflow-y: scroll;
+}
+
+.container__chat--input {
+  position: fixed;
+  bottom: 0;
+  height: 150px;
+  width: calc(100% - 20vw);
+}

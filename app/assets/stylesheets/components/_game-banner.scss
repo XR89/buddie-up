@@ -1,12 +1,15 @@
 .game-banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5vh;
+  position: sticky;
+  top: 64px;
   padding: 0 20vh;
   height: calc(100vh - 64px);
   background-size: cover;
   background-position: center;
+}
+
+.game-wrapper {
+  gap: 5vw;
+  height: 300px;
 }
 
 .game-image {
