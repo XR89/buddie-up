@@ -2,28 +2,30 @@
   <h1>News Feed</h1>
 </div>
 <div class="container__news">
-  <div class="featured-article" style="background-image: url(https://source.unsplash.com/random)<%#= image_url %>">
+  <div class="featured-article" style="background-image: url(https://i.guim.co.uk/img/media/e280c3881d6db9e827d1475115939706356ef22b/27_46_3451_2072/master/3451.jpg?width=445&quality=45&auto=format&fit=max&dpr=2&s=41a087a27c21fbe0d7dbf77e52a29a50)">
     <div class="featured-article__text">
-      <h2>Placeholder<%#= article title %></h2>
-      <p>Lorem ipsum text<%#= article description %></p>
+      <h2>David Beckham's esports team to float on London Stock Exchange</h2>
+      <p>Guild Esports plans to raise £20m as it aims to create global franchise</p>
     </div>
   </div>
   <div class="flex__articles">
     <div class="container__articles--horizontal">
       <%# iterator %>
         <div class="card__article--wide">
-          <%#= image_url %>
-          <h3><%#= article title %></h3>
-          <p><%#= article description %></p>
+          <img src="https://i.guim.co.uk/img/media/d5eab25b9cd2a38580bf8a13e7756b2eb27e6a5d/79_167_1047_628/master/1047.jpg?width=645&quality=45&auto=format&fit=max&dpr=2&s=aef514cd82f74abaadef2620e927865d">
+          <div class="article__text">
+            <h3>Move over, Fortnite: how Valorant became the next big competitive game</h3>
+            <p>Riot Games’ new shooter is already being hailed as a threat to Fortnite, Counter-Strike and Overwatch – and barely anyone has played it yet</p>
+          </div>
         </div>
       <%# end %>
     </div>
     <div class="container__articles--vertical">
       <%# iterator %>
         <div class="card__article--tall">
-          <%#= image_url %>
-          <h3><%#= article title %></h3>
-          <p><%#= article description %></p>
+          <img src="https://images.theconversation.com/files/353939/original/file-20200820-18-1i1cwq0.jpg?ixlib=rb-1.1.0&rect=0%2C1122%2C4992%2C2492&q=45&auto=format&w=1356&h=668&fit=crop">
+          <h3>Here’s what it’ll take to clean up esports’ toxic culture</h3>
+          <p>Combating sexism and other forms of harassment in online videogames comes down to community standards.</p>
         </div>
       <%# end %>
     </div>
