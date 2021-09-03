@@ -35,8 +35,9 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Profile", profile_path, class: "dropdown-item" %>
             <%= link_to "Sessions", game_sessions_path, class: "dropdown-item" %>
-            <%# <%= raise %>
-            <% if current_user.session_id.present?%>
+          <%= raise %>
+              <% if current_user.session_id.present?%>
+              <%# this might need to change soon %>
               <%= link_to "Active session", game_session_path, class: "dropdown-item"%>
               <% else %>
               <%= link_to "No Active session", "#", class: "dropdown-item"%>
