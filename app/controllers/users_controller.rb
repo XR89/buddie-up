@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def profile
     @user = current_user
+    @invitations = @user.invitations unless @user.invitations.nil?
   end
 
   def index
