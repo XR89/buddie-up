@@ -1,35 +1,43 @@
 <div class="game-banner" style="background-image: linear-gradient(to top right, rgba(255,104,37,0.2), rgba(213,2,75,0.2), rgba(213,2,75,0.2)),
                                                   linear-gradient(to top left, rgba(255,104,37,0.2), rgba(213,2,75,0.2), rgba(104, 32, 124, 0.2)),
                                                   url(<%= @game.background_image_url %>);">
-  <div class="game-image">
-    <img src="<%= @game.image_url %>" alt="game-splash-art">
-  </div>
-  <div class="game-desc">
-    <h2><%= @game.title %></h2>
-    <p><%= @game.description %></p>
-    <p>Developed by: <%= @game.developer %></p>
-  </div>
 </div>
 
-<div class="container">
+<div class="user-list">
+  <div class="d-flex game-wrapper">
+    <div>
+      <img src="<%= @game.image_url %>" class="game-image" alt="game-splash-art">
+    </div>
+    <div class="game-desc">
+      <h2><%= @game.title %></h2>
+      <p><%= @game.description %></p>
+      <p>Developed by: <%= @game.developer %></p>
+    </div>
+  </div>
+
   <ul>
-    <% @users.sample(5).each do |user| %>
+    <% @users.each do |user| %>
       <li>
         <%= link_to user_path(user) do %>
-          <div class="card-product mt-3">
+          <div class="card-user">
             <% if user.photo.attached? %>
                   <%= cl_image_tag user.photo.key, class: "avatar-medium ml-2" %>
               <% else %>
                   <%= image_tag "default-profile.jpeg", class: "avatar-medium ml-2" %>
               <% end %>
-            <div class="card-product-infos">
+            <div class="card-user-infos">
               <h2><%= user.username %></h2>
-              <p>is looking for players to play <%= @game.title %>!</p>
             </div>
-          </div> 
-        <% end %>     
+            <%# <div> %>
+              <%# <p><%= user.language if user.language %></p>
+              <%# <p><%= user.favourite_games if user.favourite_games %></p>
+            <%# </div> %>
+            <div class="user-rating">
+              <h2>⭐⭐⭐⭐⭐</h2>
+            </div>
+          </div>
+        <% end %>
       </li>
-    <% end %> 
+    <% end %>
   </ul>
 </div>
-
