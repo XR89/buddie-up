@@ -10,3 +10,26 @@
     <p>Developed by: <%= @game.developer %></p>
   </div>
 </div>
+
+<div class="container">
+  <ul>
+    <% @users.sample(5).each do |user| %>
+      <li>
+        <%= link_to user_path(user) do %>
+          <div class="card-product mt-3">
+            <% if user.photo.attached? %>
+                  <%= cl_image_tag user.photo.key, class: "avatar-medium ml-2" %>
+              <% else %>
+                  <%= image_tag "default-profile.jpeg", class: "avatar-medium ml-2" %>
+              <% end %>
+            <div class="card-product-infos">
+              <h2><%= user.username %></h2>
+              <p>is looking for players to play <%= @game.title %>!</p>
+            </div>
+          </div> 
+        <% end %>     
+      </li>
+    <% end %> 
+  </ul>
+</div>
+

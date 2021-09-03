@@ -35,7 +35,7 @@
         </li>
         <li class="nav-dropdown">
           <% if current_user.photo.attached? %>
-            <%= cl_image_tag @user.photo.key, class: "avatar", id: "navbarDropdown", data: { toggle: "dropdown" } %>
+            <%= cl_image_tag current_user.photo.key, class: "avatar", id: "navbarDropdown", data: { toggle: "dropdown" } %>
           <% else %>
             <%= image_tag "default-profile.jpeg", class:"avatar", id: "navbarDropdown", data: { toggle: "dropdown" }%>
           <% end %>
