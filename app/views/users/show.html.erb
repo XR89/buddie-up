@@ -10,7 +10,6 @@
             <p class="text-center">Region: <%= @user.region %></p>
             <p class="text-center">Gender: <%= @user.gender %></p>
             <p class="text-center">Age: <%= Date.today.year  - @user.dob.year %></p>
-            <%= link_to "edit profile", edit_user_registration_path, class: "pop-btn pop-btn-pink" %>
             <%= link_to "create chat", game_sessions_path, class: "pop-btn pop-btn-pink" %>
         </div>
     </div>
@@ -81,7 +80,8 @@
         var options = {
             width: 600,
             height: 300,
-            channel: "lolworldchampionship"
+            channel: "lolworldchampionship",
+            muted: true
         };
         var player = new Twitch.Player("live", options);
         player.setVolume(0);
