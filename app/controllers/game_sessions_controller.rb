@@ -5,7 +5,7 @@ class GameSessionsController < ApplicationController
 
   def show
     @invitation = current_user.invitations.where(game_session: params[:id])[0] unless current_user.invitations.nil?
-    if @invitation.nil? || @invitation.status == 'unconfirmed'
+    if @invitation.nil? || @invitation.status != 'confirmed'
       redirect_to profile_path # add error message, not final.
     else
       @gamesession = GameSession.find(params[:id])
