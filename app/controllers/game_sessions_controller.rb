@@ -4,7 +4,7 @@ class GameSessionsController < ApplicationController
   #  the hassle of logging in and out
 
   def show
-    if current_user.invitation.present? || current_user.invitation == 'unconfirmed'
+    if current_user.invitations.nil? || current_user.invitations == 'unconfirmed'
       redirect_to profile_path # add error message, not final.
     else
       @gamesession = GameSession.find(params[:id])
