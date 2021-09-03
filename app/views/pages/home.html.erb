@@ -1,3 +1,31 @@
 <div class="home-banner">
   <h1>News Feed</h1>
 </div>
+<div class="container__news">
+  <div class="featured-article" style="background-image: url(https://source.unsplash.com/random)<%#= image_url %>">
+    <div class="featured-article__text">
+      <h2>Placeholder<%#= article title %></h2>
+      <p>Lorem ipsum text<%#= article description %></p>
+    </div>
+  </div>
+  <div class="flex__articles">
+    <div class="container__articles--horizontal">
+      <%# iterator %>
+        <div class="card__article--wide">
+          <%#= image_url %>
+          <h3><%#= article title %></h3>
+          <p><%#= article description %></p>
+        </div>
+      <%# end %>
+    </div>
+    <div class="container__articles--vertical">
+      <%# iterator %>
+        <div class="card__article--tall">
+          <%#= image_url %>
+          <h3><%#= article title %></h3>
+          <p><%#= article description %></p>
+        </div>
+      <%# end %>
+    </div>
+  </div>
+</div>
