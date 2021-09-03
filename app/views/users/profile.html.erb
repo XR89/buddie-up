@@ -1,7 +1,11 @@
 <div class="container d-flex justify-content-around">
     <div class="row">
         <div class="container mt-4">
-            <img src="https://www.hollywoodreporter.com/wp-content/uploads/2019/03/avatar-publicity_still-h_2019.jpg?w=681&h=383&crop=1" alt="profile-avatar" class="avatar-large">
+            <% if @user.photo.attached? %>
+                <%= cl_image_tag @user.photo.key, class: "avatar-large" %>
+            <% else %>
+                <%= image_tag "default-profile.jpeg", class: "avatar-large" %>
+            <% end %>
             <h1 class="text-center"><%= @user.username %></h1>
             <p class="text-center">Region: <%= @user.region %></p>
             <p class="text-center">Gender: <%= @user.gender %></p>

@@ -30,6 +30,7 @@
                               end_year: Date.today.year - 18,
                               order: [:day, :month, :year] %>
       <%= f.input :gender, collection: ["Male", "Female", "Other", "Prefer not to say"], required: true, autofocus: true  %>
+      <%= f.input :photo %>
     </div>
 
     <div class="form-actions">
