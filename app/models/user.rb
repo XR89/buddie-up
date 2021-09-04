@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :username, :region, :dob, :gender, presence: true
   validates :username, format: { with: /\A[A-Za-z0-9\-_.£$€@*]+\z/i,
                                  message: "Please use only letters from the latin alphabet,
-                                           numbers, and punctuation: -_." },
+                                           numbers, and punctuation: -_.£$€@*" },
                        length: { minimum: 3, maximum: 255 },
                        uniqueness: true
   validates :region, inclusion: { in: ["Europe",
