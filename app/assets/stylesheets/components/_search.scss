@@ -7,13 +7,12 @@
   border-bottom: 4px solid $white;
   height: 48px;
   width: 80%;
-  background-color: $black;
+  background-color: transparent;
   font-size: 24px;
   color: $white;
   &:active,
   &:focus {
     outline: none;
-    background-color: $black;
     color: $white;
   }
 }
