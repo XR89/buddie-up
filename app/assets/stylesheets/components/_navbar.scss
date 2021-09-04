@@ -15,9 +15,14 @@ nav {
   h1 {
     font-family: 'Game Battles';
     font-size: 16px;
-    background-image: linear-gradient(to right, $pink, $orange);
+    background-image: linear-gradient(to right, $pink, $orange, $pink, $orange);
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-size: 300% 100%;
+    animation: gradientScroll 5s linear infinite;
+    @keyframes gradientScroll {
+        to { background-position: 100% 0% }
+    }
   }
 }
 
