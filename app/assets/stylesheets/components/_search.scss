@@ -1,0 +1,34 @@
+.search__form {
+  text-align: center;
+}
+
+.search__input {
+  border: none;
+  border-bottom: 4px solid $white;
+  height: 48px;
+  width: 80%;
+  background-color: $black;
+  font-size: 24px;
+  color: $white;
+  &:active,
+  &:focus {
+    outline: none;
+    background-color: $black;
+    color: $white;
+  }
+}
+
+.list-container {
+  padding: 0 10vw;
+}
+
+.list-header {
+  margin: 16px 0 16px 10%;
+}
+
+.result {
+  background-image: linear-gradient(to right, $blue, $purple);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}

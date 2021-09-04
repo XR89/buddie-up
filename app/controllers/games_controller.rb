@@ -1,16 +1,13 @@
 class GamesController < ApplicationController
   def index
-    # raise
+    @games = Game.all
     if params[:query].present?
-      @game = params[:query]
-      if @game['title'].present?
-        @game = Game.find(@game['title'])
-        redirect_to game_path(@game)
-      else
-        @games = Game.all
-      end
-    else
-      @games = Game.all
+      @games = @games.where('title ILIKE ?', "%#{params[:query]}%")
+    end
+
+    respond_to do |format|
+      format.html
+      format.text { render partial: 'list.html', locals: { games: @games } }
     end
   end
 
