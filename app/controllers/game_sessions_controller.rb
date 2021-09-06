@@ -69,7 +69,6 @@ class GameSessionsController < ApplicationController
       redirect_to root_path
     end
 
-
     # @users = User.all.select { |user| user.invitations.any? }
     # @user_invitations = user.invitations.where(game_session_id: params[:id].to_i)
     # @users_left = @users.select do |user|

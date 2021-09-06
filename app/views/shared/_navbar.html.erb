@@ -7,17 +7,30 @@
 
   <% if user_signed_in? %>
     <ul class="nav-items">
+        <%= link_to profile_path do  %>
+           <li class = "align-middle">
+          <% if current_user.invitations.find_by status: "unconfirmed" %>
+            <div class="spinner">
+              <div class="double-bounce1"></div>
+              <div class="double-bounce2"></div>
+            </div>
+          <% end %>
+          </li>
+        <% end %>
       <li class="nav-item">
         <%= link_to "Find Game", games_path, class: "pop-btn pop-btn-pink" %>
       </li>
       <li class="nav-item">
         <%= link_to "Find Buddy", users_path, class: "pop-btn pop-btn-orange" %>
       </li>
+      
+     
       <% if current_user.photo.attached? %>
         <%= cl_image_tag current_user.photo.key, class: "avatar", id: "dropdown-toggle" %>
       <% else %>
         <%= image_tag "default-profile.jpeg", class:"avatar", id: "dropdown-toggle" %>
       <% end %>
+
       <div class="nav__dropdown">
         <%= link_to "Profile", profile_path, class: "dropdown__item dropdown__item--hide" %>
         <%= link_to "Sessions", game_sessions_path, class: "dropdown__item dropdown__item--hide" %>
