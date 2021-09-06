@@ -16,8 +16,8 @@
     <%= simple_form_for [ @gamesession, @message ], remote: true do |f| %>
       <%= f.input :content, label: false, placeholder: "Message" %>
       <%= f.submit %>
-      <%# <%= link_to 'Start session', start_game_session_path %>
-      <%= link_to 'End session', end_game_session_path %>
+      <%= link_to 'Start session', start_game_session_path, method: :patch %>
+      <%= link_to 'End session', end_game_session_path, method: :patch %>
     <% end %>
   </div>
 </div>
