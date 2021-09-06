@@ -5,7 +5,12 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    # @users = User.all
+    @avoided_users_array = current_user.avoid_users.map do |x|
+      x.avoid_user_id
+    end
+    @users = User.where.not(id: @avoided_users_array)
+
 
     if params[:query].present?
       @users = @users.where('username ILIKE ?', "%#{params[:query]}%")

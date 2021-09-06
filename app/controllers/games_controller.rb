@@ -13,13 +13,11 @@ class GamesController < ApplicationController
   end
 
   def show
+    @game = Game.find(params[:id])
     @avoided_users_array = current_user.avoid_users.map do |x|
       x.avoid_user_id
     end
-    @game = Game.find(params[:id])
     @users = User.where.not(id: @avoided_users_array)
-
-
     # @users = User.reject
 
   end

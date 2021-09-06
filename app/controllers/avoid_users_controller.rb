@@ -8,7 +8,7 @@ class AvoidUsersController < ApplicationController
     redirect_back(fallback_location: root_path)
 
 
-    # redirect above to home/profile so they dont have to see tht dickhead again
+    # redirect above to home/profile so they dont have to see that dickhead again
   end
 
   end
