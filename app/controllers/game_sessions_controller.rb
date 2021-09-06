@@ -56,7 +56,6 @@ class GameSessionsController < ApplicationController
   end
 
   def end_game_session
-
     @gamesession = GameSession.find(params[:id])
     # if gamesession was true, chat becomes 'dead', redirect users to reviews page.
     # set invitation to 'left'

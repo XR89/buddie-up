@@ -4,7 +4,7 @@ const initGameSessionCable = () => {
   const messagesContainer = document.getElementById('messages');
   if (messagesContainer) {
     const id = messagesContainer.dataset.gamesessionId;
-    console.log('test2');
+    // console.log('test2');
     // consumer.subscriptions.create({ channel: "GameSessionChannel", id: id}, {
     //   received(data) {
     //     console.log(data);
@@ -13,11 +13,13 @@ const initGameSessionCable = () => {
     // if else statement
     consumer.subscriptions.create({ channel: "GameSessionChannel", id: id }, {
       received(data) {
-        console.log('test');
+        // console.log('test');
         console.log(data);
         messagesContainer.insertAdjacentHTML('beforeend', data);
+        messagesContainer.scrollIntoView(false);
       }
     });
+    
   }
 }
 
