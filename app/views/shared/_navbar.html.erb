@@ -5,50 +5,30 @@
     <% end %>
   <% end %>
 
-
-
-  <div class='d-flex'>
-
-    <div class="d-flex justify-content-center">
-      <% if user_signed_in? %>
-      <%= simple_form_for :query, url: games_path, method: :get, class:'#' do |f| %>
-      <div class='d-flex'>
-      <%= f.input :title, collection: Game.all, label: false, input_html: { class: 'select2 test' }  %>
-      <%= f.submit "Go to Game", class: "pop-btn pop-btn-pink button_correct nav-items" %>
-      </div>
-      <% end %>
-    </div>
-
-
+  <% if user_signed_in? %>
     <ul class="nav-items">
-        <li class="nav-item">
-          <%= link_to "Home", root_path, class: "pop-btn pop-btn-pink" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Games", games_path, class: "pop-btn pop-btn-pink" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Top Users", users_path, class: "pop-btn pop-btn-pink" %>
-        </li>
-        <li>
-          <% if current_user.photo.attached? %>
-            <%= cl_image_tag current_user.photo.key, class: "avatar", id: "dropdown-toggle" %>
-          <% else %>
-            <%= image_tag "default-profile.jpeg", class:"avatar", id: "dropdown-toggle" %>
-          <% end %>
-          <div class="nav__dropdown">
-            <%= link_to "Profile", profile_path, class: "dropdown__item dropdown__item--hide" %>
-            <%= link_to "Sessions", game_sessions_path, class: "dropdown__item dropdown__item--hide" %>
-            <% if current_user.session_id.present?%>
-              <%# this might need to change soon %>
-              <%= link_to "Active session", game_session_path, class: "dropdown__item dropdown__item--hide"%>
-            <% else %>
-              <%= link_to "No Active session", "#", class: "dropdown__item dropdown__item--hide"%>
-            <% end %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown__item dropdown__item--hide" %>
-          </div>
-        </li>
+      <li class="nav-item">
+        <%= link_to "Find Game", games_path, class: "pop-btn pop-btn-pink" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Find Buddy", users_path, class: "pop-btn pop-btn-orange" %>
+      </li>
+      <% if current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key, class: "avatar", id: "dropdown-toggle" %>
+      <% else %>
+        <%= image_tag "default-profile.jpeg", class:"avatar", id: "dropdown-toggle" %>
+      <% end %>
+      <div class="nav__dropdown">
+        <%= link_to "Profile", profile_path, class: "dropdown__item dropdown__item--hide" %>
+        <%= link_to "Sessions", game_sessions_path, class: "dropdown__item dropdown__item--hide" %>
+        <% if current_user.session_id.present?%>
+          <%# this might need to change soon %>
+          <%= link_to "Active session", game_session_path, class: "dropdown__item dropdown__item--hide"%>
+        <% else %>
+          <%= link_to "No Active session", "#", class: "dropdown__item dropdown__item--hide"%>
+        <% end %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown__item dropdown__item--hide" %>
+      </div>
     </ul>
-    <% end %>
-  </div>
+  <% end %>
 </nav>

@@ -1,0 +1,16 @@
+<div data-search-target="list">
+  <% if params[:query].blank? %>
+    <h2 class="list-header"><%= pluralize games.count, 'game' %> available</h2>
+  <% else %>
+    <h2 class="list-header"><%= pluralize games.count, 'result' %> for <span class="result"><%= params[:query] %></span></h2>
+  <% end %>
+
+  <div class="game-card-flex">
+    <% games.each do |game| %>
+        <%= link_to game_path(game) do %>
+          <div class="game-card" style="background-image: url(<%= game.image_url %>)">
+          </div>
+        <% end %>
+    <% end %>
+  </div>
+</div>
