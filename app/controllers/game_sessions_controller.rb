@@ -42,7 +42,7 @@ class GameSessionsController < ApplicationController
     # need to check how many users are left
 
     # if one user left, set their invitation to left and game sesion ongoing to false
-    if @gamesession
+    # if @gamesession
   end
 
   private

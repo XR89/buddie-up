@@ -15,5 +15,7 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
     @users = User.all
+    @avoided_users_array = current_user.avoid_user_ids
+    # @passed_users = @users.reject
   end
 end
