@@ -39,10 +39,20 @@ class GameSessionsController < ApplicationController
   end
 
   def end_game_session
+    current_user.invitations.last.update(status: 'left')
     # need to check how many users are left
-
+    @users = User.all.select { |user| user.invitations.any? }
+    @users_left = @users.select do |user|
+      user.invitations.last.game_session_id == params[:id].to_i && (user.invitations.last.status == 'confirmed' || user.invitations.last.status == 'unconfirmed')
+    end
+    raise
     # if one user left, set their invitation to left and game sesion ongoing to false
-    if @gamesession
+    @gamesession = GameSession.find(params[:id])
+    if @users_left.count == 1
+      @gamesession.ongoing = false
+      @users_left.first.invitations.last.update(status: 'left')
+    end
+    redirect_to new_game_session_user_rating_path(@gamesession)
   end
 
   private
