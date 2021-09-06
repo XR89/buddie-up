@@ -15,12 +15,16 @@ nav {
   h1 {
     font-family: 'Game Battles';
     font-size: 16px;
-    background-image: linear-gradient(to right, $pink, $orange);
+    background-image: linear-gradient(to right, $pink, $orange, $pink, $orange);
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-size: 300% 100%;
+    animation: gradientScroll 5s linear infinite;
+    @keyframes gradientScroll {
+        to { background-position: 100% 0% }
+    }
   }
 }
-
 
 .nav-items {
   flex-shrink: 0;
@@ -42,5 +46,56 @@ nav {
   box-shadow: 1px 1px $pink-accent, 2px 2px $pink-accent, 3px 3px $pink-accent;
   &:hover {
     color: $white;
+  }
+}
+
+.nav__dropdown {
+  z-index: 1000;
+  display: block;
+  position: absolute;
+  top: 80px;
+  right: -192px;
+  text-align: left;
+  list-style: none;
+}
+
+.dropdown__item--show {
+  transform: translate(-140%);
+}
+
+.dropdown__item--hide {
+  right: -192px;
+}
+
+.dropdown__item {
+  display: block;
+  clear: both;
+  clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+  margin-bottom: 8px;
+  padding: 8px 32px;
+  width: 160px;
+  background-color: rgba(68, 68, 68, 0.5);
+  color: $white;
+  white-space: nowrap;
+  text-align: inherit;
+  text-decoration: none;
+  transition: all 300ms;
+  &:hover,
+  &:focus {
+    transform: translate(-151%);
+    background-color: $white;
+    color: $black;
+  }
+  &:nth-child(1n) {
+    border-bottom: 4px solid $pink;
+  }
+  &:nth-child(2n) {
+    border-bottom: 4px solid $orange;
+  }
+  &:nth-child(3n) {
+    border-bottom: 4px solid $blue;
+  }
+  &:nth-child(4n) {
+    border-bottom: 4px solid $purple;
   }
 }
