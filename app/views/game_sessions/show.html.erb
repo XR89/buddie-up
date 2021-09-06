@@ -16,6 +16,7 @@
     <%= simple_form_for [ @gamesession, @message ], remote: true do |f| %>
       <%= f.input :content, label: false, placeholder: "Message" %>
       <%= f.submit %>
+      <%= link_to 'Cancel chat', :back %>
     <% end %>
   </div>
 </div>
