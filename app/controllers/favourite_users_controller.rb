@@ -15,6 +15,9 @@ class FavouriteUsersController < ApplicationController
     @favourite_destroy.destroy!
     if @favourite_user.nil?
       redirect_back(fallback_location: root_path)
+      # render html: '<div>html goes here</div>'.html_safe
+
+
     end
   end
 
