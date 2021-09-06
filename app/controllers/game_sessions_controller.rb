@@ -27,7 +27,7 @@ class GameSessionsController < ApplicationController
     @invitation_2.user = @invitee
     @invitation_2.game_session = @gamesession
 
-    # @gamesession.ongoing = true
+    @gamesession.ongoing = true
     # @gamesession.status = 'active'
     # @game = Game.find(params[:id])
     # @gamesession.game = @game
@@ -36,6 +36,13 @@ class GameSessionsController < ApplicationController
     else
       redirect_to profile_path
     end
+  end
+
+  def end_game_session
+    # need to check how many users are left
+
+    # if one user left, set their invitation to left and game sesion ongoing to false
+    if @gamesession
   end
 
   private
