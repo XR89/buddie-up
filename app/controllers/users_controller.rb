@@ -5,11 +5,16 @@ class UsersController < ApplicationController
   end
 
   def index
-    # if params[:query].present?
-    #   @users = User.search_by_name(params[:query])
-    # else
-      @users = User.all
-    # end
+    @users = User.all
+
+    if params[:query].present?
+      @users = @users.where('username ILIKE ?', "%#{params[:query]}%")
+    end
+
+    respond_to do |format|
+      format.html
+      format.text { render partial: 'games/userlist.html', locals: { users: @users } }
+    end
   end
 
   def show

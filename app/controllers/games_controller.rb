@@ -1,13 +1,14 @@
 class GamesController < ApplicationController
   def index
     @games = Game.all
+
     if params[:query].present?
       @games = @games.where('title ILIKE ?', "%#{params[:query]}%")
     end
 
     respond_to do |format|
       format.html
-      format.text { render partial: 'list.html', locals: { games: @games } }
+      format.text { render partial: 'gamelist.html', locals: { games: @games } }
     end
   end
 
