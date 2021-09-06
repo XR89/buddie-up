@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
   resources :games, only: %i[index show]
   resources :game_sessions, only: %i[show create] do
-    resources :user_ratings, only: %i[new create], as: :ratings
+    resources :user_ratings, only: %i[new create]
     resources :messages, only: :create
   end
 
