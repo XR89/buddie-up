@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'favourite_users/create'
+  get 'favourite_users/destroy'
   root to: 'pages#home'
   get '/welcome', to: 'pages#welcome', as: 'welcome'
   devise_for :users
@@ -15,6 +17,7 @@ Rails.application.routes.draw do
     resources :user_ratings, only: %i[new create], as: :ratings
     resources :messages, only: :create
   end
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
