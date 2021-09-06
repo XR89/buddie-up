@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     # resources :invitations, only: :update
   end
   resources :games, only: %i[index show]
+  patch '/game_sessions/:id/start', to: 'game_sessions#start_game_session', as: 'start_game_session'
+  patch '/game_sessions/:id/end', to: 'game_sessions#end_game_session', as: 'end_game_session'
   resources :game_sessions, only: %i[show create] do
     resources :user_ratings, only: %i[new create]
     resources :messages, only: :create

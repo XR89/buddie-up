@@ -7,7 +7,12 @@ class InvitationsController < ApplicationController
   def accept
     @invitation = Invitation.find(params[:id])
     @invitation.update(status: 'confirmed')
-    redirect_to game_session_path(@invitation.game_session_id)
+    @gamesession = GameSession.find(@invitation.game_session_id)
+    if @gamesession.status == 'new'
+      @gamesession.update(status: 'active')
+      # start timer if status is active.
+    end
+    redirect_to game_session_path(@gamesession)
   end
 
   def decline
