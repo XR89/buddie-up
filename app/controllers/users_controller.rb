@@ -30,5 +30,6 @@ class UsersController < ApplicationController
     @ratings = UserRating.where(reviewee_id: @user)
     @invitations = @user.invitations unless @user.invitations.nil?
     redirect_to profile_path if current_user == @user
+    @favourite_user = FavouriteUser.find_by(favourite_user: params[:id], user: current_user)
   end
 end
