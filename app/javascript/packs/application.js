@@ -24,6 +24,10 @@ import "controllers"
 import "channels"
 import { initGameSessionCable } from '../channels/gamesession_channel';
 import { dropdown } from '../components/dropdown';
+import { initStarRating } from '../plugins/init_star_rating';
+
+initStarRating();
+
 
 const removeBootstrapFromSimpleForms = () => {
   let bootstrapButtons = document.querySelectorAll(".btn");
