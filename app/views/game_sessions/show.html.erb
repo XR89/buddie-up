@@ -13,12 +13,13 @@
     <% end %>
   </div>
   <div class="container__chat--input">
-    <%= simple_form_for [ @gamesession, @message ], remote: true do |f| %>
-      <%= f.input :content, label: false, placeholder: "Type your message here. Please do not share sensitive information like password, credit card info etc.", id: 'usermessage'%>
-      <%= f.submit id: 'createmessage' %>
-      <%= link_to 'Start session', start_game_session_path, method: :patch %>
-      <%= link_to 'End session', end_game_session_path, method: :patch %>
-      <%= link_to 'Invite another user', users_path %>
+    <%= simple_form_for [@gamesession, @message], remote: true do |f| %>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+      <%= f.input :content, label: false, placeholder: "Type your message here. Please do not share sensitive information like password, credit card info etc." %>
+      <%= f.submit %>
     <% end %>
+    <%= link_to 'Start session', start_game_session_path, method: :patch %>
+    <%= link_to 'End session', end_game_session_path, method: :patch %>
+    <%= link_to 'Invite another user', users_path %>
   </div>
 </div>
