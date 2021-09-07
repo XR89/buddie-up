@@ -14,15 +14,31 @@
   </div>
 </div>
 
-<div class="container col-6">
+<div class="container d-flex justify-content-center">
   <%= simple_form_for [@gamesession, @user_rating] do |f| %>
-    <%= f.input :comments %>
-    <%= f.input :rating, collection: (1..5).to_a %>
-    <%= f.button :submit, "Submit" %>
+    <div class="text-center">
+      <%= f.input :comments %>
+    </div>
+    <div class="text-center">
+      <%= f.input :rating, collection: (1..5).to_a %>
+    </div>
+    <div class="text-center">
+      <%= f.button :submit, "Submit", class: "pop-btn pop-btn-orange" %>
+    </div>
   <% end %>
-  <div class="container mt-3 d-flex justify-content-center">
-    <%= link_to "Unfavourite", favourite_users_destroy_user_path(@otheruser.id), class: "pop-btn pop-btn-pink" %>
-    <%= link_to "Favourite", favourite_users_create_user_path(@otheruser.id), class: "pop-btn pop-btn-pink"  %>
-    <%= link_to "Avoid", avoid_users_create_user_path(@otheruser.id), class: "pop-btn pop-btn-purple"  %>
-  </div>  
 </div>
+
+<div class="container my-4 d-flex justify-content-center">
+  <%# <%= link_to "Unfavourite", favourite_users_destroy_user_path(@otheruser.id), class: "pop-btn pop-btn-pink" %>
+  <%= link_to "Favourite", favourite_users_create_user_path(@otheruser.id), class: "pop-btn pop-btn-pink"  %>
+  <%= link_to "Avoid", avoid_users_create_user_path(@otheruser.id), class: "pop-btn pop-btn-purple"  %>
+</div>  
+
+<script>
+  document.addEventListener('turbolinks:load', () => {
+  centerStars = document.querySelector('.br-wrapper');
+  centerStars.classList.add("d-flex");
+  centerStars.classList.add("justify-content-center");
+  console.log(centerStars);
+});
+</script>
