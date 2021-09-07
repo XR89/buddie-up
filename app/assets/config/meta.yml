@@ -1,0 +1,5 @@
+meta_product_name: "Buddie Up"
+meta_title: "Buddie Up - Find likeminded gamers"
+meta_description: "Buddie Up helps you find other people to play games with, without the toxicity of public lobbies and servers"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@buddie-up"   # required for Twitter Cards
