@@ -1,12 +1,27 @@
 .container__chat {
-  margin: 0 10vw;
-  height: calc(100vh - 238px);
+  margin: 0 30vw;
   overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.messages-container {
+  height: 75vh;
 }
 
 .container__chat--input {
   position: fixed;
   bottom: 0;
+  border-top: 4px solid $white;
   height: 150px;
-  width: calc(100% - 20vw);
+  width: calc(100% - 60vw);
+}
+
+.chat--buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

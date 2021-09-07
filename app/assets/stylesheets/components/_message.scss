@@ -1,0 +1,27 @@
+.message-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 16px 32px;
+}
+
+.message {
+  border-radius: 8px;
+  padding: 8px 16px;
+  max-width: 50%;
+  p {
+    margin: 0;
+  }
+}
+
+.message-self {
+  margin: 0 0 16px auto;
+  background-color: $purple;
+  text-align: right;
+}
+
+.message-other {
+  margin: 0 auto 16px 0;
+  background-color: $blue;
+  text-align: left;
+}

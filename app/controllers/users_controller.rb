@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.text { render partial: 'games/userlist.html', locals: { users: @users } }
+      format.text { render partial: 'shared/userlist.html', locals: { users: @users } }
     end
   end
 

@@ -1,5 +1,5 @@
 .container__news {
-  margin: 5vh 5vw;
+  margin: 5vh 10vw;
 }
 
 .featured-article {
@@ -24,12 +24,14 @@
 .container__articles--horizontal {
   margin: 32px;
   border-right: 4px solid $blue;
+  padding: 0 8px;
   width: 60vw;
 }
 
 .container__articles--vertical {
   margin: 32px;
   border-bottom: 4px solid $purple;
+  padding: 8px 0;
   width: 30vw;
 }
 
