@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def profile
     @user = current_user
+    @ratings = UserRating.where(reviewee_id: @user)
     @invitations = @user.invitations unless @user.invitations.nil?
   end
 
@@ -19,6 +20,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @ratings = UserRating.where(reviewee_id: @user)
+    @invitations = @user.invitations unless @user.invitations.nil?
     redirect_to profile_path if current_user == @user
   end
 end

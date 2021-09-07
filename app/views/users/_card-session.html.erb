@@ -1,0 +1,25 @@
+<%= link_to game_session_path(invitation.game_session_id) do %>
+  <div class="session-card">
+    <div class="session-card__info">
+      <div class="session-card__players">
+        <% invitations = Invitation.where("game_session_id = ? AND status = ?", invitation.game_session_id, "confirmed") %>
+        <% users = invitations.map { |invite| User.find(invite.user_id) } %>
+        <% users.each do |user| %>
+          <% if user.photo.attached? %>
+            <%= cl_image_tag user.photo.key, class: "avatar" %>
+          <% else %>
+            <%= image_tag "default-profile.jpeg", class: "avatar" %>
+          <% end %>
+        <% end %>
+      </div>
+      <p>Now playing</p>
+    </div>
+    <div class="session-card__status">
+      <p>Status: <%= GameSession.find(invitation.game_session_id).status %></p>
+      <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+      </div>
+    </div>
+  </div>
+<% end %>
