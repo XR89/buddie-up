@@ -19,6 +19,6 @@ class GamesController < ApplicationController
     end
     @users = User.where.not(id: @avoided_users_array)
     # @users = User.reject
-
+    @favourite_game = FavouriteGame.find_by(game: @game, user: current_user)
   end
 end
