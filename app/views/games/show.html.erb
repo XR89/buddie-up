@@ -12,6 +12,14 @@
       <p><%= @game.description %></p>
       <p>Developed by: <%= @game.developer %></p>
     </div>
+
+    <% if @favourite_game %>
+      <%= link_to "UnFavourite", game_favourite_game_path(@game, @favourite_game), method: :delete %>
+    <% else %>
+      <%= link_to "Favourite", game_favourite_games_path(@game), method: :post %>
+    <% end %>
+
+
   </div>
 
   <div class="filter-flex">
@@ -32,3 +40,5 @@
     </div>
   </div>
 </div>
+
+<%= console %>
