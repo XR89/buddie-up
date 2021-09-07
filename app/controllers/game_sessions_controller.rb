@@ -21,6 +21,7 @@ class GameSessionsController < ApplicationController
       @gamesession = GameSession.new
       @invitation_1 = Invitation.new(status: 'confirmed') # for first user who initiaties the chat
       @invitation_1.user = current_user
+      @invitation_1.inviter = current_user
       @invitation_1.game_session = @gamesession
       @gamesession.ongoing = false
       @gamesession.status = 'new'
@@ -31,6 +32,7 @@ class GameSessionsController < ApplicationController
     # for user_2 to decide whether to accept
     @invitation_2 = Invitation.new(status: 'unconfirmed')
     @invitation_2.user = @invitee
+    @invitation_2.inviter = current_user
     @invitation_2.game_session = @gamesession
 
     # @game = Game.find(params[:id])

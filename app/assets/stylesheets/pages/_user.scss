@@ -1,0 +1,53 @@
+.profile__container {
+  padding: 0 10vw;
+}
+
+.profile__flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 5vw;
+}
+
+.profile__avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile__details {
+  width: 20vw;
+}
+
+.profile__header {
+  text-align: center;
+}
+
+.profile__info {
+  border-top: 4px solid $blue;
+  padding: 4px;
+  table {
+    vertical-align: center;
+  }
+  th, td {
+  padding: 4px 8px;
+  }
+}
+
+.profile__handles {
+  border-top: 4px solid $purple;
+  padding: 8px 4px;
+  table {
+    vertical-align: center;
+  }
+  th, td {
+  padding: 4px 8px;
+  }
+  i {
+    font-size: 20px;
+  }
+}
+
+.profile__jumbo {
+  width: 55vw;
+}

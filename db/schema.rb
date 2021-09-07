@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_07_104513) do
+ActiveRecord::Schema.define(version: 2021_09_07_113108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,7 +97,9 @@ ActiveRecord::Schema.define(version: 2021_09_07_104513) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "is_ready"
+    t.bigint "inviter_id", null: false
     t.index ["game_session_id"], name: "index_invitations_on_game_session_id"
+    t.index ["inviter_id"], name: "index_invitations_on_inviter_id"
     t.index ["user_id"], name: "index_invitations_on_user_id"
   end
 
@@ -166,6 +168,7 @@ ActiveRecord::Schema.define(version: 2021_09_07_104513) do
   add_foreign_key "game_sessions", "games"
   add_foreign_key "invitations", "game_sessions"
   add_foreign_key "invitations", "users"
+  add_foreign_key "invitations", "users", column: "inviter_id"
   add_foreign_key "messages", "game_sessions"
   add_foreign_key "messages", "users"
   add_foreign_key "user_ratings", "users"
