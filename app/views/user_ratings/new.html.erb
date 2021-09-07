@@ -1,8 +1,44 @@
-<%= simple_form_for [@gamesession, @user_rating] do |f| %>
-  <%= f.input :comments %>
-  <%= f.input :rating %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <% if @otheruser.photo.attached? %>
+        <%= cl_image_tag @otheruser.photo.key, class: "avatar-large ml-2" %>
+    <% else %>
+        <%= image_tag "default-profile.jpeg", class: "avatar-large ml-2" %>
+    <% end %>
+  </div>
+  <div class="row d-flex justify-content-center mt-3">
+    <h3>Leave a review for:</h3>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <h1><%= @otheruser.username %></h1>
+  </div>
+</div>
 
+<div class="container d-flex justify-content-center">
+  <%= simple_form_for [@gamesession, @user_rating] do |f| %>
+    <div class="text-center">
+      <%= f.input :comments %>
+    </div>
+    <div class="text-center">
+      <%= f.input :rating, collection: (1..5).to_a %>
+    </div>
+    <div class="text-center">
+      <%= f.button :submit, "Submit", class: "pop-btn pop-btn-orange" %>
+    </div>
+  <% end %>
+</div>
 
-<%# <%= form_with(url) %>
+<div class="container my-4 d-flex justify-content-center">
+  <%# <%= link_to "Unfavourite", favourite_users_destroy_user_path(@otheruser.id), class: "pop-btn pop-btn-pink" %>
+  <%= link_to "Favourite", favourite_users_create_user_path(@otheruser.id), class: "pop-btn pop-btn-pink"  %>
+  <%= link_to "Avoid", avoid_users_create_user_path(@otheruser.id), class: "pop-btn pop-btn-purple"  %>
+</div>  
+
+<script>
+  document.addEventListener('turbolinks:load', () => {
+  centerStars = document.querySelector('.br-wrapper');
+  centerStars.classList.add("d-flex");
+  centerStars.classList.add("justify-content-center");
+  console.log(centerStars);
+});
+</script>

@@ -52,6 +52,15 @@ ActiveRecord::Schema.define(version: 2021_09_07_113108) do
     t.index ["user_id"], name: "index_avoid_users_on_user_id"
   end
 
+  create_table "favourite_games", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "game_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_id"], name: "index_favourite_games_on_game_id"
+    t.index ["user_id"], name: "index_favourite_games_on_user_id"
+  end
+
   create_table "favourite_users", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -142,6 +151,7 @@ ActiveRecord::Schema.define(version: 2021_09_07_113108) do
     t.integer "avoid_users", default: [], array: true
     t.integer "user_status"
     t.bigint "session_id"
+    t.float "average_rating", default: 0.0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["session_id"], name: "index_users_on_session_id"
@@ -151,6 +161,8 @@ ActiveRecord::Schema.define(version: 2021_09_07_113108) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "avoid_users", "users"
   add_foreign_key "avoid_users", "users", column: "avoid_user_id"
+  add_foreign_key "favourite_games", "games"
+  add_foreign_key "favourite_games", "users"
   add_foreign_key "favourite_users", "users"
   add_foreign_key "favourite_users", "users", column: "favourite_user_id"
   add_foreign_key "game_sessions", "games"

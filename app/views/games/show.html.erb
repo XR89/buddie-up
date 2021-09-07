@@ -2,7 +2,6 @@
                                                   linear-gradient(to top left, rgba(255,104,37,0.1), rgba(213,2,75,0.1), rgba(213,2,75,0.1)),
                                                   url(<%= @game.background_image_url %>);">
 </div>
-
 <div class="game-details">
   <div class="game-wrapper">
     <div class="game-image">
@@ -13,6 +12,14 @@
       <p><%= @game.description %></p>
       <p>Developed by: <%= @game.developer %></p>
     </div>
+
+    <% if @favourite_game %>
+      <%= link_to "UnFavourite", game_favourite_game_path(@game, @favourite_game), method: :delete %>
+    <% else %>
+      <%= link_to "Favourite", game_favourite_games_path(@game), method: :post %>
+    <% end %>
+
+
   </div>
 
   <div class="filter-flex">
@@ -33,3 +40,5 @@
     </div>
   </div>
 </div>
+
+<%= console %>
