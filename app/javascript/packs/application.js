@@ -24,6 +24,7 @@ import "controllers"
 import "channels"
 import { initGameSessionCable } from '../channels/gamesession_channel';
 import { dropdown } from '../components/dropdown';
+import { message } from '../components/message';
 
 const removeBootstrapFromSimpleForms = () => {
   let bootstrapButtons = document.querySelectorAll(".btn");
@@ -37,4 +38,5 @@ document.addEventListener('turbolinks:load', () => {
   initGameSessionCable();
   dropdown();
   removeBootstrapFromSimpleForms();
+  message();
 });
