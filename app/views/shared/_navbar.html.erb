@@ -23,8 +23,8 @@
       <li class="nav-item">
         <%= link_to "Find Buddy", users_path, class: "pop-btn pop-btn-orange" %>
       </li>
-      
-     
+
+
       <% if current_user.photo.attached? %>
         <%= cl_image_tag current_user.photo.key, class: "avatar", id: "dropdown-toggle" %>
       <% else %>
@@ -33,12 +33,18 @@
 
       <div class="nav__dropdown">
         <%= link_to "Profile", profile_path, class: "dropdown__item dropdown__item--hide" %>
-        <%= link_to "Sessions", game_sessions_path, class: "dropdown__item dropdown__item--hide" %>
-        <% if current_user.session_id.present?%>
-          <%# this might need to change soon %>
-          <%= link_to "Active session", game_session_path, class: "dropdown__item dropdown__item--hide"%>
+        <%# <%= link_to "Sessions", game_sessions_path, class: "dropdown__item dropdown__item--hide" %>
+        <%# Check if any of the current user's invitations are confirmed, and if they are %>
+        <%# are the game session in status active? If they are display active session and link %>
+        <%# else don't.  %>
+        <% current_user_confirmed_invitations = current_user.invitations.select { |invitation| invitation.status == 'confirmed' } %>
+        <% current_user_active_session = current_user_confirmed_invitations.select { |invitation| invitation.game_session.status != 'dead'} %>
+        <% raise %>
+        <% if current_user_active_session.first.nil? %>
+        <% elsif current_user_active_session.first.status == 'new' %>
+          <%= link_to "New session", game_session_path(current_user_active_session.first.game_session_id), class: "dropdown__item dropdown__item--hide"%>
         <% else %>
-          <%= link_to "No Active session", "#", class: "dropdown__item dropdown__item--hide"%>
+            <%= link_to "Active session", game_session_path(current_user_active_session.first.game_session_id), class: "dropdown__item dropdown__item--hide"%>
         <% end %>
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown__item dropdown__item--hide" %>
       </div>
