@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-
-  get 'favourite_games/create'
-  get 'favourite_games/destroy'
   root to: 'pages#home'
   get '/welcome', to: 'pages#welcome', as: 'welcome'
   devise_for :users
