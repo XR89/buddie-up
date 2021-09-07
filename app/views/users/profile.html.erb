@@ -1,98 +1,148 @@
-<div class="container d-flex justify-content-around">
-    <div class="row">
-        <div class="container mt-4">
-            <% if @user.photo.attached? %>
-                <%= cl_image_tag @user.photo.key, class: "avatar-large" %>
-            <% else %>
-                <%= image_tag "default-profile.jpeg", class: "avatar-large" %>
-            <% end %>
-            <h1 class="text-center"><%= @user.username %></h1>
-            <p class="text-center">Region: <%= @user.region %></p>
-            <p class="text-center">Gender: <%= @user.gender %></p>
-            <p class="text-center">Age: <%= Date.today.year  - @user.dob.year %></p>
-            <%= link_to "edit profile", edit_user_registration_path, class: "pop-btn pop-btn-pink" %>
-            <% if @invitations %>
-              <% @invitations.each do |invitation| %>
-                <% if invitation.status == 'unconfirmed' %>
-                  <%= link_to "accept chat", user_accept_path(@user.id, invitation.id), method: 'patch', class: "pop-btn pop-btn-pink" %>
-                  <%= link_to "decline chat", user_decline_path(@user.id, invitation.id), method: 'patch',class: "pop-btn pop-btn-orange" %>
-                <% end %>
-              <% end %>
-            <% end %>
-        </div>
-    </div>
-    <div class="row">
-        <div class="container mt-4 text-left">
-            <h2>News Feed</h2>
-            <p><%= @user.username %> played Dota 2 yesterday!</p>
-            <p><%= @user.username %> is now friends with KingSlayer210</p>
-            <p></p>
-        </div>
-    </div>
-</div>
-<div class="container mt-4 d-flex justify-content-around">
-    <div class="row text-center">
-        <ul>
-        <h3>Find me:</h3>
+<div class="profile__container">
+  <div class="profile__flex">
+    <div class="profile__details">
+      <div class="profile__avatar">
+        <% if @user.photo.attached? %>
+          <%= cl_image_tag @user.photo.key, class: "avatar-large" %>
+        <% else %>
+          <%= image_tag "default-profile.jpeg", class: "avatar-large" %>
+        <% end %>
+      </div>
+      <div class="profile__header">
+        <h2><%= @user.username %></h2>
+        <%# Implement aggregate ratings here %>
+      </div>
+      <div class="profile__info">
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                Region
+              </th>
+              <td>
+                <%= @user.region %>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                Gender
+              </th>
+              <td>
+                <%= @user.gender %>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                Age
+              </th>
+              <td>
+                <%= Date.today.year  - @user.dob.year %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="profile__handles">
+        <table>
+          <tbody>
             <% if @user.steam_handle %>
-                <li>
-                    <i class="fab fa-steam"></i> <%= @user.steam_handle %>
-                </li>
+              <tr>
+                <td><i class="fab fa-steam"></i></td>
+                <td><%= @user.steam_handle %></td>
+              </tr>
             <% end %>
             <% if @user.origin_handle %>
-                <li>
-                    <i class="fas fa-circle-notch"></i><%= @user.origin_handle %>
-                </li>
+              <tr>
+                <td><i class="fas fa-circle-notch"></i></td>
+                <td><%= @user.origin_handle %></td>
+              </tr>
             <% end %>
             <% if @user.psn_handle %>
-                <li>
-                    <i class="fab fa-playstation"></i><%= @user.psn_handle%>
-                </li>
+              <tr>
+                <td><i class="fab fa-playstation"></i></td>
+                <td><%= @user.psn_handle%></td>
+              </tr>
             <% end %>
             <% if @user.epic_handle %>
-                <li>
-                    <i class="fas fa-shield-alt"></i><%= @user.epic_handle%>
-                </li>
+              <tr>
+                <td><i class="fas fa-shield-alt"></i></td>
+                <td><%= @user.epic_handle%></td>
+              </tr>
             <% end %>
             <% if @user.discord_handle %>
-                <li>
-                    <i class="fab fa-discord"></i><%= @user.discord_handle%>
-                </li>
+              <tr>
+                <td><i class="fab fa-discord"></i></td>
+                <td><%= @user.discord_handle%></td>
+              </tr>
             <% end %>
             <% if @user.live_handle %>
-                <li>
-                    <i class="fab fa-xbox"></i><%= @user.live_handle%>
-                </li>
+              <tr>
+                <td><i class="fab fa-xbox"></i></td>
+                <td><%= @user.live_handle%></td>
+              </tr>
             <% end %>
             <% if @user.gog_handle %>
-                <li>
-                    <i class="fab fa-guilded"></i><%= @user.gog_handle%>
-                </li>
+              <tr>
+                <td><i class="fab fa-guilded"></i></td>
+                <td><%= @user.gog_handle%></td>
+              </tr>
             <% end %>
             <% if @user.twich_handle %>
-                <li>
-                    <i class="fab fa-twitch"></i><%= @user.twich_handle%>
-                </li>
+              <tr>
+                <td><i class="fab fa-twitch"></i></td>
+                <td><%= @user.twich_handle%></td>
+              </tr>
             <% end %>
             <% if @user.battlenet_handle %>
-                <li>
-                    <i class="fab fa-battle-net"></i><%= @user.battlenet_handle%>
-                </li>
+              <tr>
+                <td><i class="fab fa-battle-net"></i></td>
+                <td><%= @user.battlenet_handle%></td>
+              </tr>
             <% end %>
-        </ul>
+          </tbody>
+        </table>
+      </div>
+      <div class="profile__actions">
+        <%= link_to "Edit Profile", edit_user_registration_path, class: "pop-btn pop-btn-blue" %>
+      </div>
     </div>
-        <div class="row">
+    <div class="profile__jumbo">
+      <div class="profile__newsfeed">
+        <h2>Feed</h2>
+        <div class="profile__session">
+          <% if @invitations.where(status: "confirmed")[0] %>
+            <%= render 'card-session', invitation: @invitations.where(status: "confirmed")[0] %>
+          <% end %>
+        </div>
+        <div class="profile__invitations">
+          <% if @invitations.find_by(status: "unconfirmed") %>
+            <%= render 'card-invitation', invitations: @invitations.where(status: "unconfirmed") %>
+          <% end %>
+        </div>
+        <div class="profile__ratings--pending">
+          <%# Take user to session index page for rating any unrated users %>
+        </div>
+      </div>
+      <div class="profile__livefeed">
         <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
         <div id="live"></div>
         <script type="text/javascript">
-        var options = {
-            width: 600,
-            height: 300,
-            channel: "lolworldchampionship",
-            muted: true
-        };
-        var player = new Twitch.Player("live", options);
-        player.setVolume(0);
+          var options = {
+              width: (window.innerWidth / 100) * 55,
+              height: (window.innerWidth / 100) * 31,
+              channel: "lolworldchampionship",
+              muted: true
+          };
+          var player = new Twitch.Player("live", options);
+          player.setVolume(0);
         </script>
+      </div>
+      <div class="profile__ratings">
+        <h3>Ratings</h3>
+        <% if @ratings[0] %>
+          <%= render 'card-rating', ratings: @ratings %>
+        <% end %>
+      </div>
     </div>
+  </div>
 </div>

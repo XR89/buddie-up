@@ -1,0 +1,25 @@
+.invitation-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 0;
+  border-right: 4px solid $pink;
+  padding: 0 16px;
+  height: 64px;
+  background: rgba(68,68,68,0.6);
+  p {
+    margin: 0 8px;
+  }
+}
+
+.invitation-card__info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.invitation-card__buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

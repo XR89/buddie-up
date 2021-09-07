@@ -1,0 +1,12 @@
+<% ratings.each do |rating| %>
+  <div class="rating-card">
+    <div class="rating-card__info">
+      <p>"<%= rating.comments %>"</p>
+    </div>
+    <div class="rating-card__rating">
+      <% rating.rating.to_i.times do %>
+        <span>⭐</span>
+      <% end %>
+    </div>
+  </div>
+<% end %>
