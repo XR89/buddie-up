@@ -39,7 +39,6 @@
         <%# else don't.  %>
         <% current_user_confirmed_invitations = current_user.invitations.select { |invitation| invitation.status != 'declined' && invitation.status != 'left'  } %>
         <% current_user_active_session = current_user_confirmed_invitations.select { |invitation| invitation.game_session.status != 'dead'} %>
-        <% raise %>
         <% if current_user_active_session.first.nil? %>
         <% elsif current_user_active_session.first.status == 'new' %>
           <%= link_to "New session", game_session_path(current_user_active_session.first.game_session_id), class: "dropdown__item dropdown__item--hide"%>
