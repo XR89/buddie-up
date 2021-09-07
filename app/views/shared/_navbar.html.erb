@@ -37,7 +37,7 @@
         <%# Check if any of the current user's invitations are confirmed, and if they are %>
         <%# are the game session in status active? If they are display active session and link %>
         <%# else don't.  %>
-        <% current_user_confirmed_invitations = current_user.invitations.select { |invitation| invitation.status == 'confirmed' } %>
+        <% current_user_confirmed_invitations = current_user.invitations.select { |invitation| invitation.status != 'declined' && invitation.status != 'left'  } %>
         <% current_user_active_session = current_user_confirmed_invitations.select { |invitation| invitation.game_session.status != 'dead'} %>
         <% raise %>
         <% if current_user_active_session.first.nil? %>
