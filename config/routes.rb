@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'favourite_games/create'
+  get 'favourite_games/destroy'
   root to: 'pages#home'
   get '/welcome', to: 'pages#welcome', as: 'welcome'
   devise_for :users
@@ -11,12 +13,15 @@ Rails.application.routes.draw do
       get 'favourite_users/destroy'
       get 'avoid_users/create'
     end
-
     patch '/accept/:id', to: 'invitations#accept', as: 'accept'
     patch '/decline/:id', to: 'invitations#decline', as: 'decline'
     # resources :invitations, only: :update
   end
-  resources :games, only: %i[index show]
+
+  resources :games, only: %i[index show] do
+    resources :favourite_games, only: %i[create destroy]
+  end
+
   patch '/game_sessions/:id/start', to: 'game_sessions#start_game_session', as: 'start_game_session'
   patch '/game_sessions/:id/end', to: 'game_sessions#end_game_session', as: 'end_game_session'
   resources :game_sessions, only: %i[show create] do
