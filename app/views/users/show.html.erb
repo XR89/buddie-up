@@ -112,6 +112,12 @@
         <% unless @user.invitations.where(status: "confirmed") %>
           <%= link_to "Invite", game_sessions_path(user_id: @user.id), method: 'post', class: "pop-btn pop-btn-blue" %>
         <% end %>
+        <% if @favourite_user %>
+          <%= link_to "Unfavourite", user_favourite_user_path(params[:id],  @favourite_user), method: :delete, class: "pop-btn pop-btn-pink"  %>
+        <% else %>
+          <%= link_to "Favourite", user_favourite_users_path(params[:id]), method: :post, class: "pop-btn pop-btn-pink"  %>
+        <% end %>
+        <%= link_to "Avoid", user_avoid_users_path(params[:id]), method: :post, class: "pop-btn pop-btn-purple"  %>
       </div>
     </div>
     <div class="profile__jumbo">

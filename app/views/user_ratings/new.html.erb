@@ -29,10 +29,13 @@
 </div>
 
 <div class="container my-4 d-flex justify-content-center">
-  <%# <%= link_to "Unfavourite", favourite_users_destroy_user_path(@otheruser.id), class: "pop-btn pop-btn-pink" %>
-  <%= link_to "Favourite", favourite_users_create_user_path(@otheruser.id), class: "pop-btn pop-btn-pink"  %>
-  <%= link_to "Avoid", avoid_users_create_user_path(@otheruser.id), class: "pop-btn pop-btn-purple"  %>
-</div>  
+  <% if @favourite_user %>
+     <%= link_to "Unfavourite", user_favourite_user_path(@otheruser,  @favourite_user), method: :delete, class: "pop-btn pop-btn-pink"  %>
+  <% else %>
+     <%= link_to "Favourite", user_favourite_users_path(@otheruser), method: :post, class: "pop-btn pop-btn-pink"  %>
+  <% end %>
+  <%= link_to "Avoid", user_avoid_users_path(@otheruser), method: :post, class: "pop-btn pop-btn-purple"  %>
+</div>
 
 <script>
   document.addEventListener('turbolinks:load', () => {
