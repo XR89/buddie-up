@@ -6,6 +6,12 @@ Rails.application.routes.draw do
   get '/profile', to: 'users#profile', as: 'profile'
 
   resources :users, only: %i[index show] do
+    member do
+      get 'favourite_users/create'
+      get 'favourite_users/destroy'
+      get 'avoid_users/create'
+    end
+
     patch '/accept/:id', to: 'invitations#accept', as: 'accept'
     patch '/decline/:id', to: 'invitations#decline', as: 'decline'
     # resources :invitations, only: :update
@@ -17,6 +23,7 @@ Rails.application.routes.draw do
     resources :user_ratings, only: %i[new create]
     resources :messages, only: :create
   end
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

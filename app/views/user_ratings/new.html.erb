@@ -4,5 +4,13 @@
   <%= f.button :submit %>
 <% end %>
 
-
 <%# <%= form_with(url) %>
+
+<h1>Hi</h1>
+
+<%# <% if  %>
+<%= link_to "Unfavourite", favourite_users_destroy_user_path(@otheruser.id) %>
+<%# <% else  %>
+<%= link_to "Favourite", favourite_users_create_user_path(@otheruser.id) %>
+<%# <% end %>
+<%= link_to "Avoid", avoid_users_create_user_path(@otheruser.id) %>
