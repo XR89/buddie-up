@@ -15,6 +15,7 @@
           <span>⭐</span>
         <% end %>
         </p>
+        <p>Reviewed <%= @ratings.count %> times</p>
       </div>
       <div class="profile__info">
         <table>
@@ -109,7 +110,7 @@
         <% end %>
       </div>
       <div class="profile__actions">
-        <% unless @user.invitations.where(status: "confirmed") %>
+        <% unless @user.invitations.where(status: "confirmed")[0] %>
           <%= link_to "Invite", game_sessions_path(user_id: @user.id), method: 'post', class: "pop-btn pop-btn-blue" %>
         <% end %>
         <% if @favourite_user %>

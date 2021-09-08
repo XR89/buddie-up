@@ -1,19 +1,9 @@
-<div class="container text-left">
-  <h1>All users</h1>
-  <ul>
-  <% @users.each do |user| %>
+<div class="list-container">
+  <div data-controller="search">
+    <form action="/users" method="get" accept-charset="UTF-8" data-search-target="form" class="search__form">
+      <input type="text" name="query" id="query" placeholder="Search for users..." data-search-target="searchInput" data-action="keyup->search#update" class="search__input">
+    </form>
 
-    <li>
-      <% if current_user.favourite_users.where(favourite_user_id: user.id)[0] %>
-      <p>fave</p>
-      <% end %>
-      <% if user.photo.attached? %>
-                <%= cl_image_tag user.photo.key, class: "avatar mt-2" %>
-            <% else %>
-                <%= image_tag "default-profile.jpeg", class: "avatar mt-2" %>
-            <% end %>
-      <%= link_to user.username, user_path(user) %>
-    </li>
-  <% end %>
-  </ul>
+    <%= render 'shared/userlist', users: @users %>
+  </div>
 </div>

@@ -34,12 +34,12 @@ const removeBootstrapFromSimpleForms = () => {
   bootstrapButtons.forEach(button => {
     button.classList.remove("btn");
   });
-};
+}
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  initGameSessionCable();
-  dropdown();
   removeBootstrapFromSimpleForms();
+  dropdown();
+  initGameSessionCable();
   message();
 });
