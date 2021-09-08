@@ -10,6 +10,12 @@ class GameSessionsController < ApplicationController
     end
   end
 
+  def index
+    @user = current_user
+    @invitations = current_user.invitations.select { |invitation| invitation.game_session.ongoing != false}
+    # returns all invitations for gamesessions that have ongoing = true
+  end
+
   def create
     # Whenever a user creates a chat , gamesession ongoing -> true, invitation for user -> confirmed
     # When the user accepts -> invitation is confirmed
