@@ -123,21 +123,21 @@
         <div class="profile__ratings--pending">
           <%# Take user to session index page for rating any unrated users %>
         </div>
-        </div>
-        <div class="profile__livefeed">
-          <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
-          <div id="live"></div>
-          <script type="text/javascript">
-            var options = {
-                width: (window.innerWidth / 100) * 55,
-                height: (window.innerWidth / 100) * 31,
-                channel: "lolworldchampionship",
-                muted: true
-            };
-            var player = new Twitch.Player("live", options);
-            player.setVolume(0);
-          </script>
-        </div>
+      </div>
+      <div class="profile__livefeed">
+        <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+        <div id="live"></div>
+        <script type="text/javascript">
+          var options = {
+              width: (window.innerWidth / 100) * 55,
+              height: (window.innerWidth / 100) * 31,
+              channel: "lolworldchampionship",
+              muted: true
+          };
+          var player = new Twitch.Player("live", options);
+          player.setVolume(0);
+        </script>
+      </div>
       <div class="profile__ratings">
         <h3>Ratings</h3>
         <% if @ratings[0] %>
