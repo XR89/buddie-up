@@ -34,6 +34,21 @@
   }
 }
 
+.profile__favourites {
+  margin-top: 16px;
+  border-top: 4px solid $orange;
+  padding: 4px;
+  table {
+    vertical-align: center;
+  }
+  th, td {
+  padding: 4px 8px;
+  }
+  h2 {
+    text-align: center;
+  }
+}
+
 .profile__handles {
   border-top: 4px solid $purple;
   padding: 8px 4px;

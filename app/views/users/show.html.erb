@@ -3,17 +3,17 @@
     <div class="profile__details">
       <div class="profile__avatar">
         <% if @user.photo.attached? %>
-          <%= cl_image_tag @user.photo.key, class: "avatar-large" %>
+        <%= cl_image_tag @user.photo.key, class: "avatar-large" %>
         <% else %>
-          <%= image_tag "default-profile.jpeg", class: "avatar-large" %>
+        <%= image_tag "default-profile.jpeg", class: "avatar-large" %>
         <% end %>
       </div>
       <div class="profile__header">
         <h2><%= @user.username %></h2>
         <p>
-        <% @user.average_rating.round.times do %>
+          <% @user.average_rating.round.times do %>
           <span>⭐</span>
-        <% end %>
+          <% end %>
         </p>
         <p>Reviewed <%= @ratings.count %> times</p>
       </div>
@@ -49,103 +49,70 @@
       </div>
       <div class="profile__handles">
         <% if @user.favourite_users.where(favourite_user_id: current_user)[0] %>
-          <table>
-            <tbody>
-              <% if @user.steam_handle %>
-                <tr>
-                  <td><i class="fab fa-steam"></i></td>
-                  <td><%= @user.steam_handle %></td>
-                </tr>
-              <% end %>
-              <% if @user.origin_handle %>
-                <tr>
-                  <td><i class="fas fa-circle-notch"></i></td>
-                  <td><%= @user.origin_handle %></td>
-                </tr>
-              <% end %>
-              <% if @user.psn_handle %>
-                <tr>
-                  <td><i class="fab fa-playstation"></i></td>
-                  <td><%= @user.psn_handle%></td>
-                </tr>
-              <% end %>
-              <% if @user.epic_handle %>
-                <tr>
-                  <td><i class="fas fa-shield-alt"></i></td>
-                  <td><%= @user.epic_handle%></td>
-                </tr>
-              <% end %>
-              <% if @user.discord_handle %>
-                <tr>
-                  <td><i class="fab fa-discord"></i></td>
-                  <td><%= @user.discord_handle%></td>
-                </tr>
-              <% end %>
-              <% if @user.live_handle %>
-                <tr>
-                  <td><i class="fab fa-xbox"></i></td>
-                  <td><%= @user.live_handle%></td>
-                </tr>
-              <% end %>
-              <% if @user.gog_handle %>
-                <tr>
-                  <td><i class="fab fa-guilded"></i></td>
-                  <td><%= @user.gog_handle%></td>
-                </tr>
-              <% end %>
-              <% if @user.twich_handle %>
-                <tr>
-                  <td><i class="fab fa-twitch"></i></td>
-                  <td><%= @user.twich_handle%></td>
-                </tr>
-              <% end %>
-              <% if @user.battlenet_handle %>
-                <tr>
-                  <td><i class="fab fa-battle-net"></i></td>
-                  <td><%= @user.battlenet_handle%></td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                Region
+              </th>
+              <td>
+                <%= @user.region %>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                Gender
+              </th>
+              <td>
+                <%= @user.gender %>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                Age
+              </th>
+              <td>
+                <%= Date.today.year  - @user.dob.year %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
         <% end %>
       </div>
       <div class="profile__actions">
         <% if @user.invitations.where(inviter_id: current_user.id).present? %>
-          <% @user_invite = @user.invitations.where(inviter_id: current_user.id ) %>
-            <% if @user_invite.last.game_session.ongoing == false %>
-              <%= link_to "Invite", game_sessions_path(user_id: @user.id), method: 'post', class: "pop-btn pop-btn-blue" %>
-            <% end %>
+        <% @user_invite = @user.invitations.where(inviter_id: current_user.id ) %>
+        <% if @user_invite.last.game_session.ongoing == false %>
+        <%= link_to "Invite", game_sessions_path(user_id: @user.id), method: 'post', class: "pop-btn pop-btn-blue" %>
+        <% end %>
         <% else %>
-              <%= link_to "Invite", game_sessions_path(user_id: @user.id), method: 'post', class: "pop-btn pop-btn-blue" %>
+        <%= link_to "Invite", game_sessions_path(user_id: @user.id), method: 'post', class: "pop-btn pop-btn-blue" %>
         <% end %>
         <%# return all invites by the current user %>
         <%# <% unless @user.invitations.where(status: "confirmed")[0] %>
         <% if @favourite_user %>
-          <%= link_to "Unfavourite", user_favourite_user_path(params[:id],  @favourite_user), method: :delete, class: "pop-btn pop-btn-pink"  %>
+        <%= link_to "Unfavourite", user_favourite_user_path(params[:id],  @favourite_user), method: :delete, class: "pop-btn pop-btn-pink"  %>
         <% else %>
-          <%= link_to "Favourite", user_favourite_users_path(params[:id]), method: :post, class: "pop-btn pop-btn-pink"  %>
+        <%= link_to "Favourite", user_favourite_users_path(params[:id]), method: :post, class: "pop-btn pop-btn-pink"  %>
         <% end %>
-        <%= link_to "Avoid", user_avoid_users_path(params[:id]), method: :post, class: "pop-btn pop-btn-purple"  %>
+        <%= link_to "Avoid", user_avoid_users_path(params[:id]), data: { confirm: 'Are you sure you want to avoid this user? (please go to avoided users list to un-avoid)' }, method: :post, class: "pop-btn pop-btn-purple"  %>
+
+
       </div>
     </div>
     <div class="profile__jumbo">
       <div class="profile__newsfeed">
         <h2>Feed</h2>
-        <div class="profile__session">
-          <% if @invitations.where(status: "confirmed")[0] %>
-            <%= render 'card-session', invitation: @invitations.where(status: "confirmed")[0] %>
-          <% end %>
-        </div>
       </div>
       <div class="profile__livefeed">
-        <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+        <script src="https://player.twitch.tv/js/embed/v1.js"></script>
         <div id="live"></div>
         <script type="text/javascript">
           var options = {
-              width: (window.innerWidth / 100) * 55,
-              height: (window.innerWidth / 100) * 31,
-              channel: "lolworldchampionship",
-              muted: true
+            width: (window.innerWidth / 100) * 55,
+            height: (window.innerWidth / 100) * 31,
+            channel: "lolworldchampionship",
+            muted: true
           };
           var player = new Twitch.Player("live", options);
           player.setVolume(0);
@@ -154,11 +121,32 @@
       <div class="profile__ratings">
         <h3>Ratings</h3>
         <% if @ratings[0] %>
-          <%= render 'card-rating', ratings: @ratings %>
+        <%= render 'card-rating', ratings: @ratings %>
         <% else %>
-          <p>This user does not have any ratings...</p>
+        <p>This user does not have any ratings...</p>
         <% end %>
       </div>
+    </div>
+  </div>
+</div>
+</div>
+<div id='favourite-games'>
+  <div class="container">
+    <div class="profile__favourites">
+      <h2>Favourite Games</h2>
+    </div>
+    <div class="game-card-flex">
+      <% @favourite_games.each do |game| %>
+      <div class="game-outer-card">
+        <%= link_to game_path(game) do %>
+        <div class="game-card" style="background-image: url(<%= game.image_url %>)">
+        </div>
+        <% end %>
+        <div class="profile__invite">
+          <%= link_to "Invite", game_sessions_path(user_id: @user.id), method: 'post', class: "pop-btn pop-btn-blue" %>
+        </div>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>

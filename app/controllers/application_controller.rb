@@ -14,4 +14,11 @@ class ApplicationController < ActionController::Base
                                                               :gog_handle, :twich_handle,
                                                               :battlenet_handle, :photo])
   end
+
+  # if current_user
+  #   @avoided_users_array = current_user.avoid_users.map do |x|
+  #     x.avoid_user_id
+  #   end
+  # end
+
 end

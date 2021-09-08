@@ -11,7 +11,7 @@ class FavouriteUsersController < ApplicationController
   end
 
   def destroy
-    @favourite_user = FavouriteUser.find(@favourite_user.id)
+    @favourite_user = FavouriteUser.find(@favourited_user.id)
     @favourite_user.destroy
     redirect_back(fallback_location: root_path)
       # render html: '<div>html goes here</div>'.html_safe
@@ -20,7 +20,7 @@ class FavouriteUsersController < ApplicationController
   private
 
   def find_favourite
-    @favourite_user = FavouriteUser.find_by(favourite_user: params[:user_id], user: current_user)
+    @favourited_user = FavouriteUser.find_by(favourite_user: params[:user_id], user: current_user)
   end
 
   # def favourite_user_params

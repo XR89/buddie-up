@@ -4,15 +4,10 @@ Rails.application.routes.draw do
   devise_for :users
   get '/profile', to: 'users#profile', as: 'profile'
 
+<<<<<<< HEAD
   resources :users, only: %i[index show] do
-    resources :user_ratings, only: %i[index new create]
     resources :favourite_users, only: %i[create destroy]
-    resources :avoid_users, only: %i[create]
-    # member do
-    #   get 'favourite_users/create'
-    #   get 'favourite_users/destroy'
-    #   get 'avoid_users/create'
-    # end
+    resources :avoid_users, only: %i[create destroy index]
     patch '/accept/:id', to: 'invitations#accept', as: 'accept'
     patch '/decline/:id', to: 'invitations#decline', as: 'decline'
     # resources :invitations, only: :update
@@ -26,6 +21,7 @@ Rails.application.routes.draw do
   patch '/game_sessions/:id/end', to: 'game_sessions#end_game_session', as: 'end_game_session'
   resources :game_sessions, only: %i[show create index] do
     resources :messages, only: :create
+    resources :user_ratings, only: %i[index new create]
   end
 
 
