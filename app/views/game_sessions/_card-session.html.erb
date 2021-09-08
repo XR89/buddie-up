@@ -11,7 +11,7 @@
             <% if invitation.inviter.photo.attached? %>
               <%= cl_image_tag invitation.inviter.photo.key, class: "avatar" %>
             <% else %>
-              <%= image_tag "https://source.unsplash.com/random", class: "avatar" %>
+              <%= image_tag "default-profile.jpeg", class: "avatar" %>
             <% end %>
             <% if invitation.user.photo.attached? %>
               <%= cl_image_tag invitation.user.photo.key, class: "avatar" %>

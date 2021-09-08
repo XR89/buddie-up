@@ -11,9 +11,9 @@ class GameSessionsController < ApplicationController
   end
 
   def index
-    @user = current_user
-    @invitations = current_user.invitations.select { |invitation| invitation.game_session.ongoing != false}
-    # returns all invitations for gamesessions that have ongoing = true
+    # @user = current_user
+    @invitations = Invitation.all.select { |invitation| invitation.game_session.ongoing == true && invitation.inviter_id != invitation.user_id}
+    # returns all invitations that have ongoing = true and inviter not user id
   end
 
   def create
