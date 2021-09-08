@@ -151,6 +151,9 @@
     <% @favourite_games.each do |game| %>
         <%= link_to game_path(game) do %>
           <div class="game-card" style="background-image: url(<%= game.image_url %>)">
+            <div class="profile__invite">
+              <%= link_to "Invite", game_sessions_path(user_id: @user.id), method: 'post', class: "pop-btn pop-btn-blue" %>
+            </div>
           </div>
         <% end %>
     <% end %>
