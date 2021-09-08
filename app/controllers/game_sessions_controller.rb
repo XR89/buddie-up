@@ -53,31 +53,35 @@ class GameSessionsController < ApplicationController
 
   def end_game_session
     @gamesession = GameSession.find(params[:id])
-    # if gamesession was true, chat becomes 'dead', redirect users to reviews page.
-    # set invitation to 'left'
     current_user_invitation = current_user.invitations.where(game_session_id: params[:id].to_i)[0] #array of one
+    @gamesession.ongoing = false
+
     current_user_invitation.update(status: 'left')
-    if @gamesession.ongoing == true
-      redirect_to new_game_session_user_rating_path(@gamesession)
-    else
-      # if gamesession never becomes true, then chat becomes 'dead', don't redirect users to reviews page.
-      # set invitation to 'left'
-      redirect_to root_path
-    end
+
+    # if either user leaves, ongoing -> becomes false
+    # only redirect to review page if there are both participants in the chat, otherwise redirect to profile page
+
+    @all_users = Invitation.where(game_session_id: params[:id].to_i)
+    # @remaining_users = Invitation.where(game_session_id: params[:id].to_i)
+    # if @remaining_users.where(status: 'confirmed').count <= 1
+    #   @remaining_users.first.update(status: 'left')
+    #   @gamesession.update(status: 'dead')
+    #   # @reviewable_users.first.invitations.last.update(status: 'left')
+    # end
+  end
+
+    # if @gamesession.ongoing == true
+    #   redirect_to new_game_session_user_rating_path(@gamesession)
+    # else
+    #   redirect_to root_path
+    # end
+
 
     # @users = User.all.select { |user| user.invitations.any? }
     # @user_invitations = user.invitations.where(game_session_id: params[:id].to_i)
     # @users_left = @users.select do |user|
     #   return true if @user_invitations[0].status == 'confirmed'
     # end
-
-    @remaining_users = Invitation.where(game_session_id: params[:id].to_i)
-    if @remaining_users.where(status: 'confirmed').count <= 1
-      @remaining_users.first.update(status: 'left')
-      @gamesession.update(status: 'dead')
-      # @reviewable_users.first.invitations.last.update(status: 'left')
-    end
-  end
 
   private
 
