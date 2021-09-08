@@ -1,3 +1,9 @@
+.container__flex {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 .container__rating {
   border-bottom: 4px solid $pink;
   padding: 16px;
