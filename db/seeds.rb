@@ -46,7 +46,7 @@ LANGUAGES = %w[
 ]
 
 
-def first_10_users
+def first_20_users
   p "Seeding first 20 users..."
   test_user = User.new(
     email: 'louis@test.com',
@@ -110,18 +110,6 @@ def first_10_users
   end
 end
 
-def two_chat_sessions
-  p "Creating two game sessions..."
-  2.times do
-    game_session = GameSession.new(
-      ongoing: true,
-      status: 'fiiine',
-      game_id: 1
-    )
-    p "Created a game session" if game_session.save!
-  end
-end
-
 def seed_100_games
   serialized_games = File.read('db/games.json')
   top_100_games = JSON.parse(serialized_games)
@@ -140,5 +128,4 @@ def seed_100_games
 end
 
 seed_100_games
-first_10_users
-two_chat_sessions
+first_20_users

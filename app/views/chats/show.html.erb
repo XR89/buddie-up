@@ -1,21 +1,20 @@
-<%# <h1>#<%= @gamesession.game.title</h1> %>
 <div class="container__chat" data-controller="chat">
-  <div class="messages-container" id="messages" data-gamesession-id="<%= @gamesession.id %>" data-user-id="<%= current_user.id %>">
-    <%# <%= link_to 'Invite User', users_path, class: "pop-btn pop-btn-purple" %>
-    <% @gamesession.messages.each do |message| %>
+  <div class="messages-container" id="messages" data-chat-id="<%= @chat.id %>" data-user-id="<%= current_user.id %>">
+    <% @chat.messages.each do |message| %>
       <%= render 'messages/message', message: message %>
     <% end %>
     <div class="container__chat--input">
-      <%= simple_form_for [@gamesession, @message], remote: true, data: { action: "onsubmit->chat#update" } do |f| %>
+      <%= simple_form_for [@chat, @message], remote: true, data: { action: "onsubmit->chat#update" } do |f| %>
         <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
         <%= f.input :content,
                     label: false,
                     placeholder: "Type your message here. Please do not share sensitive information like your password, credit card info, etc.",
-                    input_html: { class: "chat--input" } %>
+                    input_html: { class: "chat--input" },
+                    html: { rows: 4 } %>
         <div class="chat--buttons">
           <%= f.submit class: "pop-btn pop-btn-blue" %>
           <div class="chat--session-buttons">
-            <%= link_to 'Leave Chat', end_game_session_path, method: :patch, class: "pop-btn pop-btn-purple" %>
+            <%= link_to 'Leave Chat', end_chat_path, method: :patch, class: "pop-btn pop-btn-purple" %>
           </div>
         </div>
       <% end %>

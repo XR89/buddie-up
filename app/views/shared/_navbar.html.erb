@@ -32,10 +32,6 @@
 
       <div class="nav__dropdown">
         <%= link_to "Profile", profile_path, class: "dropdown__item dropdown__item--hide" %>
-        <%# <%= link_to "Sessions", game_sessions_path, class: "dropdown__item dropdown__item--hide" %>
-        <%# Check if any of the current user's invitations are confirmed, and if they are %>
-        <%# are the game session in status active? If they are display active session and link %>
-        <%# else don't.  %>
         <% if current_user.invitations.find_by status: "unconfirmed" %>
           <%= link_to "Invitations", profile_path, class: "dropdown__item dropdown__item--hide"%>
         <% end %>

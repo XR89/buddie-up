@@ -9,16 +9,22 @@
 }
 
 .messages-container {
-  height: 75vh;
+  height: calc(95vh - 268px);
 }
 
 .container__chat--input {
   position: fixed;
   bottom: 0;
   border-top: 4px solid $white;
-  height: 150px;
   width: calc(100% - 60vw);
+}
+
+.chat--input {
   resize: none;
+}
+
+textarea.form-control {
+  height: 128px;
 }
 
 .chat--buttons {
