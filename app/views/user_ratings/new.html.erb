@@ -37,7 +37,7 @@
   <% if @avoided_user %>
     <%= link_to "Un-avoid", user_avoid_user_path(@otheruser,  @avoided_user), method: :delete, class: "pop-btn pop-btn-pink"  %>
   <% else %>
-    <%= link_to "Avoid", user_avoid_users_path(@otheruser), data: { confirm: 'Are you sure?' }, method: :post, class: "pop-btn pop-btn-purple"  %>
+    <%= link_to "Avoid", user_avoid_users_path(@otheruser),  data: { confirm: 'Are you sure you want to avoid this user? (please go to avoided users list to un-avoid)' }, method: :post, class: "pop-btn pop-btn-purple"  %>
   <% end %>
 </div>
 
