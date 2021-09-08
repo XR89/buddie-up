@@ -12,6 +12,7 @@ class UsersController < ApplicationController
       x.avoid_user_id
     end
     @users = User.where.not(id: @avoided_users_array)
+    @favourite_users = current_user.favourite_users
 
 
     if params[:query].present?
