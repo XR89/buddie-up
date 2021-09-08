@@ -31,6 +31,15 @@
   animation-delay: -1.5s;
 }
 
+.double-bounce--green {
+  background-color: $turquoise;
+}
+
+.double-bounce--dead {
+  background-color: $white;
+  animation: none;
+}
+
 @-webkit-keyframes sk-bounce {
   0%, 100% { -webkit-transform: scale(0.0) }
   50% { -webkit-transform: scale(1) }

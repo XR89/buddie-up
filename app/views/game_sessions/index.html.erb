@@ -1,3 +1,1 @@
-<% @invitations.each do |invitation| %>
-  <%= invitation.game_session.id %>
-<% end %>
+<%= render 'game_sessions/card-session', invitations: @invitations %>
