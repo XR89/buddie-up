@@ -61,32 +61,12 @@ class GameSessionsController < ApplicationController
     @gamesession = GameSession.find(params[:id])
     @gamesession.update(ongoing: false)
 
-    # current_user_invitation.update(status: 'left')
-
-    # if either user leaves, ongoing -> becomes false
-    # only redirect to review page if there are both participants in the chat, otherwise redirect to profile page
-
-    # unless invitations has a declined or unconfirmed, redirect to reviews page.
-
-
     @all_users_invitations = Invitation.where(game_session_id: params[:id].to_i) # this returns an array of invitations per gamesession
-
     @users_unconfirmed = @all_users_invitations.where(status: 'unconfirmed')
-    # this will return an array of all users which haven't confirmed yet.
     @users_declined = @all_users_invitations.where(status: 'declined')
-    # this will return an array of all users which have declined.
-    # this will find current_user's invitation status filtered by this this gamesession
 
-    # @other_user_invitations = @other_users.user
-    # @other_user = @other_user_invitations.invitations.find_by(game_session_id: params[:id].to_i)
-    # this will get the 2nd user in a 2 user model.
-
-
-    # only redirects to reviews page if all users have confirmed status.
     if @all_users_invitations.all? { |invitation| invitation.status == 'confirmed' }
       redirect_to new_game_session_user_rating_path(@gamesession)
-    # if current_user invites user2 but left before user 2 confirms, change user 2 status to declined
-    # and redirect to home page
     elsif @users_unconfirmed.present?
       @users_unconfirmed.first.update(status: 'declined')
       redirect_to root_path
