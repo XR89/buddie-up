@@ -1,5 +1,6 @@
 <div class="list-container">
-    <% if @avoided_users_array %>
-      <%= render 'avoided_userlist', avoided_users: @avoided_users_array %>
-    <% end %>
+  <h2>Avoided Users</h2>
+  <% if @avoided_users_array %>
+    <%= render 'avoided_userlist', avoided_users: @avoided_users_array %>
+  <% end %>
 </div>
