@@ -62,6 +62,10 @@ class GameSessionsController < ApplicationController
     # only redirect to review page if there are both participants in the chat, otherwise redirect to profile page
 
     @all_users = Invitation.where(game_session_id: params[:id].to_i)
+    if @all_users.count > 1
+      redirect_to new_game_session_user_rating
+    end
+
     # @remaining_users = Invitation.where(game_session_id: params[:id].to_i)
     # if @remaining_users.where(status: 'confirmed').count <= 1
     #   @remaining_users.first.update(status: 'left')
