@@ -1,32 +1,26 @@
 <div class="container">
-  <div class="row d-flex justify-content-center">
-    <% if @otheruser.photo.attached? %>
-        <%= cl_image_tag @otheruser.photo.key, class: "avatar-large ml-2" %>
-    <% else %>
-        <%= image_tag "default-profile.jpeg", class: "avatar-large ml-2" %>
+  <div class="container__rating">
+    <div class="container__player-details">
+      <% if @otheruser.photo.attached? %>
+        <%= cl_image_tag @otheruser.photo.key, class: "avatar-medium ml-2" %>
+      <% else %>
+        <%= image_tag "default-profile.jpeg", class: "avatar-medium ml-2" %>
+      <% end %>
+      <div class="container__player-info">
+        <h2>Rate your experience with...</h2>
+        <h3><%= @otheruser.username %></h3>
+      </div>
+    </div>
+    <%= simple_form_for [@gamesession, @user_rating], html: { class: "rating-container__form" } do |f| %>
+      <%= f.input :comments, input_html: { class: "form__comment-input" } %>
+      <%= f.input :rating, collection: (1..5).to_a %>
+      <div class="form__submit-button--right">
+        <%= f.button :submit, "Rate", class: "pop-btn pop-btn-orange" %>
+      </div>
     <% end %>
-  </div>
-  <div class="row d-flex justify-content-center mt-3">
-    <h3>Leave a review for:</h3>
-  </div>
-  <div class="row d-flex justify-content-center">
-    <h1><%= @otheruser.username %></h1>
   </div>
 </div>
 
-<div class="container d-flex justify-content-center">
-  <%= simple_form_for [@gamesession, @user_rating] do |f| %>
-    <div class="text-center">
-      <%= f.input :comments %>
-    </div>
-    <div class="text-center">
-      <%= f.input :rating, collection: (1..5).to_a %>
-    </div>
-    <div class="text-center">
-      <%= f.button :submit, "Submit", class: "pop-btn pop-btn-orange" %>
-    </div>
-  <% end %>
-</div>
 
 <div class="container my-4 d-flex justify-content-center">
   <% if @favourite_user %>
@@ -39,9 +33,9 @@
 
 <script>
   document.addEventListener('turbolinks:load', () => {
-  centerStars = document.querySelector('.br-wrapper');
-  centerStars.classList.add("d-flex");
-  centerStars.classList.add("justify-content-center");
-  console.log(centerStars);
+  let flexStars = document.querySelector('.user_rating_rating');
+  flexStars.classList.add("d-flex");
+  flexStars.classList.add("justify-content-between");
+  // console.log(flexStars);
 });
 </script>
