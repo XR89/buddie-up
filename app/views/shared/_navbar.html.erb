@@ -37,7 +37,7 @@
         <%# are the game session in status active? If they are display active session and link %>
         <%# else don't.  %>
         <% current_user_invitations = current_user.invitations.select { |invitation| invitation.status != 'declined' && invitation.status != 'left'  } %>
-        <% current_user_session = current_user_invitations.select { |invitation| invitation.game_session.status != 'dead'} %>
+        <% current_user_session = current_user_invitations.select { |invitation| invitation.game_session.ongoing != false} %>
         <% if current_user_session.first.nil? %>
         <% elsif current_user_session.last.status == 'unconfirmed' %>
           <%= link_to "View invites", profile_path, class: "dropdown__item dropdown__item--hide"%>
