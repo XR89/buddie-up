@@ -8,13 +8,24 @@
             <%# <% users = invitations.map { |invite| User.find(invite.user_id) } %>
             <%# <% users.each do |user| %>
             <%# User.first.invitations.inviter_id %>
-            <% if current_user.photo.attached? %>
-              <%= cl_image_tag current_user.photo.key, class: "avatar" %>
+            <% if invitation.inviter.photo.attached? %>
+              <%= cl_image_tag invitation.inviter.photo.key, class: "avatar" %>
+            <% else %>
+              <%= image_tag "https://source.unsplash.com/random", class: "avatar" %>
+            <% end %>
+            <% if invitation.user.photo.attached? %>
+              <%= cl_image_tag invitation.user.photo.key, class: "avatar" %>
             <% else %>
               <%= image_tag "default-profile.jpeg", class: "avatar" %>
             <% end %>
           </div>
-          <p>Now playing</p>
+          <%= invitation.inviter.username %>
+          <%= invitation.user.username %>
+          <% if invitation.user == current_user %>
+            <p>In a chat with <%= invitation.inviter.username %></p>
+          <% else %>
+            <p>In a chat with <%= invitation.user.username %></p>
+          <% end %>
         </div>
         <div class="session-card__status">
           <p>Status: <%= GameSession.find(invitation.game_session_id).status %></p>
