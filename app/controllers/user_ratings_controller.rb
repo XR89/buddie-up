@@ -1,6 +1,10 @@
 class UserRatingsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[new]
   before_action :find_reviewee, :find_favourite
+  def index
+
+  end
+
   def new
     @user_rating = UserRating.new
     # raise
