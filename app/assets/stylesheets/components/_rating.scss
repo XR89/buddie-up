@@ -1,0 +1,33 @@
+.container__rating {
+  border-bottom: 4px solid $pink;
+  padding: 16px;
+  background: rgba(68,68,68,0.6);
+  max-width: 500px;
+}
+
+.container__player-details {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.rating-container__form {
+  margin: 0 auto;
+  padding: 16px;
+  max-width: 400px;
+  .form-group {
+    margin: 16px auto;
+  }
+}
+
+.form__comment-input {
+  margin: 0 auto;
+  max-width: 400px;
+  height: 20vh !important;
+  resize: none;
+}
+
+.form__submit-button--right {
+  text-align: right;
+}
