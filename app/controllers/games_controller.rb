@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
   def index
     @games = Game.all
-
+    @favourite_games = users_favourite_games(current_user.id)
     if params[:query].present?
       @games = @games.where('title ILIKE ?', "%#{params[:query]}%")
     end
@@ -20,5 +20,12 @@ class GamesController < ApplicationController
     @users = User.where.not(id: @avoided_users_array)
     # @users = User.reject
     @favourite_game = FavouriteGame.find_by(game: @game, user: current_user)
+  end
+
+  private
+
+  def users_favourite_games(user_id)
+    favourited_array = FavouriteGame.where(user_id: user_id)
+    favourite_game_ids = favourited_array.map { |instance| instance.game_id }
   end
 end

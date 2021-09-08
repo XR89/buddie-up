@@ -9,6 +9,9 @@
     <% games.each do |game| %>
         <%= link_to game_path(game) do %>
           <div class="game-card" style="background-image: url(<%= game.image_url %>)">
+              <% if @favourite_games.include?(game.id) %>
+                <i class="fas fa-star fa-star-game"></i>
+              <% end %>
           </div>
         <% end %>
     <% end %>
