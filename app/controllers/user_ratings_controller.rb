@@ -30,7 +30,7 @@ class UserRatingsController < ApplicationController
     @users = User.all.select { |user| user.invitations.any? }
     @user_invitations = @users.map { |user| user.invitations }.flatten!
     @other_invitation = @user_invitations.select { |invitation| invitation.game_session_id == params[:game_session_id].to_i  && invitation.user_id != current_user.id }[0]
-    @other_user = User.find(@other_invitation.user_id)
+    @otheruser = User.find(@other_invitation.user_id)
   end
 
   def find_favourite
