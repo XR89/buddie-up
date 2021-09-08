@@ -115,11 +115,6 @@
     <div class="profile__jumbo">
       <div class="profile__newsfeed">
         <h2>Feed</h2>
-        <div class="profile__session">
-          <% if @invitations.where(status: "confirmed")[0] %>
-            <%= render 'card-session', invitation: @invitations.where(status: "confirmed")[0] %>
-          <% end %>
-        </div>
         <div class="profile__invitations">
           <% if @invitations.find_by(status: "unconfirmed") %>
             <%= render 'card-invitation', invitations: @invitations.where(status: "unconfirmed") %>
@@ -128,21 +123,21 @@
         <div class="profile__ratings--pending">
           <%# Take user to session index page for rating any unrated users %>
         </div>
-      </div>
-      <div class="profile__livefeed">
-        <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
-        <div id="live"></div>
-        <script type="text/javascript">
-          var options = {
-              width: (window.innerWidth / 100) * 55,
-              height: (window.innerWidth / 100) * 31,
-              channel: "lolworldchampionship",
-              muted: true
-          };
-          var player = new Twitch.Player("live", options);
-          player.setVolume(0);
-        </script>
-      </div>
+        </div>
+        <div class="profile__livefeed">
+          <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+          <div id="live"></div>
+          <script type="text/javascript">
+            var options = {
+                width: (window.innerWidth / 100) * 55,
+                height: (window.innerWidth / 100) * 31,
+                channel: "lolworldchampionship",
+                muted: true
+            };
+            var player = new Twitch.Player("live", options);
+            player.setVolume(0);
+          </script>
+        </div>
       <div class="profile__ratings">
         <h3>Ratings</h3>
         <% if @ratings[0] %>
@@ -151,6 +146,21 @@
           <p>This user does not have any ratings...</p>
         <% end %>
       </div>
+    </div>
+  </div>
+</div>
+<div id='favourite-games'>
+  <div class="container">
+    <div class="profile__favourites">
+      <h2>Favourite Games</h2>
+    </div>
+    <div class="game-card-flex">
+      <% @favourite_games.each do |game| %>
+          <%= link_to game_path(game) do %>
+            <div class="game-card" style="background-image: url(<%= game.image_url %>)">
+            </div>
+          <% end %>
+      <% end %>
     </div>
   </div>
 </div>

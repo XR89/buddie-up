@@ -18,6 +18,7 @@
   border-top: 4px solid $white;
   height: 150px;
   width: calc(100% - 60vw);
+  resize: none;
 }
 
 .chat--buttons {

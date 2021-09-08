@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   patch '/game_sessions/:id/start', to: 'game_sessions#start_game_session', as: 'start_game_session'
   patch '/game_sessions/:id/end', to: 'game_sessions#end_game_session', as: 'end_game_session'
-  resources :game_sessions, only: %i[show create] do
+  resources :game_sessions, only: %i[show create index] do
     resources :user_ratings, only: %i[new create]
     resources :messages, only: :create
   end
