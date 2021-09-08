@@ -29,6 +29,11 @@ class UserRatingsController < ApplicationController
   def find_reviewee
     @users = User.all.select { |user| user.invitations.any? }
     @otheruser = @users.select { |user| user.invitations.last.game_session_id == params[:game_session_id].to_i && user.id != current_user.id }[0]
+
+    # @users = User.all.select { |user| user.invitations.any? }
+    # @session_user = @users.invitations.where(game_session_id: params[:game_session_id].to_i).map do |invitation|
+    #   @session_user << invitation.select { |user| user_id: current_user.id }[0]
+
   end
 
   def find_favourite
