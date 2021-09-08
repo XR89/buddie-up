@@ -1,5 +1,11 @@
 class GameSessionsController < ApplicationController
 
+  def index
+    @all_user_invitations = Invitation.where("inviter_id = ? OR user_id = ?", current_user.id, current_user.id)
+    @invitations = @all_user_invitations.reject { |invitation| invitation.inviter_id == invitation.user_id }
+    # returns all invitations that have ongoing = true and inviter not user id
+  end
+
   def show
     @gamesession = GameSession.find(params[:id])
     @invitation = current_user.invitations.where(game_session: params[:id])[0] unless current_user.invitations.nil?
@@ -8,12 +14,6 @@ class GameSessionsController < ApplicationController
     else
       @message = Message.new
     end
-  end
-
-  def index
-    # @user = current_user
-    @invitations = Invitation.all.select { |invitation| invitation.game_session.ongoing == true && invitation.inviter_id != invitation.user_id}
-    # returns all invitations that have ongoing = true and inviter not user id
   end
 
   def create
@@ -66,7 +66,7 @@ class GameSessionsController < ApplicationController
     @users_declined = @all_users_invitations.where(status: 'declined')
 
     if @all_users_invitations.all? { |invitation| invitation.status == 'confirmed' }
-      redirect_to new_game_session_user_rating_path(@gamesession)
+      redirect_to ratings_path
     elsif @users_unconfirmed.present?
       @users_unconfirmed.first.update(status: 'declined')
       redirect_to root_path
