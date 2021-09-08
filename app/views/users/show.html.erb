@@ -149,13 +149,15 @@
     </div>
     <div class="game-card-flex">
     <% @favourite_games.each do |game| %>
+      <div class="game-outer-card">
         <%= link_to game_path(game) do %>
           <div class="game-card" style="background-image: url(<%= game.image_url %>)">
+          </div>
+        <% end %>
             <div class="profile__invite">
               <%= link_to "Invite", game_sessions_path(user_id: @user.id), method: 'post', class: "pop-btn pop-btn-blue" %>
             </div>
-          </div>
-        <% end %>
+      </div>
     <% end %>
   </div>
   </div>
