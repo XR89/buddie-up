@@ -6,10 +6,6 @@
         <div class="session-card">
           <div class="session-card__info">
             <div class="session-card__players">
-              <%# <% invitations = Invitation.where("game_session_id = ? AND status = ?", invitation.game_session_id, "confirmed") %>
-              <%# <% users = invitations.map { |invite| User.find(invite.user_id) } %>
-              <%# <% users.each do |user| %>
-              <%# User.first.invitations.inviter_id %>
               <% if invitation.inviter.photo.attached? %>
                 <%= cl_image_tag invitation.inviter.photo.key, class: "avatar" %>
               <% else %>
