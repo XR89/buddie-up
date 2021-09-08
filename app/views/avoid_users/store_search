@@ -1,0 +1,5 @@
+ <div data-controller="search">
+    <form action="/users/<%=current_user.id%>/avoid_users" method="get" accept-charset="UTF-8" data-search-target="form" class="search__form">
+      <input type="text" name="query" id="query" placeholder="Search avoided users..." data-search-target="searchInput" data-action="keyup->search#update" class="search__input">
+    </form>
+  </div>

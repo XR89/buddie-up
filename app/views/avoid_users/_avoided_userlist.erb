@@ -1,11 +1,5 @@
-<div data-search-target="list">
-  <% if params[:query].blank? %>
-    <h2 class="list-header"><%= pluralize users.count, 'user' %> online</h2>
-  <% else %>
-    <h2 class="list-header"><%= pluralize users.count, 'result' %> for <span class="result"><%= params[:query] %></span></h2>
-  <% end %>
-  <ul>
-    <% users.each do |user| %>
+ <ul>
+    <% avoided_users.each do |user| %>
       <li>
         <%= link_to user_path(user) do %>
           <div class="card-user">
@@ -22,9 +16,7 @@
               <%# <p><%= user.favourite_games if user.favourite_games %></p>
             <%# </div> %>
             <div class="user-rating">
-              <% user.average_rating.round.times do %>
-                <span>⭐</span>
-              <% end %>
+            <%= link_to "Un-avoid", user_avoid_user_path(current_user.id, user.id), method: :delete, class: "pop-btn pop-btn-pink"  %>
             </div>
           </div>
         <% end %>
