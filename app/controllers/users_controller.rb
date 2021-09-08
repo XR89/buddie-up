@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     end
     @users = User.where.not(id: @avoided_users_array)
     @favourite_users = current_user.favourite_users
-
+    @favourite_user_ids = @favourite_users.map { |user| user.id}
 
     if params[:query].present?
       @users = @users.where('username ILIKE ?', "%#{params[:query]}%")

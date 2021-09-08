@@ -1,8 +1,14 @@
-.fa-star{
+.fa-star-game {
     position: absolute;
     font-size: 28px;
     top: 10px;
     right: 10px;
+    color: $pink;
+    text-shadow: $pink-accent 2px 2px 8px;
+}
+
+.fa-star-user {
+    font-size: 28px;
     color: $pink;
     text-shadow: $pink-accent 2px 2px 8px;
 }

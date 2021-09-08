@@ -17,7 +17,9 @@
             <div class="card-user-infos">
               <h2><%= user.username %></h2>
             </div>
-              <i class="fas fa-star"></i>
+            <% if @favourite_user_ids.include?(user.id) %>
+              <i class="fas fa-star fa-star-user"></i>
+            <% end %>
             <%# <div> %>
               <%# <p><%= user.language if user.language %></p>
               <%# <p><%= user.favourite_games if user.favourite_games %></p>
