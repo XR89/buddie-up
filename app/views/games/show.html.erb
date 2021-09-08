@@ -35,7 +35,7 @@
           <input type="text" name="query" id="query" placeholder="Search for users..." data-search-target="searchInput" data-action="keyup->search#update" class="search__input">
         </form>
 
-        <%= render 'userlist', users: @users %>
+        <%= render 'shared/userlist', users: @users %>
       </div>
     </div>
   </div>

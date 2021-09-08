@@ -1,6 +1,6 @@
 <div data-search-target="list">
   <% if params[:query].blank? %>
-    <h2 class="list-header"><%= pluralize users.count, 'user' %> looking to play</h2>
+    <h2 class="list-header"><%= pluralize users.count, 'user' %> online</h2>
   <% else %>
     <h2 class="list-header"><%= pluralize users.count, 'result' %> for <span class="result"><%= params[:query] %></span></h2>
   <% end %>
@@ -10,9 +10,9 @@
         <%= link_to user_path(user) do %>
           <div class="card-user">
             <% if user.photo.attached? %>
-                  <%= cl_image_tag user.photo.key, class: "avatar-medium ml-2" %>
+                <%= cl_image_tag user.photo.key, class: "avatar-medium ml-2" %>
               <% else %>
-                  <%= image_tag "default-profile.jpeg", class: "avatar-medium ml-2" %>
+                <%= image_tag "default-profile.jpeg", class: "avatar-medium ml-2" %>
               <% end %>
             <div class="card-user-infos">
               <h2><%= user.username %></h2>
