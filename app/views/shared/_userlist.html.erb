@@ -25,7 +25,9 @@
               <%# <p><%= user.favourite_games if user.favourite_games %></p>
             <%# </div> %>
             <div class="user-rating">
-              <h2>⭐⭐⭐⭐⭐</h2>
+              <% user.average_rating.round.times do %>
+                <span>⭐</span>
+              <% end %>
             </div>
           </div>
         <% end %>
