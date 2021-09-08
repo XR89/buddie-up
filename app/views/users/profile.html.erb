@@ -116,7 +116,7 @@
         <h2>Feed</h2>
         <div class="profile__session">
           <% if @invitations.where(status: "confirmed")[0] %>
-            <%= render 'card-session', invitation: @invitations.where(status: "confirmed")[0] %>
+            <%# <%= render 'card-session', invitation: @invitations.where(status: "confirmed")[0] %>
           <% end %>
         </div>
         <div class="profile__invitations">
