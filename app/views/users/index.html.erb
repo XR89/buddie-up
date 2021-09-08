@@ -1,7 +1,7 @@
 <div class="list-container">
   <div data-controller="search">
     <form action="/users" method="get" accept-charset="UTF-8" data-search-target="form" class="search__form">
-      <input type="text" name="query" id="query" placeholder="Search for users..." data-search-target="searchInput" data-action="keyup->search#update" class="search__input">
+      <input type="text" name="query" id="query" placeholder="Search users..." data-search-target="searchInput" data-action="keyup->search#update" class="search__input">
     </form>
 
     <%= render 'shared/userlist', users: @users %>

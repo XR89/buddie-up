@@ -109,6 +109,7 @@
       </div>
       <div class="profile__actions">
         <%= link_to "Edit Profile", edit_user_registration_path, class: "pop-btn pop-btn-blue" %>
+        <%= link_to "Avoided Users", user_avoid_users_path(current_user.id), method: :get, class: "pop-btn pop-btn-blue"  %>
       </div>
     </div>
     <div class="profile__jumbo">

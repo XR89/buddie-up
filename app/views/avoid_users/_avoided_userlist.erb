@@ -1,0 +1,26 @@
+ <ul>
+    <% avoided_users.each do |user| %>
+      <li>
+        <%= link_to user_path(user) do %>
+          <div class="card-user">
+            <% if user.photo.attached? %>
+                <%= cl_image_tag user.photo.key, class: "avatar-medium ml-2" %>
+              <% else %>
+                <%= image_tag "default-profile.jpeg", class: "avatar-medium ml-2" %>
+              <% end %>
+            <div class="card-user-infos">
+              <h2><%= user.username %></h2>
+            </div>
+            <%# <div> %>
+              <%# <p><%= user.language if user.language %></p>
+              <%# <p><%= user.favourite_games if user.favourite_games %></p>
+            <%# </div> %>
+            <div class="user-rating">
+            <%= link_to "Un-avoid", user_avoid_user_path(current_user.id, user.id), method: :delete, class: "pop-btn pop-btn-pink"  %>
+            </div>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>

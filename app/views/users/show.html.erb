@@ -118,7 +118,13 @@
         <% else %>
           <%= link_to "Favourite", user_favourite_users_path(params[:id]), method: :post, class: "pop-btn pop-btn-pink"  %>
         <% end %>
-        <%= link_to "Avoid", user_avoid_users_path(params[:id]), method: :post, class: "pop-btn pop-btn-purple"  %>
+          <%= link_to "Avoid", user_avoid_users_path(params[:id]), data: { confirm: 'Are you sure?' }, method: :post, class: "pop-btn pop-btn-purple"  %>
+
+
+
+
+
+
       </div>
     </div>
     <div class="profile__jumbo">
@@ -155,3 +161,5 @@
     </div>
   </div>
 </div>
+
+<%= console %>
