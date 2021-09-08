@@ -9,7 +9,7 @@ class UserRatingsController < ApplicationController
   end
 
   def create
-    @user_rating = UserRating.new(rating_params) 
+    @user_rating = UserRating.new(rating_params)
     @user_rating.reviewee_id = @otheruser.id
     @user_rating.user_id = current_user.id
     if @user_rating.save!
