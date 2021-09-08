@@ -20,6 +20,11 @@ class GamesController < ApplicationController
     @users = User.where.not(id: @avoided_users_array)
     # @users = User.reject
     @favourite_game = FavouriteGame.find_by(game: @game, user: current_user)
+    @users.each do |x|
+      x.avoid_users.each do |y|
+        @avoided_users_array << y.avoid_user_id if y.avoid_user_id == current_user.id
+      end
+    end
   end
 
   private
