@@ -5,7 +5,6 @@ class AvoidUsersController < ApplicationController
     @avoid_user = AvoidUser.new
     @avoid_user.user = current_user
     @avoid_user.avoid_user = User.find(params[:user_id])
-    @avoid_user.save!
     if @avoid_user.save
       redirect_back(fallback_location: root_path)
     end
@@ -13,8 +12,9 @@ class AvoidUsersController < ApplicationController
 
   def destroy
     @avoid_user = AvoidUser.find_by(avoid_user: params[:id])
-    @avoid_user.destroy
-    redirect_back(fallback_location: root_path)
+    if @avoid_user.destroy
+      redirect_back(fallback_location: root_path)
+    end
       # render html: '<div>html goes here</div>'.html_safe
   end
 
