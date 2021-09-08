@@ -31,7 +31,7 @@ class GameSessionsController < ApplicationController
 
     # @game = Game.find(params[:id])
     # @gamesession.game = @game
-    if @invitation_1.save && @invitation_2.save
+    if @invitation_1.save && @invitation_2.save && @gamesession.save
       redirect_to game_session_path(@gamesession)
     else
       redirect_to profile_path
@@ -53,7 +53,6 @@ class GameSessionsController < ApplicationController
 
   def end_game_session
     @gamesession = GameSession.find(params[:id])
-    current_user_invitation = current_user.invitations.where(game_session_id: params[:id].to_i)[0] #array of one
     @gamesession.update(ongoing: false)
 
     # current_user_invitation.update(status: 'left')
@@ -66,11 +65,10 @@ class GameSessionsController < ApplicationController
 
     @all_users_invitations = Invitation.where(game_session_id: params[:id].to_i) # this returns an array of invitations per gamesession
 
-    @users_unconfirmed = @all_users_invitations.find_by(status: 'unconfirmed')
-    # this will return  users which haven't confirmed yet.
-    @users_declined = @all_users_invitations.find_by(status: 'declined')
-    # this will return users which have declined.
-    current_user_status = current_user_invitation.status
+    @users_unconfirmed = @all_users_invitations.where(status: 'unconfirmed')
+    # this will return an array of all users which haven't confirmed yet.
+    @users_declined = @all_users_invitations.where(status: 'declined')
+    # this will return an array of all users which have declined.
     # this will find current_user's invitation status filtered by this this gamesession
 
     # @other_user_invitations = @other_users.user
@@ -83,14 +81,13 @@ class GameSessionsController < ApplicationController
       redirect_to new_game_session_user_rating_path(@gamesession)
     # if current_user invites user2 but left before user 2 confirms, change user 2 status to declined
     # and redirect to home page
-    elsif current_user_status == 'left' && @users_unconfirmed.present?
-      @users_unconfirmed.update(status: 'declined')
+    elsif @users_unconfirmed.present?
+      @users_unconfirmed.first.update(status: 'declined')
       redirect_to root_path
-    elsif current_user_status == 'confirmed' && @users_declined.present?
-      redirect_to root_path
-    else
+    elsif @users_declined.first.present?
       redirect_to root_path
     end
+  end
 
 
 
@@ -104,7 +101,6 @@ class GameSessionsController < ApplicationController
     #   @gamesession.update(status: 'dead')
     #   # @reviewable_users.first.invitations.last.update(status: 'left')
     # end
-  end
 
     # if @gamesession.ongoing == true
     #   redirect_to new_game_session_user_rating_path(@gamesession)

@@ -110,9 +110,16 @@
         <% end %>
       </div>
       <div class="profile__actions">
-        <% unless @user.invitations.where(status: "confirmed")[0] %>
-          <%= link_to "Invite", game_sessions_path(user_id: @user.id), method: 'post', class: "pop-btn pop-btn-blue" %>
+        <% if @user.invitations.where(inviter_id: current_user.id).present? %>
+          <% @user_invite = @user.invitations.where(inviter_id: current_user.id ) %>
+            <% if @user_invite.last.game_session.ongoing == false %>
+              <%= link_to "Invite", game_sessions_path(user_id: @user.id), method: 'post', class: "pop-btn pop-btn-blue" %>
+            <% end %>
+        <% else %>
+              <%= link_to "Invite", game_sessions_path(user_id: @user.id), method: 'post', class: "pop-btn pop-btn-blue" %>
         <% end %>
+        <%# return all invites by the current user %>
+        <%# <% unless @user.invitations.where(status: "confirmed")[0] %>
         <% if @favourite_user %>
           <%= link_to "Unfavourite", user_favourite_user_path(params[:id],  @favourite_user), method: :delete, class: "pop-btn pop-btn-pink"  %>
         <% else %>
