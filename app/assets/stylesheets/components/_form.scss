@@ -1,0 +1,43 @@
+form {
+  padding-bottom: 5vh;
+}
+
+.form-control {
+  border: none;
+  border-bottom: 4px solid $white;
+  border-radius: 0;
+  background-color: $black;
+  transition: none;
+  &:focus {
+    color: $white;
+  }
+  &:focus-visible {
+    outline: none;
+    background-color: $black;
+    box-shadow: none;
+  }
+}
+
+.form-group:nth-child(1n) .form-control {
+  &:focus-visible {
+    border-color: $pink;
+  }
+}
+
+.form-group:nth-child(2n) .form-control {
+  &:focus-visible {
+    border-color: $orange;
+  }
+}
+
+.form-group:nth-child(3n) .form-control {
+  &:focus-visible {
+    border-color: $blue;
+  }
+}
+
+.form-group:nth-child(4n) .form-control {
+  &:focus-visible {
+    border-color: $purple;
+  }
+}

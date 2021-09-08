@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.text { render partial: 'games/userlist.html', locals: { users: @users } }
+      format.text { render partial: 'shared/userlist.html', locals: { users: @users } }
     end
   end
 
@@ -30,6 +30,7 @@ class UsersController < ApplicationController
     @invitations = @user.invitations unless @user.invitations.nil?
     @favourite_games = users_favourite_games(@user.id)
     redirect_to profile_path if current_user == @user
+    @favourite_user = FavouriteUser.find_by(favourite_user: params[:id], user: current_user)
   end
 
   private

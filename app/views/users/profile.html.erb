@@ -1,76 +1,80 @@
-<div id="profile-info">
-  <div class="profile__container">
-    <div class="profile__flex">
-      <div class="profile__details">
-        <div class="profile__avatar">
-          <% if @user.photo.attached? %>
-            <%= cl_image_tag @user.photo.key, class: "avatar-large" %>
-          <% else %>
-            <%= image_tag "default-profile.jpeg", class: "avatar-large" %>
-          <% end %>
-        </div>
-        <div class="profile__header">
-          <h1><%= @user.username %></h1>
-          <%# Implement aggregate ratings here %>
-        </div>
-        <div class="profile__info">
-          <table>
-            <tbody>
+<div class="profile__container">
+  <div class="profile__flex">
+    <div class="profile__details">
+      <div class="profile__avatar">
+        <% if @user.photo.attached? %>
+          <%= cl_image_tag @user.photo.key, class: "avatar-large" %>
+        <% else %>
+          <%= image_tag "default-profile.jpeg", class: "avatar-large" %>
+        <% end %>
+      </div>
+      <div class="profile__header">
+        <h2><%= @user.username %></h2>
+        <p>
+        <% @user.average_rating.round.times do %>
+          <span>⭐</span>
+        <% end %>
+        </p>
+        <p>Reviewed <%= @ratings.count %> times</p>
+      </div>
+      <div class="profile__info">
+        <table>
+          <tbody>
+            <tr>
+              <th>
+                Region
+              </th>
+              <td>
+                <%= @user.region %>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                Gender
+              </th>
+              <td>
+                <%= @user.gender %>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                Age
+              </th>
+              <td>
+                <%= Date.today.year  - @user.dob.year %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="profile__handles">
+        <table>
+          <tbody>
+            <% if @user.steam_handle %>
               <tr>
-                <th>
-                  Region
-                </th>
-                <td>
-                  <%= @user.region %>
-                </td>
+                <td><i class="fab fa-steam"></i></td>
+                <td><%= @user.steam_handle %></td>
               </tr>
+            <% end %>
+            <% if @user.origin_handle %>
               <tr>
-                <th>
-                  Gender
-                </th>
-                <td>
-                  <%= @user.gender %>
-                </td>
+                <td><i class="fas fa-circle-notch"></i></td>
+                <td><%= @user.origin_handle %></td>
               </tr>
+            <% end %>
+            <% if @user.psn_handle %>
               <tr>
-                <th>
-                  Age
-                </th>
-                <td>
-                  <%= Date.today.year  - @user.dob.year %>
-                </td>
+                <td><i class="fab fa-playstation"></i></td>
+                <td><%= @user.psn_handle%></td>
               </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="profile__handles">
-          <table>
-            <tbody>
-              <% if @user.steam_handle %>
-                <tr>
-                  <td><i class="fab fa-steam"></i></td>
-                  <td><%= @user.steam_handle %></td>
-                </tr>
-              <% end %>
-              <% if @user.origin_handle %>
-                <tr>
-                  <td><i class="fas fa-circle-notch"></i></td>
-                  <td><%= @user.origin_handle %></td>
-                </tr>
-              <% end %>
-              <% if @user.psn_handle %>
-                <tr>
-                  <td><i class="fab fa-playstation"></i></td>
-                  <td><%= @user.psn_handle%></td>
-                </tr>
-              <% end %>
-              <% if @user.epic_handle %>
-                <tr>
-                  <td><i class="fas fa-shield-alt"></i></td>
-                  <td><%= @user.epic_handle%></td>
-                </tr>
-              <% end %>
-              <% if @user.discord_handle %>
+            <% end %>
+            <% if @user.epic_handle %>
+              <tr>
+                <td><i class="fas fa-shield-alt"></i></td>
+                <td><%= @user.epic_handle%></td>
+              </tr>
+            <% end %>
+            <% if @user.discord_handle %>
                 <tr>
                   <td><i class="fab fa-discord"></i></td>
                   <td><%= @user.discord_handle%></td>
@@ -138,12 +142,13 @@
             player.setVolume(0);
           </script>
         </div>
-        <div class="profile__ratings">
-          <h3>Ratings</h3>
-          <% if @ratings[0] %>
-            <%= render 'card-rating', ratings: @ratings %>
-          <% end %>
-        </div>
+      <div class="profile__ratings">
+        <h3>Ratings</h3>
+        <% if @ratings[0] %>
+          <%= render 'card-rating', ratings: @ratings %>
+        <% else %>
+          <p>This user does not have any ratings...</p>
+        <% end %>
       </div>
     </div>
   </div>

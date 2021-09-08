@@ -1,25 +1,40 @@
 <%# <h1>#<%= @gamesession.game.title</h1> %>
-<div class="container__chat">
-  <div id="messages" data-gamesession-id="<%= @gamesession.id %>">
+<div class="container__chat" data-controller="chat">
+  <div class="messages-container" id="messages" data-gamesession-id="<%= @gamesession.id %>" data-user-id="<%= current_user.id %>">
+    <%= link_to 'Invite User', users_path, class: "pop-btn pop-btn-purple" %>
     <% @gamesession.messages.each do |message| %>
       <%= render 'messages/message', message: message %>
-      <%# <div class="message-container" id="message-<%= message.id %>
-        <%# <i class="author"> %>
-          <%# <span><%= message.user.username</span> %>
-          <%# <small><%= message.created_at.strftime("%a %b %e at %l:%M%p")</small> %>
-        <%# </i> %>
-        <%# <p><%= message.content</p> %>
-      <%# </div> %>
     <% end %>
-  </div>
-  <div class="container__chat--input">
-    <%= simple_form_for [@gamesession, @message], remote: true do |f| %>
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
-      <%= f.input :content, label: false, placeholder: "Type your message here. Please do not share sensitive information like password, credit card info etc." %>
-      <%= f.submit %>
-    <% end %>
-    <%= link_to 'Start session', start_game_session_path, method: :patch %>
-    <%= link_to 'End session', end_game_session_path, method: :patch %>
-    <%= link_to 'Invite another user', users_path %>
+    <div class="container__chat--input">
+      <%= simple_form_for [@gamesession, @message], remote: true, data: { action: "onsubmit->chat#update" } do |f| %>
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <%= f.input :content,
+                    label: false,
+                    placeholder: "Type your message here. Please do not share sensitive information like your password, credit card info, etc.",
+                    input_html: { class: "chat--input" } %>
+        <div class="chat--buttons">
+          <%= f.submit class: "pop-btn pop-btn-blue" %>
+          <div class="chat--session-buttons">
+            <% if GameSession.find(params[:id]).ongoing == true %>
+            <% else %>
+              <%= link_to 'Start session', start_game_session_path, method: :patch, class: "pop-btn pop-btn-pink" %>
+            <% end %>
+            <%= link_to 'End session', end_game_session_path, method: :patch, class: "pop-btn pop-btn-orange" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
+
+<script>
+  const messages = document.querySelectorAll(".message");
+  const currentUser = document.getElementById("messages").dataset.userId;
+  messages.forEach(message => {
+    if (message.dataset.senderId === currentUser) {
+      message.classList.add("message-self");
+    } else {
+      message.classList.add("message-other");
+    };
+  });
+</script>

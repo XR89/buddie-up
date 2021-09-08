@@ -5,11 +5,14 @@ Rails.application.routes.draw do
   get '/profile', to: 'users#profile', as: 'profile'
 
   resources :users, only: %i[index show] do
-    member do
-      get 'favourite_users/create'
-      get 'favourite_users/destroy'
-      get 'avoid_users/create'
-    end
+
+    resources :favourite_users, only: %i[create destroy]
+    resources :avoid_users, only: %i[create]
+    # member do
+    #   get 'favourite_users/create'
+    #   get 'favourite_users/destroy'
+    #   get 'avoid_users/create'
+    # end
     patch '/accept/:id', to: 'invitations#accept', as: 'accept'
     patch '/decline/:id', to: 'invitations#decline', as: 'decline'
     # resources :invitations, only: :update

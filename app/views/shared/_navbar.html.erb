@@ -7,24 +7,23 @@
 
   <% if user_signed_in? %>
     <ul class="nav-items">
-        <%= link_to profile_path do  %>
-           <li class = "align-middle">
-          <% if current_user.invitations.find_by status: "unconfirmed" %>
-            <div class="spinner">
-              <div class="double-bounce1"></div>
-              <div class="double-bounce2"></div>
-            </div>
-          <% end %>
-          </li>
-        <% end %>
       <li class="nav-item">
         <%= link_to "Find Game", games_path, class: "pop-btn pop-btn-pink" %>
       </li>
       <li class="nav-item">
         <%= link_to "Find Buddy", users_path, class: "pop-btn pop-btn-orange" %>
       </li>
-      
-     
+
+
+      <div class="notification">
+        <% if current_user.invitations.find_by status: "unconfirmed" %>
+          <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+          </div>
+        <% end %>
+      </div>
+
       <% if current_user.photo.attached? %>
         <%= cl_image_tag current_user.photo.key, class: "avatar", id: "dropdown-toggle" %>
       <% else %>
@@ -33,12 +32,17 @@
 
       <div class="nav__dropdown">
         <%= link_to "Profile", profile_path, class: "dropdown__item dropdown__item--hide" %>
-        <%= link_to "Sessions", game_sessions_path, class: "dropdown__item dropdown__item--hide" %>
-        <% if current_user.session_id.present?%>
-          <%# this might need to change soon %>
-          <%= link_to "Active session", game_session_path, class: "dropdown__item dropdown__item--hide"%>
+        <%# <%= link_to "Sessions", game_sessions_path, class: "dropdown__item dropdown__item--hide" %>
+        <%# Check if any of the current user's invitations are confirmed, and if they are %>
+        <%# are the game session in status active? If they are display active session and link %>
+        <%# else don't.  %>
+        <% current_user_invitations = current_user.invitations.select { |invitation| invitation.status != 'declined' && invitation.status != 'left'  } %>
+        <% current_user_session = current_user_invitations.select { |invitation| invitation.game_session.status != 'dead'} %>
+        <% if current_user_session.first.nil? %>
+        <% elsif current_user_session.last.status == 'unconfirmed' %>
+          <%= link_to "View invites", profile_path, class: "dropdown__item dropdown__item--hide"%>
         <% else %>
-          <%= link_to "No Active session", "#", class: "dropdown__item dropdown__item--hide"%>
+            <%= link_to "Game session", game_session_path(current_user_session.first.game_session_id), class: "dropdown__item dropdown__item--hide"%>
         <% end %>
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown__item dropdown__item--hide" %>
       </div>

@@ -22,8 +22,12 @@
 }
 
 body {
+  min-height: 100vh;
   overflow-x: hidden;
-  background-color: $black;
+  background: $black;
+  // background: linear-gradient(to top right, $blue-accent, rgba(104, 32, 124, 0.3), $purple),
+  //             linear-gradient(to top left, $orange, rgba(213, 2, 75, 0.3), $pink),
+  //             rgba(213, 2, 75, 0.3);
   color: $white;
 }
 
