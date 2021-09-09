@@ -1,9 +1,9 @@
 class ChatsController < ApplicationController
-
   def index
     @all_user_invitations = Invitation.where("inviter_id = ? OR user_id = ?", current_user.id, current_user.id)
     @invitations = @all_user_invitations.reject { |invitation| invitation.inviter_id == invitation.user_id }
-    # returns all invitations that have ongoing = true and inviter not user id
+    @invitations.reject! { |invitation| invitation.status == 'declined' }
+    @user_ratings = UserRating.where(user_id: current_user.id)
   end
 
   def show
@@ -58,9 +58,9 @@ class ChatsController < ApplicationController
       redirect_to new_chat_user_rating_path(@chat)
     elsif @users_unconfirmed.present?
       @users_unconfirmed.first.update(status: 'declined')
-      redirect_to root_path
+      redirect_to chats_path
     elsif @users_declined.first.present?
-      redirect_to root_path
+      redirect_to chats_path
     end
   end
 

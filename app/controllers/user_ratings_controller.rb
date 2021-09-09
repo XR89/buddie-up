@@ -1,15 +1,16 @@
 class UserRatingsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[new]
+  skip_before_action :authenticate_user!, only: %i[new create]
   before_action :find_reviewee, only: %i[new create]
   before_action :find_favourite
 
-  def index
-
-  end
-
   def new
-    @user_rating = UserRating.new
-    @chat = Chat.find(params[:chat_id])
+    @user_ratings = UserRating.where(user_id: current_user.id)
+    if @user_ratings.where("user_id = ? AND reviewee_id = ?", current_user.id, @otheruser.id)[0]
+      redirect_to chats_path, notice: "You have already reviewed this user"
+    else
+      @chat = Chat.find(params[:chat_id])
+      @user_rating = UserRating.new
+    end
   end
 
   def create
@@ -44,5 +45,4 @@ class UserRatingsController < ApplicationController
   def rating_params
     params.require(:user_rating).permit(:rating, :comments, :reviewee_id, :user_id)
   end
-
 end

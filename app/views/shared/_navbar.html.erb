@@ -11,10 +11,11 @@
         <%= link_to "Find Game", games_path, class: "pop-btn pop-btn-pink" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Find Buddy", users_path, class: "pop-btn pop-btn-orange" %>
+        <%= link_to "Find Buddy", users_path, class: "pop-btn pop-btn-purple" %>
       </li>
-
-
+      <li class="nav-item">
+        <%= link_to "Chats", chats_path, class: "pop-btn pop-btn-blue" %>
+      </li>
       <div class="notification">
         <% if current_user.invitations.find_by status: "unconfirmed" %>
           <div class="spinner">
@@ -35,7 +36,6 @@
         <% if current_user.invitations.find_by status: "unconfirmed" %>
           <%= link_to "Invitations", profile_path, class: "dropdown__item dropdown__item--hide"%>
         <% end %>
-        <%= link_to "Rate Users", user_ratings_path, class: "dropdown__item dropdown__item--hide"%>
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown__item dropdown__item--hide" %>
       </div>
     </ul>

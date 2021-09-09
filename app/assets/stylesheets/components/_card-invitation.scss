@@ -18,8 +18,15 @@
   align-items: center;
 }
 
+.invitation-outer-card {
+  position: relative;
+}
+
 .invitation-card__buttons {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: absolute;
+  top: 10px;
+  right: 16px;
 }
