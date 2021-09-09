@@ -9,7 +9,10 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.where.not(id: @current_user_avoided_users_array)
+    @users_unsorted = User.where.not(id: @current_user_avoided_users_array)
+    @users = @users_unsorted.reject do |user|
+      user.avoid_user_ids.include?(current_user.id)
+    end
     @favourite_users = current_user.favourite_users
     @favourite_user_ids = @favourite_users.map { |user| user.id}
 
@@ -41,6 +44,11 @@ class UsersController < ApplicationController
     @current_user_avoided_users_array = current_user.avoid_users.map do |x|
       x.avoid_user_id
     end
+    @other_users = User.all
+    @other_users_avoided_users_id_array = @other_users.map do |user|
+      user.avoid_user_ids
+    end
+
 
   end
 
