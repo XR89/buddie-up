@@ -25,6 +25,9 @@ class GamesController < ApplicationController
         @avoided_users_array << y.avoid_user_id if y.avoid_user_id == current_user.id
       end
     end
+    @favourite_users = current_user.favourite_users
+    @favourite_user_ids = @favourite_users.map { |instance| instance.favourite_user_id }
+
   end
 
   private
