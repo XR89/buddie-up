@@ -10,6 +10,7 @@ class UserRatingsController < ApplicationController
   def new
     @user_rating = UserRating.new
     @chat = Chat.find(params[:chat_id])
+    # flash[:notice] = "You can now rate users!"
   end
 
   def create
