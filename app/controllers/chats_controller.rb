@@ -55,7 +55,7 @@ class ChatsController < ApplicationController
     @users_declined = @all_users_invitations.where(status: 'declined')
 
     if @all_users_invitations.all? { |invitation| invitation.status == 'confirmed' }
-      redirect_to user_ratings_path
+      redirect_to new_chat_user_rating_path(@chat)
     elsif @users_unconfirmed.present?
       @users_unconfirmed.first.update(status: 'declined')
       redirect_to root_path
