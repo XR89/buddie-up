@@ -62,7 +62,7 @@ class ChatsController < ApplicationController
       @users_unconfirmed.first.update(status: 'declined')
       redirect_to root_path, notice: 'Chat has ended.'
     elsif @users_declined.first.present?
-      redirect_to root_path, notice: 'It seems the other user has declined your invitation'
+      redirect_to root_path, notice: 'The other user declined your invitation'
     end
   end
 
