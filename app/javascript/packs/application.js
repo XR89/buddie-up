@@ -41,8 +41,8 @@ document.addEventListener('turbolinks:load', () => {
   removeBootstrapFromSimpleForms();
   dropdown();
   message();
-  // setTimeout(function () {
-  //   $('.alert').fadeOut();
-  //   $('.notice').fadeOut();
-  // }, 1000);
+  setTimeout(function () {
+    $('.alert').fadeOut();
+    $('.notice').fadeOut();
+  }, 1000);
 });
