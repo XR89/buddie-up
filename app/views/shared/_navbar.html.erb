@@ -18,8 +18,8 @@
       <div class="notification">
         <% if current_user.invitations.find_by status: "unconfirmed" %>
           <div class="spinner">
-            <div class="double-bounce1"></div>
-            <div class="double-bounce2"></div>
+            <div class="double-bounce1 double-bounce--green"></div>
+            <div class="double-bounce2 double-bounce--green"></div>
           </div>
         <% end %>
       </div>
