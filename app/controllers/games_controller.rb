@@ -1,10 +1,12 @@
 class GamesController < ApplicationController
   def index
     @games = Game.all
-    @favourite_games = users_favourite_games(current_user.id)
     if params[:query].present?
       @games = @games.where('title ILIKE ?', "%#{params[:query]}%")
+      # this will return what the user searched in an array
     end
+    @favourite_games = users_favourite_games(current_user.id)
+    # this will return an array of favourite game ids [1,2]
 
     respond_to do |format|
       format.html

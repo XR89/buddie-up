@@ -6,14 +6,51 @@
   <% end %>
 
   <div class="game-card-flex">
-    <% games.each do |game| %>
-        <%= link_to game_path(game) do %>
-          <div class="game-card" style="background-image: url(<%= game.image_url %>)">
+    <% if params[:query].present? %>
+      <% @games = @games.where('title ILIKE ?', "%#{params[:query]}%") %>
+
+        <% games.each do |game| %>
+          <%= link_to game_path(game) do %>
+            <div class="game-card" style="background-image: url(<%= game.image_url %>)">
               <% if @favourite_games.include?(game.id) %>
                 <i class="fas fa-star fa-star-game"></i>
               <% end %>
-          </div>
+            </div>
+          <% end %>
         <% end %>
-    <% end %>
-  </div>
+
+    <% else %>
+      <% if current_user.favourite_games.present? %>
+        <% @games = Game.all %>
+        <% @favourite_games.each do |favourite_game_id|%>
+          <%= link_to game_path(Game.find(favourite_game_id)) do %>
+            <div class="game-card" style="background-image: url(<%= Game.find(favourite_game_id).image_url%>">
+              <% if @favourite_games.include?(favourite_game_id) %>
+                  <i class="fas fa-star fa-star-game"></i>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+        <% game_list_ids = games.map {|game| game.id } %>
+        <% user_favouritegame_ids = current_user.favourite_games.map {|favourite_game| favourite_game.game_id } %>
+        <% newgamelist = game_list_ids.reject { |game| user_favouritegame_ids.include?(game)}  %>
+        <% newgamelist.each do |game| %>
+          <%= link_to game_path(game) do %>
+            <div class="game-card" style="background-image: url(<%= Game.find(game).image_url %>)">
+            </div>
+          <% end %>
+        <% end %>
+      <% else %>
+        <% games.each do |game| %>
+          <%= link_to game_path(game) do %>
+            <div class="game-card" style="background-image: url(<%= game.image_url %>)">
+              <% if @favourite_games.include?(game.id) %>
+                <i class="fas fa-star fa-star-game"></i>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
