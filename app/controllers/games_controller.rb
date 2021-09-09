@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  before_action :find_avoided_users, only: :show
   def index
     @games = Game.all
     @favourite_games = users_favourite_games(current_user.id)
@@ -14,23 +15,21 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
-    @avoided_users_array = current_user.avoid_users.map do |x|
-      x.avoid_user_id
-    end
-    @users = User.where.not(id: @avoided_users_array)
-    # @users = User.reject
+    @users = User.where.not(id: @current_user_avoided_users_array | @users_avoiding_current_user)
     @favourite_game = FavouriteGame.find_by(game: @game, user: current_user)
-    @users.each do |x|
-      x.avoid_users.each do |y|
-        @avoided_users_array << y.avoid_user_id if y.avoid_user_id == current_user.id
-      end
-    end
-    @favourite_users = current_user.favourite_users
-    @favourite_user_ids = @favourite_users.map { |instance| instance.favourite_user_id }
-
   end
 
   private
+
+  def find_avoided_users
+    @current_user_avoided_users_array = current_user.avoid_users.map do |x|
+      x.avoid_user_id
+    end
+    @avoid_instances_with_current_user = AvoidUser.where(avoid_user_id: current_user.id)
+    @users_avoiding_current_user = @avoid_instances_with_current_user.map do |avoid_user_instances|
+      avoid_user_instances.user_id
+    end
+  end
 
   def users_favourite_games(user_id)
     favourited_array = FavouriteGame.where(user_id: user_id)
