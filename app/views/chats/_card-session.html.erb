@@ -49,7 +49,7 @@
         <% end %>
         <div class="session-card__buttons">
           <% @reviewee = invitation.inviter_id == current_user.id ? invitation.user_id : invitation.inviter_id %>
-          <% if invitation.status == "confirmed" %>
+          <% if invitation.status == "confirmed" || invitation.inviter_id == current_user.id %>
             <% unless @user_ratings.where("user_id = ? AND reviewee_id = ?", current_user.id, @reviewee)[0] %>
               <%= link_to 'Rate User', new_chat_user_rating_path(invitation.chat_id), class: "pop-btn pop-btn-blue" %>
             <% end %>

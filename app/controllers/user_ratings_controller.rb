@@ -25,7 +25,7 @@ class UserRatingsController < ApplicationController
 
       redirect_to user_path(@otheruser)
     else
-      render :new
+      redirect_to new_chat_user_rating_path
     end
   end
 

@@ -95,7 +95,7 @@
               <% end %>
               <div class="profile__invite">
                 <% @user_invite = @user.invitations.where(inviter_id: current_user.id ) %>
-                <% if @user_invite.last.chat.ongoing == true %>
+                <% if @user_invite[0] && @user_invite.last.chat.ongoing == true %>
                 <% else %>
                 <%= link_to "Invite", chats_path(user_id: @user.id), method: 'post', class: "pop-btn pop-btn-blue" %>
                 <% end %>
