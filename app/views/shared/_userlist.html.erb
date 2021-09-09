@@ -26,6 +26,7 @@
                 <% user.average_rating.round.times do %>
                   <span>⭐</span>
                 <% end %>
+                <p>(<%= user.user_rating_ids.count %>)</p>
               </div>
             </div>
           <% end %>
