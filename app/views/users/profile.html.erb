@@ -108,8 +108,8 @@
         </table>
       </div>
       <div class="profile__actions">
-        <%= link_to "Edit Profile", edit_user_registration_path, class: "pop-btn pop-btn-blue" %>
-        <%= link_to "Avoided Users", user_avoid_users_path(current_user.id), method: :get, class: "pop-btn pop-btn-blue"  %>
+        <%= link_to "Edit Profile", edit_user_registration_path, class: "pop-btn pop-btn-purple" %>
+        <%= link_to "Avoided Users", user_avoid_users_path(current_user.id), method: :get, class: "pop-btn pop-btn-pink"  %>
       </div>
     </div>
     <div class="profile__jumbo">
@@ -146,21 +146,19 @@
         <p>This user does not have any ratings...</p>
         <% end %>
       </div>
-    </div>
-  </div>
-</div>
-<div id='favourite-games'>
-  <div class="container">
-    <div class="profile__favourites">
-      <h2>Favourite Games</h2>
-    </div>
-    <div class="game-card-flex">
-      <% @favourite_games.each do |game| %>
-      <%= link_to game_path(game) do %>
-      <div class="game-card" style="background-image: url(<%= game.image_url %>)">
+      <div class='profile__favourite-games'>
+        <div class="profile__favourites">
+          <h2>Favourite Games</h2>
+        </div>
+        <div class="game-card-flex">
+          <% @favourite_games.each do |game| %>
+            <%= link_to game_path(game) do %>
+            <div class="game-card game-card--small" style="background-image: url(<%= game.image_url %>)">
+            </div>
+            <% end %>
+          <% end %>
+        </div>
       </div>
-      <% end %>
-      <% end %>
     </div>
   </div>
 </div>
