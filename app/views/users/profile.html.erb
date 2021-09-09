@@ -147,7 +147,7 @@
         <% end %>
       </div>
       <div class='profile__favourite-games'>
-        <div class="profile__favourites">
+        <div class="profile__favourites profile__favourites--pink">
           <h2>Favourite Games</h2>
         </div>
         <div class="game-card-flex">
@@ -158,6 +158,43 @@
             <% end %>
           <% end %>
         </div>
+      </div>
+      <div class='profile__favourite-users'>
+        <div class="profile__favourites profile__favourites--orange">
+          <h2>Favourite Users</h2>
+        </div>
+        <% @favourite_users.each do |user| %>
+          <%= link_to user_path(user) do %>
+            <ul>
+              <li>
+                <%= link_to user_path(user) do %>
+                  <div class="card-user">
+                    <% if user.photo.attached? %>
+                        <%= cl_image_tag user.photo.key, class: "avatar-medium ml-2" %>
+                      <% else %>
+                        <%= image_tag "default-profile.jpeg", class: "avatar-medium ml-2" %>
+                      <% end %>
+                    <div class="card-user-infos">
+                      <h2><%= user.username %></h2>
+                    </div>
+                    <div>
+                      <i class="fas fa-star fa-star-user"></i>
+                    </div>
+                    <div class="user-rating">
+                      <% if user.average_rating == 0 || user.average_rating == nil %>
+                        <p>New!</p>
+                      <% else %>
+                        <% user.average_rating.round.times do %>
+                          <span>⭐</span>
+                        <% end %>
+                      <% end %>
+                    </div>
+                  </div>
+                <% end %>
+              </li>
+            </ul>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>

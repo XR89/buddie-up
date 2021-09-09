@@ -8,18 +8,21 @@
       <img src="<%= @game.image_url %>" alt="game-splash-art">
     </div>
     <div class="game-desc">
-      <h2><%= @game.title %></h2>
+      <div class="game-infos data-controller="favourite">
+        <h2><%= @game.title %></h2>
+        <% if @favourite_game %>
+          <%= link_to game_favourite_game_path(@game, @favourite_game), method: :delete do %>
+            <i class="fas fa-star fa-star-game"></i>
+          <% end %>
+        <% else %>
+          <%= link_to game_favourite_games_path(@game), method: :post do %>
+            <i class="far fa-star fa-star-game"></i>
+          <% end %>
+        <% end %>
+      </div>
       <p><%= @game.description %></p>
       <p>Developed by: <%= @game.developer %></p>
     </div>
-
-    <% if @favourite_game %>
-      <%= link_to "UnFavourite", game_favourite_game_path(@game, @favourite_game), method: :delete %>
-    <% else %>
-      <%= link_to "Favourite", game_favourite_games_path(@game), method: :post %>
-    <% end %>
-
-
   </div>
 
   <%# <div class="filter-flex">
