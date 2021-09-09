@@ -31,6 +31,10 @@ body {
   color: $white;
 }
 
+h1, h2, p {
+  margin: 0;
+}
+
 .container {
   padding: 0 10vw;
 }

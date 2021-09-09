@@ -16,10 +16,9 @@
 .game-wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   flex-wrap: wrap;
   gap: 64px;
-  height: 300px;
 }
 
 .game-image {
@@ -28,6 +27,7 @@
   img {
     box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.4);
     min-width: 400px;
+    max-width: 30vw;
   }
 }
 
@@ -43,6 +43,13 @@
     opacity: .7;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
   }
+}
+
+.game-infos {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
 }
 
 .filter-flex {
