@@ -47,57 +47,13 @@
           </tbody>
         </table>
       </div>
-      <div class="profile__handles">
-        <% if @user.favourite_users.where(favourite_user_id: current_user)[0] %>
-        <table>
-          <tbody>
-            <tr>
-              <th>
-                Region
-              </th>
-              <td>
-                <%= @user.region %>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                Gender
-              </th>
-              <td>
-                <%= @user.gender %>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                Age
-              </th>
-              <td>
-                <%= Date.today.year  - @user.dob.year %>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <% end %>
-      </div>
       <div class="profile__actions">
-        <% if @user.invitations.where(inviter_id: current_user.id).present? %>
-        <% @user_invite = @user.invitations.where(inviter_id: current_user.id ) %>
-        <% if @user_invite.last.chat.ongoing == false %>
-        <%= link_to "Invite", chats_path(user_id: @user.id), method: 'post', class: "pop-btn pop-btn-blue" %>
-        <% end %>
-        <% else %>
-        <%= link_to "Invite", chats_path(user_id: @user.id), method: 'post', class: "pop-btn pop-btn-blue" %>
-        <% end %>
-        <%# return all invites by the current user %>
-        <%# <% unless @user.invitations.where(status: "confirmed")[0] %>
         <% if @favourite_user %>
         <%= link_to "Unfavourite", user_favourite_user_path(params[:id],  @favourite_user), method: :delete, class: "pop-btn pop-btn-pink"  %>
         <% else %>
         <%= link_to "Favourite", user_favourite_users_path(params[:id]), method: :post, class: "pop-btn pop-btn-pink"  %>
         <% end %>
         <%= link_to "Avoid", user_avoid_users_path(params[:id]), data: { confirm: 'Are you sure you want to avoid this user? (please go to avoided users list to un-avoid)' }, method: :post, class: "pop-btn pop-btn-purple"  %>
-
-
       </div>
     </div>
     <div class="profile__jumbo">
@@ -126,27 +82,28 @@
         <p>This user does not have any ratings...</p>
         <% end %>
       </div>
-    </div>
-  </div>
-</div>
-</div>
-<div id='favourite-games'>
-  <div class="container">
-    <div class="profile__favourites">
-      <h2>Favourite Games</h2>
-    </div>
-    <div class="game-card-flex">
-      <% @favourite_games.each do |game| %>
-      <div class="game-outer-card">
-        <%= link_to game_path(game) do %>
-        <div class="game-card" style="background-image: url(<%= game.image_url %>)">
+      <div class='profile__favourite-games'>
+        <div class="profile__favourites">
+          <h2>Favourite Games</h2>
         </div>
-        <% end %>
-        <div class="profile__invite">
-          <%= link_to "Invite", chats_path(user_id: @user.id), method: 'post', class: "pop-btn pop-btn-blue" %>
+        <div class="game-card-flex">
+          <% @favourite_games.each do |game| %>
+            <div class="game-outer-card">
+              <%= link_to game_path(game) do %>
+                <div class="game-card game-card--small" style="background-image: url(<%= game.image_url %>)">
+                </div>
+              <% end %>
+              <div class="profile__invite">
+                <% @user_invite = @user.invitations.where(inviter_id: current_user.id ) %>
+                <% if @user_invite[0] && @user_invite.last.chat.ongoing == true %>
+                <% else %>
+                <%= link_to "Invite", chats_path(user_id: @user.id), method: 'post', class: "pop-btn pop-btn-blue" %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
-      <% end %>
     </div>
   </div>
 </div>

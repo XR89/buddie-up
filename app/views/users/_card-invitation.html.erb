@@ -1,14 +1,18 @@
 <% invitations.each do |invitation| %>
-  <div class="invitation-card">
-    <div class="invitation-card__info">
-      <% inviter = User.find(invitation.inviter_id) %>
-      <% if inviter.photo.attached? %>
-        <%= cl_image_tag inviter.photo.key, class: "avatar" %>
-      <% else %>
-        <%= image_tag "default-profile.jpeg", class: "avatar" %>
-      <% end %>
-    <p><%= inviter.username %> has invited you to play!</p>
-    </div>
+  <div class="invitation-outer-card">
+    <%= link_to user_path(invitation.inviter_id) do %>
+      <div class="invitation-card">
+        <div class="invitation-card__info">
+          <% inviter = User.find(invitation.inviter_id) %>
+          <% if inviter.photo.attached? %>
+            <%= cl_image_tag inviter.photo.key, class: "avatar" %>
+          <% else %>
+            <%= image_tag "default-profile.jpeg", class: "avatar" %>
+          <% end %>
+          <p><%= inviter.username %> has invited you to play!</p>
+        </div>
+      </div>
+    <% end %>
     <div class="invitation-card__buttons">
       <%= link_to "Accept", user_accept_path(current_user, invitation), method: 'patch', class: "pop-btn pop-btn-pink" %>
       <%= link_to "Decline", user_decline_path(current_user, invitation), method: 'patch',class: "pop-btn pop-btn-orange" %>

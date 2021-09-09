@@ -1,6 +1,13 @@
 .alert {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
   z-index: 1000;
+  position: fixed;
+  top: 80px;
+  left: 16px;
+  margin: 0;
+  padding: 12px;
+  height: 48px;
+  border: none;
+  border-right: 4px solid $pink;
+  background: rgba(68,68,68,0.6);
+  color: $white;
 }
