@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.where.not(id: @avoided_users_array)
+    @users = User.where.not(id: @current_user_avoided_users_array | @users_avoiding_current_user)
     @favourite_users = current_user.favourite_users
     @favourite_user_ids = @favourite_users.map { |instance| instance.favourite_user_id }
 
@@ -30,7 +30,8 @@ class UsersController < ApplicationController
     @invitations = @user.invitations unless @user.invitations.nil?
     @favourite_games = users_favourite_games(@user.id)
     redirect_to profile_path if current_user == @user
-    redirect_to profile_path if @avoided_users_array.include?(@user.id)
+    redirect_to profile_path if @current_user_avoided_users_array.include?(@user.id)
+    redirect_to profile_path if @users_avoiding_current_user.include? @user.id
     @favourite_user = FavouriteUser.find_by(favourite_user: params[:id], user: current_user)
     @avoided_user = AvoidUser.find_by(avoid_user: params[:id], user: current_user)
   end
@@ -38,12 +39,14 @@ class UsersController < ApplicationController
   private
 
   def find_avoided_users
-    @avoided_users_array = current_user.avoid_users.map do |x|
+    @current_user_avoided_users_array = current_user.avoid_users.map do |x|
       x.avoid_user_id
     end
+    @avoid_instances_with_current_user = AvoidUser.where(avoid_user_id: current_user.id)
+    @users_avoiding_current_user = @avoid_instances_with_current_user.map do |avoid_user_instances|
+      avoid_user_instances.user_id
+    end
   end
-
-  private
 
   def users_favourite_games(user_id)
     favourited_array = FavouriteGame.where(user_id: user_id)
