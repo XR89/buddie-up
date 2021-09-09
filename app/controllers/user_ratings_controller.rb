@@ -1,5 +1,4 @@
 class UserRatingsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[new create]
   before_action :find_reviewee, only: %i[new create]
   before_action :find_favourite
 
