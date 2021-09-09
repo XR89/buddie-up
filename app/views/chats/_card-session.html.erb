@@ -2,7 +2,7 @@
   <h2>All Chats</h2>
   <% @invitations.each do |invitation| %>
     <div class="session-card--outer">
-      <%= link_to game_session_path(invitation.game_session_id) do %>
+      <%= link_to chat_path(invitation.chat_id) do %>
         <div class="session-card">
           <div class="session-card__info">
             <div class="session-card__players">
@@ -17,14 +17,22 @@
                 <%= image_tag "default-profile.jpeg", class: "avatar" %>
               <% end %>
             </div>
-            <% if invitation.user == current_user %>
-              <p>Now chatting with <%= invitation.inviter.username %></p>
+            <% if invitation.chat.ongoing == true %>
+              <% if invitation.user == current_user %>
+                <p>Now chatting with <%= invitation.inviter.username %></p>
+              <% else %>
+                <p>Now chatting with <%= invitation.user.username %></p>
+              <% end %>
             <% else %>
-              <p>Now chatting with <%= invitation.user.username %></p>
+              <% if invitation.user == current_user %>
+                <p>Your previous chat with <%= invitation.inviter.username %></p>
+              <% else %>
+                <p>Your previous chat with <%= invitation.user.username %></p>
+              <% end %>
             <% end %>
           </div>
           <div class="session-card__status">
-            <% if invitation.game_session.ongoing == true %>
+            <% if invitation.chat.ongoing == true %>
               <div class="spinner">
                 <div class="double-bounce1 double-bounce--green"></div>
                 <div class="double-bounce2 double-bounce--green"></div>
@@ -39,9 +47,9 @@
         </div>
       <% end %>
       <div class="session-card__buttons">
-        <%= link_to 'Rate Player', new_game_session_user_rating_path(invitation.game_session_id), class: "pop-btn pop-btn-blue" %>
-        <% if invitation.game_session.ongoing == true %>
-          <%= link_to 'Leave Chat', end_game_session_path(invitation.game_session_id), method: :patch, class: "pop-btn pop-btn-purple" %>
+        <%= link_to 'Rate User', new_chat_user_rating_path(invitation.chat_id), class: "pop-btn pop-btn-blue" %>
+        <% if invitation.chat.ongoing == true %>
+          <%= link_to 'Leave Chat', end_chat_path(invitation.chat_id), method: :patch, class: "pop-btn pop-btn-purple" %>
         <% end %>
       </div>
     </div>

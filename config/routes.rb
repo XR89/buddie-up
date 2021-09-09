@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   devise_for :users
   get '/profile', to: 'users#profile', as: 'profile'
 
-
-
   resources :users, only: %i[index show] do
     resources :favourite_users, only: %i[create destroy]
     resources :avoid_users, only: %i[create destroy index]
@@ -18,13 +16,13 @@ Rails.application.routes.draw do
     resources :favourite_games, only: %i[create destroy]
   end
 
-  patch '/game_sessions/:id/start', to: 'game_sessions#start_game_session', as: 'start_game_session'
-  patch '/game_sessions/:id/end', to: 'game_sessions#end_game_session', as: 'end_game_session'
-  resources :game_sessions, only: %i[show create index] do
-    resources :user_ratings, only: %i[new create]
+  patch '/chats/:id/start', to: 'chats#start_chat', as: 'start_chat'
+  patch '/chats/:id/end', to: 'chats#end_chat', as: 'end_chat'
+  resources :chats, only: %i[show create index] do
     resources :messages, only: :create
+    resources :user_ratings, only: %i[new create]
   end
-
+  resources :user_ratings, only: %i[index]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
