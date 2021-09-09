@@ -11,7 +11,7 @@
       <div class="game-infos data-controller="favourite">
         <h2><%= @game.title %></h2>
         <% if @favourite_game %>
-          <%= link_to game_favourite_game_path(@game, @favourite_game), method: :delete, data: { favouriteTarget: "star", action: "toggle-favourite" } do %>
+          <%= link_to game_favourite_game_path(@game, @favourite_game), method: :delete do %>
             <i class="fas fa-star fa-star-game"></i>
           <% end %>
         <% else %>

@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @ratings = UserRating.where(reviewee_id: @user)
     @invitations = @user.invitations unless @user.invitations.nil?
     @favourite_games = users_favourite_games(current_user.id)
+    @favourite_users = users_favourite_users(current_user.id)
   end
 
   def index
@@ -50,6 +51,9 @@ class UsersController < ApplicationController
     favourite_game_ids.map { |id| Game.find(id) }
   end
 
-
-
+  def users_favourite_users(user_id)
+    favourited_array = FavouriteUser.where(user_id: user_id)
+    favourite_user_ids = favourited_array.map { |instance| instance.favourite_user_id }
+    favourite_user_ids.map { |id| User.find(id) }
+  end
 end
