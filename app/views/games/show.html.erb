@@ -12,11 +12,11 @@
         <h2><%= @game.title %></h2>
         <% if @favourite_game %>
           <%= link_to game_favourite_game_path(@game, @favourite_game), method: :delete do %>
-            <i class="fas fa-star fa-star-game"></i>
+            <i class="fas fa-star fa-star-game fa-star-game-show"></i>
           <% end %>
         <% else %>
           <%= link_to game_favourite_games_path(@game), method: :post do %>
-            <i class="far fa-star fa-star-game"></i>
+            <i class="far fa-star fa-star-game fa-star-game-show"></i>
           <% end %>
         <% end %>
       </div>

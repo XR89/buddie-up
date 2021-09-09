@@ -19,6 +19,10 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     @users = User.where.not(id: @current_user_avoided_users_array | @users_avoiding_current_user)
     @favourite_game = FavouriteGame.find_by(game: @game, user: current_user)
+
+
+    @favourite_users = current_user.favourite_users
+    @favourite_user_ids = @favourite_users.map { |instance| instance.favourite_user_id }
   end
 
   private
