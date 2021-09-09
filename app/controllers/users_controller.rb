@@ -9,8 +9,7 @@ class UsersController < ApplicationController
   end
 
   def index
-
-    @users = User.where.not(id: @current_user_avoided_users_array && @users_avoiding_current_user)
+    @users = User.where.not(id: @current_user_avoided_users_array | @users_avoiding_current_user)
     @favourite_users = current_user.favourite_users
     @favourite_user_ids = @favourite_users.map { |user| user.id}
 
@@ -48,6 +47,7 @@ class UsersController < ApplicationController
     @users_avoiding_current_user = @avoid_instances_with_current_user.map do |avoid_user_instances|
       avoid_user_instances.user_id
     end
+
 
   end
 
