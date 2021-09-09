@@ -10,9 +10,11 @@ class ChatsController < ApplicationController
     @chat = Chat.find(params[:id])
     @invitation = current_user.invitations.where(chat: params[:id])[0] unless current_user.invitations.nil?
     if @invitation.nil? || @invitation.status != 'confirmed'
-      redirect_to profile_path # add error message, not final.
+      redirect_to profile_path, alert: "You don't have access to that chat" # add error message, not final.
     elsif @chat.ongoing == false
-      redirect_to new_chat_user_rating_path(@chat)
+      # flash[:notice] = "You can now rate users"
+      redirect_to new_chat_user_rating_path(@chat), notice: 'You can now rate users'
+      # flash.keep(:notice)
     else
       @message = Message.new
     end
@@ -28,7 +30,7 @@ class ChatsController < ApplicationController
     @invitation_1.inviter = current_user
     @invitation_1.chat = @chat
     # @chat.status = 'new'
-    redirect_to profile_path unless @invitation_1.save # flash error message
+    redirect_to profile_path, alert: 'An error happened. Please try again' unless @invitation_1.save # flash error message
 
     @invitee = User.find(params[:user_id]) # assuming we are on user's show page or game's show page(user card)
     # for user_2 to decide whether to accept
@@ -40,9 +42,9 @@ class ChatsController < ApplicationController
     # @game = Game.find(params[:id])
     # @chat.game = @game
     if @invitation_1.save && @invitation_2.save && @chat.save
-      redirect_to chat_path(@chat)
+      redirect_to chat_path(@chat), notice: "You can now start chatting"
     else
-      redirect_to profile_path
+      redirect_to profile_path, alert: "An error happened. Please try again"
     end
   end
 
@@ -55,12 +57,12 @@ class ChatsController < ApplicationController
     @users_declined = @all_users_invitations.where(status: 'declined')
 
     if @all_users_invitations.all? { |invitation| invitation.status == 'confirmed' }
-      redirect_to new_chat_user_rating_path(@chat)
+      redirect_to new_chat_user_rating_path(@chat), notice: "You can now rate users"
     elsif @users_unconfirmed.present?
       @users_unconfirmed.first.update(status: 'declined')
-      redirect_to root_path
+      redirect_to root_path, notice: 'Chat has ended.'
     elsif @users_declined.first.present?
-      redirect_to root_path
+      redirect_to root_path, notice: 'The other user declined your invitation'
     end
   end
 
