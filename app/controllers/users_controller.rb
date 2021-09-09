@@ -38,17 +38,13 @@ class UsersController < ApplicationController
   private
 
   def find_avoided_users
-
     @current_user_avoided_users_array = current_user.avoid_users.map do |x|
       x.avoid_user_id
     end
-
     @avoid_instances_with_current_user = AvoidUser.where(avoid_user_id: current_user.id)
     @users_avoiding_current_user = @avoid_instances_with_current_user.map do |avoid_user_instances|
       avoid_user_instances.user_id
     end
-
-
   end
 
   def users_favourite_games(user_id)
