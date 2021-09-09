@@ -10,7 +10,7 @@ class ChatsController < ApplicationController
     @chat = Chat.find(params[:id])
     @invitation = current_user.invitations.where(chat: params[:id])[0] unless current_user.invitations.nil?
     if @invitation.nil? || @invitation.status != 'confirmed'
-      redirect_to profile_path, alert: "Back to profile as you don't have access to that chat" # add error message, not final.
+      redirect_to profile_path, alert: "You don't have access to that chat" # add error message, not final.
     elsif @chat.ongoing == false
       # flash[:notice] = "You can now rate users"
       redirect_to new_chat_user_rating_path(@chat), notice: 'You can now rate users'
