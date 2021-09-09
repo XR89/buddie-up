@@ -1,8 +1,10 @@
 const message = () => {
   const form = document.querySelector('form');
   // document.getElementById('message_content').mouseup();
-  document.querySelector('.chat--input').focus();
-  document.querySelector('.chat--input').select();
+  setTimeout(() => {
+    document.querySelector('#message_content').focus();
+  }, 300);
+  document.querySelector('#message_content').select();
   // console.log(document.getElementById('message_content').focus());
   // console.log(document.getElementById('message_content').select());
   document.addEventListener('keydown', (e) => {

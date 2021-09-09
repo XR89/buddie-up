@@ -5,30 +5,37 @@
     <h2 class="list-header"><%= pluralize users.count, 'result' %> for <span class="result"><%= params[:query] %></span></h2>
   <% end %>
   <ul>
-    <% users.each do |user| %>
-      <li>
-        <%= link_to user_path(user) do %>
-          <div class="card-user">
-            <% if user.photo.attached? %>
-                <%= cl_image_tag user.photo.key, class: "avatar-medium ml-2" %>
-              <% else %>
-                <%= image_tag "default-profile.jpeg", class: "avatar-medium ml-2" %>
-              <% end %>
-            <div class="card-user-infos">
-              <h2><%= user.username %></h2>
+    <% users.shuffle.each do |user| %>                    
+      <% if user.id != current_user.id %>
+        <li>
+          <%= link_to user_path(user) do %>
+            <div class="card-user">
+              <% if user.photo.attached? %>
+                  <%= cl_image_tag user.photo.key, class: "avatar-medium ml-2" %>
+                <% else %>
+                  <%= image_tag "default-profile.jpeg", class: "avatar-medium ml-2" %>
+                <% end %>
+              <div class="card-user-infos">
+                <h2><%= user.username %></h2>
+              </div>
+              <div>
+                <% if @favourite_user_ids.include?(user.id) %>
+                  <i class="fas fa-star fa-star-user"></i>
+                <% end %>
+              </div>
+              <div class="user-rating">
+                <% if user.average_rating == 0 || user.average_rating == nil %>
+                  <p>New!</p>
+                <% else %>
+                  <% user.average_rating.round.times do %>
+                    <span>⭐</span>
+                  <% end %>
+                <% end %>
+              </div>
             </div>
-            <%# <div> %>
-              <%# <p><%= user.language if user.language %></p>
-              <%# <p><%= user.favourite_games if user.favourite_games %></p>
-            <%# </div> %>
-            <div class="user-rating">
-              <% user.average_rating.round.times do %>
-                <span>⭐</span>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
-      </li>
+          <% end %>
+        </li>
+      <% end %>
     <% end %>
   </ul>
 </div>

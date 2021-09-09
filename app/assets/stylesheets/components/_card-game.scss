@@ -22,6 +22,12 @@
   }
 }
 
+.game-card--small {
+  height: 135px;
+  min-width: 300px;
+  max-width: 300px;
+}
+
 .game-outer-card {
   position: relative;
 }
