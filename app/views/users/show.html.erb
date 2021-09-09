@@ -82,11 +82,11 @@
       <div class="profile__actions">
         <% if @user.invitations.where(inviter_id: current_user.id).present? %>
         <% @user_invite = @user.invitations.where(inviter_id: current_user.id ) %>
-        <% if @user_invite.last.game_session.ongoing == false %>
-        <%= link_to "Invite", game_sessions_path(user_id: @user.id), method: 'post', class: "pop-btn pop-btn-blue" %>
+        <% if @user_invite.last.chat.ongoing == false %>
+        <%= link_to "Invite", chats_path(user_id: @user.id), method: 'post', class: "pop-btn pop-btn-blue" %>
         <% end %>
         <% else %>
-        <%= link_to "Invite", game_sessions_path(user_id: @user.id), method: 'post', class: "pop-btn pop-btn-blue" %>
+        <%= link_to "Invite", chats_path(user_id: @user.id), method: 'post', class: "pop-btn pop-btn-blue" %>
         <% end %>
         <%# return all invites by the current user %>
         <%# <% unless @user.invitations.where(status: "confirmed")[0] %>
@@ -143,7 +143,7 @@
         </div>
         <% end %>
         <div class="profile__invite">
-          <%= link_to "Invite", game_sessions_path(user_id: @user.id), method: 'post', class: "pop-btn pop-btn-blue" %>
+          <%= link_to "Invite", chats_path(user_id: @user.id), method: 'post', class: "pop-btn pop-btn-blue" %>
         </div>
       </div>
       <% end %>

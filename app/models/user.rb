@@ -23,7 +23,6 @@ class User < ApplicationRecord
   # validation for languages?
   validate :validate_age
   validates :gender, inclusion: { in: ["Male", "Female", "Other", "Prefer not to say"] }
-  # validation for user status (0 - offline, 1 - online) may require sessions?
 
   has_one_attached :photo
   has_many :favourite_users, foreign_key: :user_id

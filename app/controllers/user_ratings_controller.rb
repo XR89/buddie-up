@@ -1,11 +1,15 @@
 class UserRatingsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[new]
-  before_action :find_reviewee
+  before_action :find_reviewee, only: %i[new create]
   before_action :find_favourite
+
+  def index
+
+  end
 
   def new
     @user_rating = UserRating.new
-    @gamesession = GameSession.find(params[:game_session_id])
+    @chat = Chat.find(params[:chat_id])
   end
 
   def create
@@ -29,7 +33,7 @@ class UserRatingsController < ApplicationController
   def find_reviewee
     @users = User.all.select { |user| user.invitations.any? }
     @user_invitations = @users.map { |user| user.invitations }.flatten!
-    @other_invitation = @user_invitations.select { |invitation| invitation.game_session_id == params[:game_session_id].to_i  && invitation.user_id != current_user.id }[0]
+    @other_invitation = @user_invitations.select { |invitation| invitation.chat_id == params[:chat_id].to_i && invitation.user_id != current_user.id }[0]
     @otheruser = User.find(@other_invitation.user_id)
   end
 

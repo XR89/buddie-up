@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_07_133552) do
+ActiveRecord::Schema.define(version: 2021_09_08_212244) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,15 @@ ActiveRecord::Schema.define(version: 2021_09_07_133552) do
     t.index ["user_id"], name: "index_avoid_users_on_user_id"
   end
 
+  create_table "chats", force: :cascade do |t|
+    t.boolean "ongoing"
+    t.string "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "game_id"
+    t.index ["game_id"], name: "index_chats_on_game_id"
+  end
+
   create_table "favourite_games", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "game_id", null: false
@@ -70,15 +79,6 @@ ActiveRecord::Schema.define(version: 2021_09_07_133552) do
     t.index ["user_id"], name: "index_favourite_users_on_user_id"
   end
 
-  create_table "game_sessions", force: :cascade do |t|
-    t.boolean "ongoing"
-    t.string "status"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "game_id"
-    t.index ["game_id"], name: "index_game_sessions_on_game_id"
-  end
-
   create_table "games", force: :cascade do |t|
     t.string "title"
     t.string "genre", default: [], array: true
@@ -92,13 +92,13 @@ ActiveRecord::Schema.define(version: 2021_09_07_133552) do
 
   create_table "invitations", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "game_session_id", null: false
     t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "is_ready"
     t.bigint "inviter_id", null: false
-    t.index ["game_session_id"], name: "index_invitations_on_game_session_id"
+    t.bigint "chat_id", null: false
+    t.index ["chat_id"], name: "index_invitations_on_chat_id"
     t.index ["inviter_id"], name: "index_invitations_on_inviter_id"
     t.index ["user_id"], name: "index_invitations_on_user_id"
   end
@@ -106,10 +106,10 @@ ActiveRecord::Schema.define(version: 2021_09_07_133552) do
   create_table "messages", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id", null: false
-    t.bigint "game_session_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["game_session_id"], name: "index_messages_on_game_session_id"
+    t.bigint "chat_id", null: false
+    t.index ["chat_id"], name: "index_messages_on_chat_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
@@ -162,17 +162,17 @@ ActiveRecord::Schema.define(version: 2021_09_07_133552) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "avoid_users", "users"
   add_foreign_key "avoid_users", "users", column: "avoid_user_id"
+  add_foreign_key "chats", "games"
   add_foreign_key "favourite_games", "games"
   add_foreign_key "favourite_games", "users"
   add_foreign_key "favourite_users", "users"
   add_foreign_key "favourite_users", "users", column: "favourite_user_id"
-  add_foreign_key "game_sessions", "games"
-  add_foreign_key "invitations", "game_sessions"
+  add_foreign_key "invitations", "chats"
   add_foreign_key "invitations", "users"
   add_foreign_key "invitations", "users", column: "inviter_id"
-  add_foreign_key "messages", "game_sessions"
+  add_foreign_key "messages", "chats"
   add_foreign_key "messages", "users"
   add_foreign_key "user_ratings", "users"
   add_foreign_key "user_ratings", "users", column: "reviewee_id"
-  add_foreign_key "users", "game_sessions", column: "session_id"
+  add_foreign_key "users", "chats", column: "session_id"
 end

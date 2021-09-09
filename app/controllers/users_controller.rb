@@ -30,8 +30,6 @@ class UsersController < ApplicationController
     @favourite_games = users_favourite_games(@user.id)
     redirect_to profile_path if current_user == @user
     redirect_to profile_path if @avoided_users_array.include?(@user.id)
-
-
     @favourite_user = FavouriteUser.find_by(favourite_user: params[:id], user: current_user)
     @avoided_user = AvoidUser.find_by(avoid_user: params[:id], user: current_user)
   end
@@ -39,7 +37,7 @@ class UsersController < ApplicationController
   private
 
   def find_avoided_users
-      @avoided_users_array = current_user.avoid_users.map do |x|
+    @avoided_users_array = current_user.avoid_users.map do |x|
       x.avoid_user_id
     end
   end

@@ -11,7 +11,7 @@
         <h3><%= @otheruser.username %></h3>
       </div>
     </div>
-    <%= simple_form_for [@gamesession, @user_rating], html: { class: "rating-container__form" } do |f| %>
+    <%= simple_form_for [@chat, @user_rating], html: { class: "rating-container__form" } do |f| %>
       <%= f.input :comments, input_html: { class: "form__comment-input" } %>
       <%= f.input :rating, collection: (1..5).to_a %>
       <div class="form__submit-button--right">

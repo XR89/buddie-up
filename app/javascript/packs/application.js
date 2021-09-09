@@ -22,7 +22,7 @@ import "bootstrap";
 // Internal imports, e.g:
 import "controllers"
 import "channels"
-import { initGameSessionCable } from '../channels/gamesession_channel';
+import { initChatCable } from '../channels/chat_channel';
 import { dropdown } from '../components/dropdown';
 import { initStarRating } from '../plugins/init_star_rating';
 import { message } from '../components/message';
@@ -37,9 +37,8 @@ const removeBootstrapFromSimpleForms = () => {
 }
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
+  initChatCable();
   removeBootstrapFromSimpleForms();
   dropdown();
-  initGameSessionCable();
   message();
 });

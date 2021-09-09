@@ -1,6 +1,6 @@
 require "test_helper"
 
-class GameSessionChannelTest < ActionCable::Channel::TestCase
+class ChatChannelTest < ActionCable::Channel::TestCase
   # test "subscribes" do
   #   subscribe
   #   assert subscription.confirmed?
