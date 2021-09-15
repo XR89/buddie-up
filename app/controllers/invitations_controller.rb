@@ -1,4 +1,5 @@
 class InvitationsController < ApplicationController
+  skip_before_action :authenticate_user!
   def accept
     @invitation = Invitation.find(params[:id])
     @invitation.update(status: 'confirmed')

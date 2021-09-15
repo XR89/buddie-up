@@ -1,5 +1,6 @@
 class AvoidUsersController < ApplicationController
   before_action :find_avoided_user
+  skip_before_action :authenticate_user!
 
   def create
     @avoid_user = AvoidUser.new

@@ -1,4 +1,5 @@
 class FavouriteGamesController < ApplicationController
+  skip_before_action :authenticate_user!
   def create
     @favourite_game = FavouriteGame.new
     @favourite_game.user = current_user
