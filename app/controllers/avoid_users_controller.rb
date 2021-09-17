@@ -2,9 +2,16 @@ class AvoidUsersController < ApplicationController
   before_action :find_avoided_user
 
   def create
+    @favourited_user = FavouriteUser.find_by(favourite_user: params[:user_id], user: current_user)
     @avoid_user = AvoidUser.new
     @avoid_user.user = current_user
     @avoid_user.avoid_user = User.find(params[:user_id])
+
+    if @favourited_user
+      @favourite_user_to_remove = FavouriteUser.find(@favourited_user.id)
+      @favourite_user_to_remove.destroy
+    end
+
     if @avoid_user.save
       redirect_back(fallback_location: root_path)
     end
