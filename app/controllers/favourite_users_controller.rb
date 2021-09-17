@@ -1,4 +1,5 @@
 class FavouriteUsersController < ApplicationController
+  skip_before_action :authenticate_user!
   before_action :find_favourite
   def create
     @favourite_user = FavouriteUser.new

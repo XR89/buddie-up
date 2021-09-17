@@ -1,5 +1,6 @@
 class AvoidUsersController < ApplicationController
   before_action :find_avoided_user
+  skip_before_action :authenticate_user!
 
   def create
     @favourited_user = FavouriteUser.find_by(favourite_user: params[:user_id], user: current_user)

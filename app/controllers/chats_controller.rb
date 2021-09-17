@@ -1,4 +1,5 @@
 class ChatsController < ApplicationController
+  skip_before_action :authenticate_user!
   def index
     @all_user_invitations = Invitation.where("inviter_id = ? OR user_id = ?", current_user.id, current_user.id)
     @invitations = @all_user_invitations.reject { |invitation| invitation.inviter_id == invitation.user_id }

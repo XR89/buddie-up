@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  skip_before_action :authenticate_user!
   before_action :find_avoided_users, only: :show
   def index
     @games = Game.all
