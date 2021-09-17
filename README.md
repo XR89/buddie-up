@@ -17,7 +17,7 @@ Currently hosted at: https://buddie-up.com
 Buddie Up was built in Ruby 2.7.3 so please ensure that you are on that version with:
 
 ``` 
-$ rbenv local 1.9.3-p183
+$ rbenv local 2.7.3-p183
 ```
 Then execute:
 
